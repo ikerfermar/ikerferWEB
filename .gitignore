@@ -1,0 +1,8 @@
+# Archivos temporales y del sistema
+tmp/
+.DS_Store
+Thumbs.db
+
+# Registros y dependencias locales accidentales
+*.log
+node_modules/

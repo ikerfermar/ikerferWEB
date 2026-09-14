@@ -52,6 +52,10 @@ Empieza siempre con un H1 con el título del contenido:
 El resto es Markdown estándar: párrafos, listas, bloques de código, tablas, imágenes.
 Para imágenes, súbelas a content/[ciclo]/[modulo]/img/ y referéncialas con ruta relativa.
 
+Antes de crear o modificar teoría o prácticas, lee y aplica completa la guía [`docs/guia-contenidos.md`](docs/guia-contenidos.md). Contiene las plantillas de ambos tipos de documento y traduce a la web el estilo de los materiales LaTeX de referencia.
+
+El campo `titulo` de `structure.json` debe coincidir exactamente con el H1 del Markdown. El validador comprueba esta correspondencia.
+
 ## Cómo añadir un módulo nuevo
 
 1. Añade el objeto del módulo en `structure.json` dentro del ciclo correspondiente.
@@ -60,6 +64,21 @@ Para imágenes, súbelas a content/[ciclo]/[modulo]/img/ y referéncialas con ru
 4. Guarda las programaciones en `content/[ciclo]/[modulo]/programacion/`.
 5. Crea la carpeta `content/[ciclo]/[modulo]/teoria/` y `content/[ciclo]/[modulo]/practica/`.
 6. Añade al menos una Unidad de Trabajo siguiendo las instrucciones anteriores.
+
+## Cómo compartir un módulo entre varios ciclos
+
+Cuando el contenido, los resultados de aprendizaje y la programación sean comunes, mantén el módulo completo una sola vez. En los demás ciclos añade una referencia:
+
+```json
+{
+  "referencia": {
+    "cicloId": "id-del-ciclo-origen",
+    "moduloId": "id-del-modulo-origen"
+  }
+}
+```
+
+La web reutiliza automáticamente los metadatos, las UT y los archivos Markdown del módulo de origen. La legislación propia del ciclo actual se incorpora en la vista del módulo y se eliminan enlaces duplicados por URL. No copies físicamente el mismo módulo ni sus documentos.
 
 Ejemplo de los metadatos propios de un módulo:
 
@@ -117,5 +136,7 @@ El contenido se gestiona únicamente a través de structure.json y archivos Mark
 - La interfaz general usa la pila tipográfica de sistema y la escala de tamaños de GitHub Primer: 16 px para el cuerpo, 20 px para títulos intermedios y 32 px para títulos principales.
 - El espaciado de interfaz sigue la retícula de GitHub Primer: 4, 8, 16, 24 y 32 px como pasos principales, con una densidad compacta y controles de al menos 32 px.
 - Los contenidos de teoría y práctica conservan Computer Modern como fuente de lectura; el código usa una pila monoespaciada de sistema.
+- La estructura editorial y las plantillas canónicas están en `docs/guia-contenidos.md` y son obligatorias para nuevos documentos.
 - Los párrafos descriptivos o explicativos se muestran justificados y con sangría de primera línea.
 - Evita sangrar títulos, etiquetas, listas, tablas, bloques de código y textos breves de interfaz.
+- Cuando cambien `assets/css/style.css` o `assets/js/app.js`, actualiza también su parámetro de versión en `index.html` para evitar que GitHub Pages sirva recursos antiguos desde caché.

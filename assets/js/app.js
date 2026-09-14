@@ -80,6 +80,36 @@
     return { ...cycleMatch, modulo };
   }
 
+  function resolveSharedModules() {
+    const modulesByPath = new Map();
+
+    for (const familia of state.structure.familias) {
+      for (const ciclo of familia.ciclos) {
+        for (const modulo of ciclo.modulos) {
+          if (!modulo.referencia) modulesByPath.set(`${ciclo.id}/${modulo.id}`, modulo);
+        }
+      }
+    }
+
+    for (const familia of state.structure.familias) {
+      for (const ciclo of familia.ciclos) {
+        ciclo.modulos = ciclo.modulos.map((modulo) => {
+          if (!modulo.referencia) return modulo;
+
+          const { cicloId, moduloId } = modulo.referencia;
+          const source = modulesByPath.get(`${cicloId}/${moduloId}`);
+          if (!source) throw new Error(`Referencia de módulo no válida: ${cicloId}/${moduloId}`);
+
+          return {
+            ...source,
+            _contentCycleId: cicloId,
+            _contentModuleId: moduloId,
+          };
+        });
+      }
+    }
+  }
+
   function getWorkUnits(modulo) {
     return modulo.unidadesTrabajo || [];
   }
@@ -93,6 +123,11 @@
         unidadNombre: unidad.nombre,
       }))
     );
+  }
+
+  function getModuleLegislation(ciclo, modulo) {
+    const laws = [...(modulo.legislacion || []), ...(ciclo.legislacion || [])];
+    return laws.filter((law, index) => laws.findIndex((candidate) => candidate.url === law.url) === index);
   }
 
   function topicHref(cicloId, moduloId, temaId) {
@@ -123,6 +158,59 @@
       }
     });
     return template.innerHTML;
+  }
+
+  function getYouTubeVideoId(url) {
+    try {
+      const parsed = new URL(url, window.location.href);
+      const hostname = parsed.hostname.replace(/^www\./, "");
+
+      if (hostname === "youtu.be") {
+        return parsed.pathname.split("/").filter(Boolean)[0] || null;
+      }
+
+      if (hostname === "youtube.com" || hostname === "m.youtube.com" || hostname === "youtube-nocookie.com") {
+        if (parsed.pathname === "/watch") return parsed.searchParams.get("v");
+
+        const parts = parsed.pathname.split("/").filter(Boolean);
+        if (["embed", "shorts", "live"].includes(parts[0])) return parts[1] || null;
+      }
+    } catch (_) {
+      return null;
+    }
+
+    return null;
+  }
+
+  function embedYouTubeVideos(container) {
+    container.querySelectorAll('a[href]').forEach((link) => {
+      const videoId = getYouTubeVideoId(link.href);
+      if (!videoId) return;
+
+      // Solo convertimos enlaces de YouTube que estén solos en su párrafo.
+      // Así, un enlace de YouTube citado dentro de una frase sigue siendo un enlace normal.
+      const paragraph = link.closest("p");
+      if (!paragraph || paragraph.childElementCount !== 1 || paragraph.textContent.trim() !== link.textContent.trim()) return;
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "youtube-video";
+
+      let contextualHeading = paragraph.previousElementSibling;
+      while (contextualHeading && !["H2", "H3"].includes(contextualHeading.tagName)) {
+        contextualHeading = contextualHeading.previousElementSibling;
+      }
+
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`;
+      iframe.title = contextualHeading?.textContent.trim() || "Vídeo de YouTube";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+
+      wrapper.appendChild(iframe);
+      paragraph.replaceWith(wrapper);
+    });
   }
 
   function updateBreadcrumb(route, entities) {
@@ -216,18 +304,33 @@
 
   /* ── Stats calculation ────────────────────────────────── */
   function calcStats() {
-    let totalCiclos = 0, totalModulos = 0, totalUnidades = 0, totalDocumentos = 0;
+    let totalCiclos = 0;
+    const modules = new Set();
+    const units = new Set();
+    const documents = new Set();
+
     for (const familia of state.structure.familias) {
       totalCiclos += familia.ciclos.length;
       for (const ciclo of familia.ciclos) {
-        totalModulos += ciclo.modulos.length;
         for (const modulo of ciclo.modulos) {
-          totalUnidades += getWorkUnits(modulo).length;
-          totalDocumentos += getModuleContents(modulo).length;
+          const moduleKey = `${modulo._contentCycleId || ciclo.id}/${modulo._contentModuleId || modulo.id}`;
+          modules.add(moduleKey);
+          for (const unidad of getWorkUnits(modulo)) {
+            units.add(`${moduleKey}/${unidad.id}`);
+            for (const contenido of unidad.contenidos || []) {
+              documents.add(`${moduleKey}/${contenido.tipo}/${contenido.id}`);
+            }
+          }
         }
       }
     }
-    return { totalCiclos, totalModulos, totalUnidades, totalDocumentos };
+
+    return {
+      totalCiclos,
+      totalModulos: modules.size,
+      totalUnidades: units.size,
+      totalDocumentos: documents.size,
+    };
   }
 
   /* ── Card factory ─────────────────────────────────────── */
@@ -300,6 +403,96 @@
       wrapper.appendChild(header);
       wrapper.appendChild(pre);
     });
+  }
+
+  function safeDownloadName(title) {
+    return title
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-zA-Z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .toLowerCase();
+  }
+
+  function enhanceDocumentLayout(article) {
+    article.querySelectorAll("p").forEach((paragraph) => {
+      if (paragraph.querySelector("br")) paragraph.classList.add("line-group");
+    });
+  }
+
+  function downloadPracticeAsWord(article, title) {
+    const content = article.cloneNode(true);
+    content.querySelectorAll("a[href]").forEach((link) => link.setAttribute("href", link.href));
+    content.querySelectorAll("p").forEach((paragraph) => {
+      if (paragraph.querySelector("br")) paragraph.classList.add("line-group");
+    });
+    content.querySelectorAll("td").forEach((cell) => {
+      if (!cell.textContent.trim()) cell.innerHTML = "<p>&nbsp;</p><p>&nbsp;</p>";
+    });
+    content.querySelectorAll("iframe").forEach((frame) => frame.remove());
+
+    const wordHtml = `<!doctype html>
+      <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" lang="es">
+      <head>
+        <meta charset="utf-8">
+        <title>${escapeHtml(title)}</title>
+        <style>
+          @page { size: A4; margin: 2.2cm; }
+          body { color: #111; font-family: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif; font-size: 11pt; line-height: 1.45; }
+          h1 { margin: 0 0 18pt; font-size: 23pt; line-height: 1.15; text-align: center; }
+          h2 { margin: 18pt 0 7pt; font-size: 16pt; }
+          h3 { margin: 14pt 0 6pt; font-size: 13pt; }
+          p { margin: 0 0 8pt; text-align: justify; text-indent: 1cm; }
+          h1 + p { text-align: center; text-indent: 0; }
+          p.line-group, blockquote p, td p { text-indent: 0; }
+          hr { margin: 16pt 0; border: 0; border-top: 1pt solid #777; }
+          blockquote { margin: 12pt 0; padding: 8pt 10pt; border-left: 2pt solid #005fbd; background: #edf4fb; }
+          ul, ol { margin: 7pt 0 10pt; }
+          li { margin-bottom: 4pt; }
+          table { width: 100%; margin: 12pt 0; border-collapse: collapse; }
+          th, td { padding: 6pt; border: 1pt solid #aeb5bd; vertical-align: middle; }
+          th { background: #edf1f5; font-weight: bold; text-align: left; }
+          a { color: #005fbd; }
+          pre { padding: 8pt; border: 1pt solid #b7bdc4; background: #f3f4f5; font-family: Consolas, monospace; font-size: 9pt; white-space: pre-wrap; }
+          code { font-family: Consolas, monospace; }
+        </style>
+      </head>
+      <body>${content.innerHTML}</body>
+      </html>`;
+
+    const blob = new Blob(["\ufeff", wordHtml], { type: "application/msword;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const download = document.createElement("a");
+    download.href = url;
+    download.download = `${safeDownloadName(title) || "practica"}.doc`;
+    document.body.appendChild(download);
+    download.click();
+    download.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function addPracticeActions(article, title) {
+    const actions = document.createElement("div");
+    actions.className = "document-actions";
+    actions.setAttribute("role", "group");
+    actions.setAttribute("aria-label", "Descargar práctica");
+    actions.innerHTML = `
+      <button class="document-action" type="button" data-action="print">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        Imprimir / guardar en PDF
+      </button>
+      <button class="document-action" type="button" data-action="word">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Descargar Word editable
+      </button>`;
+
+    actions.querySelector('[data-action="print"]').addEventListener("click", () => window.print());
+    actions.querySelector('[data-action="word"]').addEventListener("click", () => downloadPracticeAsWord(article, title));
+    article.before(actions);
   }
 
   /* ── Render: Home ─────────────────────────────────────── */
@@ -536,7 +729,7 @@
     appEl.innerHTML = `
       <div class="sidebar-overlay" id="sidebar-overlay"></div>
       <section class="page-shell ${hasModules ? "" : "page-shell--empty"} family-${familiaId}">
-        ${hasModules ? `<nav class="page-sidebar ${state.sidebarOpen ? "open" : ""}" aria-label="Módulos del ciclo">
+        ${hasModules ? `<nav id="page-navigation" class="page-sidebar ${state.sidebarOpen ? "open" : ""}" aria-label="Módulos del ciclo">
           <h2>${cycleData.ciclo.nombre}</h2>
           <ul class="sidebar-list">${sidebarLinks}</ul>
         </nav>` : ""}
@@ -591,12 +784,20 @@
       return `<div class="error-box"><strong>Error:</strong> No se ha encontrado el contenido solicitado.</div>`;
 
     const response = await fetch(
-      markdownPath(ciclo.id, modulo.id, selectedTema.tipo, selectedTema.id),
-      { headers: { "Accept-Charset": "utf-8" } }
+      markdownPath(
+        modulo._contentCycleId || ciclo.id,
+        modulo._contentModuleId || modulo.id,
+        selectedTema.tipo,
+        selectedTema.id
+      ),
+      {
+        cache: "no-cache",
+        headers: { "Accept-Charset": "utf-8" }
+      }
     );
 
     if (!response.ok)
-      throw new Error("No se pudo cargar el archivo Markdown del tema seleccionado.");
+      throw new Error("No se pudo cargar el archivo Markdown del contenido seleccionado.");
 
     const buffer = await response.arrayBuffer();
     const markdown = new TextDecoder("utf-8").decode(buffer);
@@ -643,7 +844,7 @@
     }).join("");
 
     return `
-      <nav class="page-sidebar ${state.sidebarOpen ? "open" : ""}" aria-label="Unidades de trabajo del módulo">
+      <nav id="page-navigation" class="page-sidebar ${state.sidebarOpen ? "open" : ""}" aria-label="Unidades de trabajo del módulo">
         <h2><a class="sidebar-module-home" href="#ciclo/${ciclo.id}/modulo/${modulo.id}" ${selectedTemaId ? "" : 'aria-current="page"'}>${modulo.nombre}</a></h2>
         ${unitsMarkup}
         ${progressText ? `<p class="sidebar-progress">${progressText}</p>` : ""}
@@ -659,7 +860,7 @@
         <p>${escapeHtml(resultado)}</p>
       </li>`).join("");
 
-    const legislacion = (modulo.legislacion || []).map((law) => `
+    const legislacion = getModuleLegislation(moduleData.ciclo, modulo).map((law) => `
       <li>
         <a href="${law.url}" target="_blank" rel="noopener noreferrer">
           <span class="legislation-item__meta">${escapeHtml(law.ambito)} · ${escapeHtml(law.tipo)}</span>
@@ -742,7 +943,7 @@
         ${renderModuleSidebar(moduleData.ciclo, moduleData.modulo, selectedTemaId)}
         <section class="page-content">
           ${selectedTema
-            ? `<article class="markdown-body"><p>Cargando tema…</p></article>`
+            ? `<article class="markdown-body"><p>Cargando contenido…</p></article>`
             : renderModuleOverview(moduleData)}
         </section>
       </section>
@@ -757,7 +958,10 @@
       const html = await loadModuleContent(moduleData.ciclo, moduleData.modulo, selectedTemaId);
       const article = appEl.querySelector(".markdown-body");
       article.innerHTML = html;
+      enhanceDocumentLayout(article);
+      embedYouTubeVideos(article);
       enhanceCodeBlocks(article);
+      if (selectedTema.tipo === "practica") addPracticeActions(article, selectedTema.titulo);
     } catch (error) {
       const article = appEl.querySelector(".markdown-body");
       article.innerHTML = `<div class="error-box"><strong>Error:</strong> ${error.message}</div>`;
@@ -810,9 +1014,10 @@
   async function init() {
     initTheme();
     try {
-      const response = await fetch("data/structure.json");
+      const response = await fetch("data/structure.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("No se pudo leer data/structure.json");
       state.structure = await response.json();
+      resolveSharedModules();
       buildSearchMetadata();
       await renderRoute();
     } catch (error) {
@@ -831,7 +1036,20 @@
       for (const ciclo of familia.ciclos) {
         for (const modulo of ciclo.modulos) {
           for (const contenido of getModuleContents(modulo)) {
-            entries.push({ familia: familia.nombre, cicloId: ciclo.id, ciclo: ciclo.nombre, moduloId: modulo.id, modulo: modulo.nombre, temaId: contenido.id, titulo: contenido.titulo, tipo: contenido.tipo, unidadCodigo: contenido.unidadCodigo, unidadNombre: contenido.unidadNombre });
+            entries.push({
+              familia: familia.nombre,
+              cicloId: ciclo.id,
+              ciclo: ciclo.nombre,
+              moduloId: modulo.id,
+              modulo: modulo.nombre,
+              contentCycleId: modulo._contentCycleId || ciclo.id,
+              contentModuleId: modulo._contentModuleId || modulo.id,
+              temaId: contenido.id,
+              titulo: contenido.titulo,
+              tipo: contenido.tipo,
+              unidadCodigo: contenido.unidadCodigo,
+              unidadNombre: contenido.unidadNombre
+            });
           }
         }
       }
@@ -849,7 +1067,10 @@
     state.searchPromise = Promise.all(state.searchIndex.map(async (entry) => {
       let markdown = "";
       try {
-        const response = await fetch(markdownPath(entry.cicloId, entry.moduloId, entry.tipo, entry.temaId));
+        const response = await fetch(
+          markdownPath(entry.contentCycleId, entry.contentModuleId, entry.tipo, entry.temaId),
+          { cache: "no-cache" }
+        );
         if (response.ok) markdown = await response.text();
       } catch (_) {
         // El buscador sigue funcionando por metadatos si un documento no está disponible.

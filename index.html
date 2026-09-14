@@ -8,15 +8,15 @@
   <title>Iker Fernández — Apuntes FP</title>
   <link rel="icon" href="assets/img/iker-fernandez.jpg" type="image/jpeg">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@333f55ec19733c28cdc43567ecf72eafd6b0af61/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260915d">
 </head>
 <body>
   <a class="skip-link" href="#app">Saltar al contenido</a>
   <header class="site-header">
     <div class="site-header__inner">
       <div class="site-header__brand">
-        <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir o cerrar menú" aria-expanded="false">
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir o cerrar menú" aria-controls="page-navigation" aria-expanded="false">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
@@ -24,7 +24,7 @@
         </button>
         <a href="#sobre-mi" class="site-logo" aria-label="Sobre Iker Fernández">
           <img class="site-logo__monogram" src="assets/img/iker-fernandez.jpg" alt="" width="30" height="30" decoding="async">
-          Iker Fernández
+          <span class="site-logo__name">Iker Fernández</span>
         </a>
       </div>
       <nav id="breadcrumb" class="breadcrumb" aria-label="Ruta de navegación"></nav>
@@ -83,6 +83,6 @@
 
   <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
   <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/app.js?v=20260915g" defer></script>
 </body>
 </html>

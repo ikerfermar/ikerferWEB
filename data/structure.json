@@ -60,24 +60,6 @@
                   "tipo": "Ordenación y currículo básico del módulo",
                   "nombre": "Real Decreto 659/2023, de 18 de julio",
                   "url": "https://www.boe.es/eli/es/rd/2023/07/18/659/con"
-                },
-                {
-                  "ambito": "Estatal",
-                  "tipo": "Incorporación del módulo al título",
-                  "nombre": "Real Decreto 499/2024, de 21 de mayo",
-                  "url": "https://www.boe.es/eli/es/rd/2024/05/21/499"
-                },
-                {
-                  "ambito": "Castilla y León",
-                  "tipo": "Currículo de Grado Medio",
-                  "nombre": "Decreto 25/2024, de 21 de noviembre",
-                  "url": "https://bocyl.jcyl.es/eli/es-cl/d/2024/11/21/25/"
-                },
-                {
-                  "ambito": "Castilla y León",
-                  "tipo": "Currículo específico del ciclo",
-                  "nombre": "Orden EDU/1388/2024, de 26 de noviembre",
-                  "url": "https://bocyl.jcyl.es/eli/es-cl/o/2024/11/26/edu1388/"
                 }
               ],
               "programacion": {
@@ -89,29 +71,17 @@
                 {
                   "id": "ut-01",
                   "codigo": "UT 1",
-                  "nombre": "Sostenibilidad y economía circular",
+                  "nombre": "La sostenibilidad en las organizaciones empresariales",
                   "contenidos": [
                     {
                       "id": "tema-01",
-                      "titulo": "Sostenibilidad y economía circular",
+                      "titulo": "La sostenibilidad en las organizaciones empresariales",
                       "tipo": "teoria"
                     },
                     {
                       "id": "practica-01",
-                      "titulo": "Análisis básico de sostenibilidad",
+                      "titulo": "Práctica 1.1 - ¿Telefónica es una empresa sostenible?",
                       "tipo": "practica"
-                    }
-                  ]
-                },
-                {
-                  "id": "ut-02",
-                  "codigo": "UT 2",
-                  "nombre": "Impacto ambiental y uso de recursos",
-                  "contenidos": [
-                    {
-                      "id": "tema-02",
-                      "titulo": "Impacto ambiental y uso de recursos",
-                      "tipo": "teoria"
                     }
                   ]
                 }
@@ -239,7 +209,14 @@
               "url": "https://bocyl.jcyl.es/eli/es-cl/o/2024/11/26/edu1346/"
             }
           ],
-          "modulos": []
+          "modulos": [
+            {
+              "referencia": {
+                "cicloId": "instalaciones-telecomunicaciones",
+                "moduloId": "sostenibilidad-aplicada-sistema-productivo"
+              }
+            }
+          ]
         }
       ]
     }

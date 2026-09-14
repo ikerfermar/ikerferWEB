@@ -1,4 +1,4 @@
-# Apuntes de Formación Profesional
+# Apuntes y Prácticas
 
 Web estática de una sola página para organizar apuntes de Formación Profesional por familias, ciclos, módulos y unidades de trabajo con teoría y prácticas.
 
@@ -8,10 +8,13 @@ Web estática de una sola página para organizar apuntes de Formación Profesion
 - Sin dependencias locales.
 - Carga dinámica de estructura y contenido con `fetch()`.
 - Búsqueda por título, módulo y contenido de los apuntes.
-- Enlaces directos a cada tema mediante rutas hash compartibles.
+- Enlaces directos a cada contenido mediante rutas hash compartibles.
 - Renderizado Markdown seguro en cliente con una versión fijada de `marked.js`.
 - Tema claro y oscuro con diseño adaptable a móvil.
+- Prácticas imprimibles en PDF y descargables como documentos Word editables.
 - Compatible con GitHub Pages usando rutas relativas.
+- Módulos compartidos entre ciclos sin duplicar datos ni documentos.
+- Validación de IDs, rutas, referencias y correspondencia entre el índice y los H1.
 
 ## Estructura del proyecto
 
@@ -19,7 +22,9 @@ Web estática de una sola página para organizar apuntes de Formación Profesion
 - `assets/css/style.css`
 - `assets/js/app.js`
 - `data/structure.json`
-- `content/[ciclo]/[modulo]/[tipo]/[tema].md`
+- `content/[ciclo]/[modulo]/[tipo]/[contenido].md`
+- `docs/guia-contenidos.md`
+- `scripts/validate-content.js`
 - `AGENTS.md`
 
 ## Ejecutar en local
@@ -47,8 +52,20 @@ Luego abrir `http://localhost:5500`.
 4. Guarda los cambios.
 5. GitHub publicará la web en la URL de Pages del repositorio.
 
+El archivo `.nojekyll` indica a GitHub Pages que publique el repositorio como una web estática sin procesamiento adicional.
+
 ## Flujo de contenido
 
 1. Editar `data/structure.json` para añadir familias, ciclos, módulos, unidades de trabajo o contenidos.
 2. Crear el archivo Markdown en `content/[ciclo]/[modulo]/[tipo]/[id-contenido].md`.
 3. La SPA lo detecta automáticamente en el menú lateral.
+
+Si un módulo se imparte en varios ciclos, se mantiene completo una sola vez y los demás ciclos utilizan el campo `referencia`. Consulta [AGENTS.md](AGENTS.md) para ver el formato.
+
+Antes de publicar cambios de contenido, ejecuta:
+
+```bash
+node scripts/validate-content.js
+```
+
+La comprobación falla si falta un Markdown, hay una referencia inválida o el título del índice no coincide exactamente con el H1 del documento.
