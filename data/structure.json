@@ -1,0 +1,247 @@
+{
+  "familias": [
+    {
+      "id": "electricidad-electronica",
+      "nombre": "Electricidad y Electrónica",
+      "ciclos": [
+        {
+          "id": "instalaciones-telecomunicaciones",
+          "nombre": "Instalaciones de Telecomunicaciones",
+          "nivel": "Grado Medio",
+          "titulacion": "Técnico en Instalaciones de Telecomunicaciones",
+          "codigo": "ELE02M",
+          "perfil": "El ciclo prepara para montar y mantener instalaciones de telecomunicaciones y audiovisuales, sistemas de radiocomunicación y soluciones domóticas. La persona titulada puede trabajar también con redes de voz y datos, seguridad electrónica, sonorización y equipos informáticos, aplicando la normativa técnica, los criterios de calidad y las medidas de seguridad y protección ambiental.",
+          "fuentePerfil": "https://www.educa.jcyl.es/fp/es/catalogo-titulos-fp-castilla-leon/titulos-grado-medio/instalaciones-telecomunicaciones",
+          "legislacion": [
+            {
+              "ambito": "Estatal",
+              "tipo": "Título y enseñanzas mínimas",
+              "nombre": "Real Decreto 1632/2009, de 30 de octubre",
+              "url": "https://www.boe.es/eli/es/rd/2009/10/30/1632"
+            },
+            {
+              "ambito": "Estatal",
+              "tipo": "Modificación del título",
+              "nombre": "Real Decreto 499/2024, de 21 de mayo",
+              "url": "https://www.boe.es/eli/es/rd/2024/05/21/499"
+            },
+            {
+              "ambito": "Castilla y León",
+              "tipo": "Currículo de Grado Medio",
+              "nombre": "Decreto 25/2024, de 21 de noviembre",
+              "url": "https://bocyl.jcyl.es/eli/es-cl/d/2024/11/21/25/"
+            },
+            {
+              "ambito": "Castilla y León",
+              "tipo": "Currículo específico del ciclo",
+              "nombre": "Orden EDU/1388/2024, de 26 de noviembre",
+              "url": "https://bocyl.jcyl.es/eli/es-cl/o/2024/11/26/edu1388/"
+            }
+          ],
+          "modulos": [
+            {
+              "id": "sostenibilidad-aplicada-sistema-productivo",
+              "codigo": "1708",
+              "nombre": "Sostenibilidad aplicada al sistema productivo",
+              "descripcion": "Este módulo desarrolla conocimientos y competencias básicas sobre economía verde, sostenibilidad e impacto ambiental de la actividad. También analiza cómo la transición ecológica transforma los procesos productivos del sector y ayuda a aplicar criterios ambientales, sociales y de gobernanza en el ámbito profesional.",
+              "fuenteDescripcion": "https://www.boe.es/eli/es/rd/2023/07/18/659/con",
+              "fuenteResultados": "https://www.boe.es/eli/es/rd/2023/07/18/659/con",
+              "resultadosAprendizaje": [
+                "Identifica los aspectos ambientales, sociales y de gobernanza (ASG) relativos a la sostenibilidad teniendo en cuenta el concepto de desarrollo sostenible y los marcos internacionales que contribuyen a su consecución.",
+                "Caracteriza los retos ambientales y sociales a los que se enfrenta la sociedad, describiendo los impactos sobre las personas y los sectores productivos y proponiendo acciones para minimizarlos.",
+                "Establece la aplicación de criterios de sostenibilidad en el desempeño profesional y personal, identificando los elementos necesarios.",
+                "Propón productos y servicios responsables teniendo en cuenta los principios de la economía circular.",
+                "Realiza actividades sostenibles minimizando el impacto de las mismas en el medio ambiente.",
+                "Analiza un plan de sostenibilidad de una empresa del sector, identificando sus grupos de interés, los aspectos ASG materiales y justificando acciones para su gestión y medición."
+              ],
+              "legislacion": [
+                {
+                  "ambito": "Estatal",
+                  "tipo": "Ordenación y currículo básico del módulo",
+                  "nombre": "Real Decreto 659/2023, de 18 de julio",
+                  "url": "https://www.boe.es/eli/es/rd/2023/07/18/659/con"
+                },
+                {
+                  "ambito": "Estatal",
+                  "tipo": "Incorporación del módulo al título",
+                  "nombre": "Real Decreto 499/2024, de 21 de mayo",
+                  "url": "https://www.boe.es/eli/es/rd/2024/05/21/499"
+                },
+                {
+                  "ambito": "Castilla y León",
+                  "tipo": "Currículo de Grado Medio",
+                  "nombre": "Decreto 25/2024, de 21 de noviembre",
+                  "url": "https://bocyl.jcyl.es/eli/es-cl/d/2024/11/21/25/"
+                },
+                {
+                  "ambito": "Castilla y León",
+                  "tipo": "Currículo específico del ciclo",
+                  "nombre": "Orden EDU/1388/2024, de 26 de noviembre",
+                  "url": "https://bocyl.jcyl.es/eli/es-cl/o/2024/11/26/edu1388/"
+                }
+              ],
+              "programacion": {
+                "curso": "2026/2027",
+                "centro": "IES Giner de los Ríos",
+                "archivo": ""
+              },
+              "unidadesTrabajo": [
+                {
+                  "id": "ut-01",
+                  "codigo": "UT 1",
+                  "nombre": "Sostenibilidad y economía circular",
+                  "contenidos": [
+                    {
+                      "id": "tema-01",
+                      "titulo": "Sostenibilidad y economía circular",
+                      "tipo": "teoria"
+                    },
+                    {
+                      "id": "practica-01",
+                      "titulo": "Análisis básico de sostenibilidad",
+                      "tipo": "practica"
+                    }
+                  ]
+                },
+                {
+                  "id": "ut-02",
+                  "codigo": "UT 2",
+                  "nombre": "Impacto ambiental y uso de recursos",
+                  "contenidos": [
+                    {
+                      "id": "tema-02",
+                      "titulo": "Impacto ambiental y uso de recursos",
+                      "tipo": "teoria"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "circuito-cerrado-television-seguridad-electronica",
+              "codigo": "0364",
+              "nombre": "Circuito cerrado de televisión y seguridad electrónica",
+              "descripcion": "Este módulo proporciona la formación necesaria para configurar, montar y mantener instalaciones de circuito cerrado de televisión y sistemas de seguridad electrónica. Incluye sistemas de detección y alarma, control de accesos, seguimiento y presencia, así como su puesta en servicio, supervisión remota y mantenimiento con criterios de calidad y seguridad.",
+              "fuenteDescripcion": "https://www.boe.es/eli/es/rd/2009/10/30/1632",
+              "fuenteResultados": "https://www.boe.es/eli/es/rd/2009/10/30/1632",
+              "resultadosAprendizaje": [
+                "Reconoce los equipos y elementos de las instalaciones de circuito cerrado de televisión y sistemas de seguridad electrónica, identificando las partes que los componen y las características más relevantes de los mismos.",
+                "Configura pequeñas instalaciones de circuito cerrado de televisión y sistemas de seguridad electrónica, elaborando esquemas y seleccionando equipos y elementos.",
+                "Monta instalaciones de circuito cerrado de televisión interpretando planos de ubicación y esquemas y aplicando técnicas de montaje.",
+                "Pone a punto los equipos instalando y configurando el software de visualización y control.",
+                "Instala centrales de gestión de alarmas, sistemas de transmisión y elementos auxiliares, interpretando planos de ubicación y esquemas y aplicando técnicas de montaje.",
+                "Monta equipos de seguimiento y control interpretando la documentación técnica.",
+                "Mantiene instalaciones de CCTV y seguridad describiendo las intervenciones y relacionando las disfunciones con sus causas.",
+                "Cumple las normas de prevención de riesgos laborales y de protección ambiental, identificando los riesgos asociados, las medidas y equipos para prevenirlos."
+              ],
+              "legislacion": [
+                {
+                  "ambito": "Estatal",
+                  "tipo": "Título, currículo básico y RA del módulo",
+                  "nombre": "Real Decreto 1632/2009, de 30 de octubre",
+                  "url": "https://www.boe.es/eli/es/rd/2009/10/30/1632"
+                },
+                {
+                  "ambito": "Estatal",
+                  "tipo": "Modificación del título",
+                  "nombre": "Real Decreto 499/2024, de 21 de mayo",
+                  "url": "https://www.boe.es/eli/es/rd/2024/05/21/499"
+                },
+                {
+                  "ambito": "Castilla y León",
+                  "tipo": "Currículo de Grado Medio",
+                  "nombre": "Decreto 25/2024, de 21 de noviembre",
+                  "url": "https://bocyl.jcyl.es/eli/es-cl/d/2024/11/21/25/"
+                },
+                {
+                  "ambito": "Castilla y León",
+                  "tipo": "Currículo específico del ciclo",
+                  "nombre": "Orden EDU/1388/2024, de 26 de noviembre",
+                  "url": "https://bocyl.jcyl.es/eli/es-cl/o/2024/11/26/edu1388/"
+                }
+              ],
+              "programacion": {
+                "curso": "2026/2027",
+                "centro": "IES Giner de los Ríos",
+                "archivo": ""
+              },
+              "unidadesTrabajo": [
+                {
+                  "id": "ut-01",
+                  "codigo": "UT 1",
+                  "nombre": "Fundamentos de los sistemas de CCTV",
+                  "contenidos": [
+                    {
+                      "id": "tema-01",
+                      "titulo": "Fundamentos de un sistema CCTV",
+                      "tipo": "teoria"
+                    },
+                    {
+                      "id": "practica-01",
+                      "titulo": "Diseño básico de una instalación",
+                      "tipo": "practica"
+                    }
+                  ]
+                },
+                {
+                  "id": "ut-02",
+                  "codigo": "UT 2",
+                  "nombre": "Sistemas de seguridad electrónica",
+                  "contenidos": [
+                    {
+                      "id": "tema-02",
+                      "titulo": "Elementos de seguridad electrónica",
+                      "tipo": "teoria"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mantenimiento-electronico",
+          "nombre": "Mantenimiento Electrónico",
+          "nivel": "Grado Superior",
+          "titulacion": "Técnico Superior en Mantenimiento Electrónico",
+          "codigo": "ELE03S",
+          "perfil": "El ciclo prepara para mantener y reparar equipos y sistemas electrónicos profesionales, industriales y de consumo, así como para planificar y organizar sus procesos de mantenimiento. La persona titulada puede trabajar con equipos de telecomunicaciones, sistemas microprocesados, redes, radiocomunicaciones, seguridad electrónica y equipos profesionales de audio y vídeo, aplicando criterios de calidad, prevención y protección ambiental.",
+          "fuentePerfil": "https://www.educa.jcyl.es/fp/es/catalogo-titulos-fp-castilla-leon/catalogo-titulos-grado-superior/mantenimiento-electronico",
+          "legislacion": [
+            {
+              "ambito": "Estatal",
+              "tipo": "Título y enseñanzas mínimas",
+              "nombre": "Real Decreto 1578/2011, de 4 de noviembre",
+              "url": "https://www.boe.es/eli/es/rd/2011/11/04/1578"
+            },
+            {
+              "ambito": "Estatal",
+              "tipo": "Actualización del título",
+              "nombre": "Real Decreto 401/2023, de 29 de mayo",
+              "url": "https://www.boe.es/eli/es/rd/2023/05/29/401"
+            },
+            {
+              "ambito": "Estatal",
+              "tipo": "Modificación del título",
+              "nombre": "Real Decreto 500/2024, de 21 de mayo",
+              "url": "https://www.boe.es/eli/es/rd/2024/05/21/500"
+            },
+            {
+              "ambito": "Castilla y León",
+              "tipo": "Currículo de Grado Superior",
+              "nombre": "Decreto 24/2024, de 21 de noviembre",
+              "url": "https://bocyl.jcyl.es/eli/es-cl/d/2024/11/21/24/"
+            },
+            {
+              "ambito": "Castilla y León",
+              "tipo": "Currículo específico del ciclo",
+              "nombre": "Orden EDU/1346/2024, de 26 de noviembre",
+              "url": "https://bocyl.jcyl.es/eli/es-cl/o/2024/11/26/edu1346/"
+            }
+          ],
+          "modulos": []
+        }
+      ]
+    }
+  ]
+}
