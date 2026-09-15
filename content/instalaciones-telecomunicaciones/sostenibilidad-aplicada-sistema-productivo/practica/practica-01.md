@@ -1,67 +1,52 @@
 # Práctica 1.1 - ¿Telefónica es una empresa sostenible?
 
 **Sostenibilidad aplicada al sistema productivo**\
-2.º de Formación Profesional — Grado Medio y Grado Superior\
-**UT01 — RA1 — Trabajo en grupos de 3 personas**
+2.º de Formación Profesional — Grado Medio y Grado Superior
 
 ---
 
 ## Contexto y objetivos
 
-Telefónica publica anualmente información ambiental, social y de gobernanza sobre su actividad. En esta práctica utilizaréis una selección de indicadores reales correspondientes a 2025 para analizar hasta qué punto esos datos permiten valorar la sostenibilidad de una gran empresa de telecomunicaciones.
+<figure class="content-photo"><img src="../../../../assets/img/telefonica-building.jpg" alt="Fachada del edificio de Telefónica en la Gran Vía de Madrid" loading="lazy"><figcaption>Edificio histórico de Telefónica en Madrid. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Madrid_-_Gran_Via_08_(Edificio_Telefonica).jpg">Zarateman, CC0</a>.</figcaption></figure>
 
-No se trata de repetir las afirmaciones de la compañía. El objetivo es **clasificar, relacionar, interpretar y justificar** la información utilizando los conceptos de la UT01: criterios ASG, ODS, stakeholders, riesgos y oportunidades, KPI, rendición de cuentas e inversión socialmente responsable.
+Una empresa de telecomunicaciones os pide una primera lectura de los datos de sostenibilidad publicados por Telefónica para 2025. Debéis clasificar los asuntos ASG, relacionarlos con ODS y grupos de interés y explicar qué permiten concluir los datos. No se trata de repetir el mensaje de la compañía, sino de separar **resultados medidos**, **declaraciones** y cuestiones que todavía necesitarían una comprobación.
 
-**Tiempo previsto:** 1 sesión de 55 minutos.\
-**Organización:** grupos de 3 personas.\
-**Entrega:** un único documento por grupo.
+<figure class="study-figure"><a href="../img/guia-evidencia.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar la guía de análisis en una pestaña nueva"><img src="../img/guia-evidencia.svg" alt="Proceso de cinco pasos: afirmación, dato, fuente, alcance y conclusión" loading="lazy"></a><figcaption>Usad esta secuencia para comprobar cada conclusión antes de incluirla en la entrega. Pulsa para ampliar.</figcaption></figure>
 
-## Datos del caso
+## Fuentes y datos del caso
 
-| Nº | Indicador publicado por Telefónica para 2025 |
-|---:|---|
-| 1 | Reducción del **49 %** de las emisiones totales de alcance 1, 2 y 3 respecto a 2015. |
-| 2 | El **93 %** de la energía utilizada por el grupo es renovable; alcanza el 100 % en Europa y Brasil. |
-| 3 | El **95 %** de los residuos se reutiliza o recicla. |
-| 4 | La cobertura de banda ancha móvil rural alcanza el **95 % en España**. |
-| 5 | Las mujeres representan el **35,3 %** de los puestos directivos. |
-| 6 | La empresa informa de **ninguna brecha grave de datos personales** durante 2025. |
-| 7 | Se realizaron **17.219 auditorías a proveedores** sobre aspectos laborales, ambientales, derechos humanos, seguridad y protección de datos. |
-| 8 | Más de **73.900 empleados** recibieron formación en Principios de Negocio Responsable. |
-| 9 | La compañía declara una política de **tolerancia cero frente a la corrupción**. |
-| 10 | Más de **20.000 millones de euros** de financiación están vinculados a sostenibilidad. |
+Consultad la [ficha ESG 2025 de Telefónica, publicada el 15 de junio de 2026](https://www.telefonica.com/es/sala-comunicacion/reportes/telefonica-esg-2025-indicadores-clave-hacia-un-modelo-sostenible/) (**F1**) y el [Informe de Gestión y Sostenibilidad 2025](https://www.telefonica.com/es/accionistas-inversores/informacion-financiera/informe-anual-integrado-de-gestion/) (**F2**). La tabla enlaza, además, con el capítulo y la página del PDF donde podéis comprobar cada dato. F1 y F2 son publicaciones de la empresa: comprobad qué parte, si alguna, está sometida a aseguramiento externo antes de presentar una cifra como verificada de forma independiente.
 
-**Fuente principal:**
+| Nº | Dato o declaración publicada para 2025 | Ámbito y localización de la fuente | Naturaleza |
+|---:|---|---|---|
+| 1 | Las emisiones totales de alcances 1, 2 y 3 se redujeron un **49 % frente a los años base utilizados por Telefónica**: 2015 para los alcances 1 y 2, y 2016 para el alcance 3. | Grupo; [F2, Información ambiental, cuadro «Objetivos de reducción de GEI y desempeño» y nota sobre los años base, p. 25 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-ambiental-informe-consolidado-telefonica.pdf#page=25). | Resultado comunicado. |
+| 2 | El **93 % del consumo eléctrico en instalaciones propias** procede de electricidad renovable. | Grupo; [F2, Información ambiental, «Plan de Energía Renovable», p. 18 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-ambiental-informe-consolidado-telefonica.pdf#page=18). | Resultado comunicado; no describe todo el consumo energético. |
+| 3 | El **95 % de los residuos generados** se reutilizó o recicló. | Grupo; [F2, Información ambiental, «Residuo Cero», p. 38 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-ambiental-informe-consolidado-telefonica.pdf#page=38). | Resultado comunicado. |
+| 4 | La cobertura de banda ancha móvil rural llegó al **95 %**. | España; [F1, apartado «Personas: inclusión, derechos humanos y talento con propósito»](https://www.telefonica.com/es/sala-comunicacion/reportes/telefonica-esg-2025-indicadores-clave-hacia-un-modelo-sostenible/). | Resultado comunicado; no representa todo el grupo. |
+| 5 | Las mujeres ocuparon el **35,3 % de los puestos directivos**. | Grupo; [F2, Información social, «Representación femenina en puestos directivos», p. 10 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-social-informe-consolidado-telefonica.pdf#page=10). | Resultado comunicado. |
+| 6 | Se realizaron **17.219 auditorías a proveedores**. | Grupo; [F2, Información sobre gobernanza, «Auditorías a proveedores clave», p. 11 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-gobernanza-informe-consolidado-telefonica.pdf#page=11). | Actividad comunicada; incluye auditorías documentales e *in situ* y no expresa su resultado. |
+| 7 | La compañía declara **tolerancia cero frente a la corrupción**. | Política del grupo; [F2, Información sobre gobernanza, «Conducta empresarial», p. 2 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-gobernanza-informe-consolidado-telefonica.pdf#page=2). | Compromiso declarado, no indicador de resultado. |
 
-https://www.telefonica.com/es/sala-comunicacion/reportes/telefonica-esg-2025-indicadores-clave-hacia-un-modelo-sostenible/
+La tabla combina ámbitos distintos. El 95 % de cobertura rural corresponde a España; no debe compararse como si describiera todos los países del grupo. El 93 % se refiere a electricidad en instalaciones propias, no a toda la energía que consume la actividad. La reducción del 49 % tampoco parte de un único año base para los tres alcances, y el informe señala cambios en el perímetro del grupo que pueden afectar a las comparaciones temporales de emisiones. Asimismo, una auditoría realizada no prueba por sí sola que un proveedor cumpla los requisitos. Registrad estas diferencias en vuestro análisis.
 
-**Informe de Gestión y Sostenibilidad 2025:**
+## 1. Clasificación ASG y ODS
 
-https://www.telefonica.com/es/accionistas-inversores/informacion-financiera/informe-anual-integrado-de-gestion/
+### 1.1. Objetivo
 
-> **Nota**
->
-> Los datos proceden de información publicada por la propia empresa. Deben utilizarse como evidencia, pero también debéis tener en cuenta esa procedencia cuando elaboréis vuestra conclusión final.
+Identificar qué dimensión o dimensiones ASG representa cada asunto y justificar relaciones concretas con la Agenda 2030.
 
----
+### 1.2. Trabajo solicitado
 
-## 1. Tarea A — Clasificación ASG y ODS
+1. Clasificad los siete elementos de la tabla como A, S o G. Podéis asignar más de una dimensión cuando lo justifiquéis. Redactad **20–35 palabras de justificación por dato**.
+2. Indicad cuáles son resultados comunicados y cuál es una política declarada. Explicad en **60–80 palabras** por qué no deben tratarse del mismo modo.
+3. Elegid **dos ODS** de la [lista oficial de Naciones Unidas](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/). Relacionad cada uno con un dato concreto y una posible actuación de la empresa; no basta con nombrar el objetivo. Escribid **60–90 palabras por relación**.
 
-### Objetivo
+### 1.3. Entrega
 
-Relacionar información empresarial real con las dimensiones ambiental, social y de gobernanza y con los Objetivos de Desarrollo Sostenible.
+#### Clasificación de los siete datos ASG (20–35 palabras por justificación)
 
-### Trabajo solicitado
-
-1. Clasificad los diez indicadores anteriores como **A (ambiental)**, **S (social)** o **G (gobernanza)**.
-2. Elegid **tres indicadores** cuya clasificación pueda necesitar una explicación y justificad por qué los habéis situado en esa dimensión.
-3. Seleccionad **tres ODS** relacionados con el caso.
-4. Para cada ODS, indicad qué dato de Telefónica permite establecer la relación y explicadla en una o dos frases.
-
-### Formato recomendado
-
-| Indicador | A / S / G | Justificación, si procede |
-|---|---|---|
+| Nº del caso | A / S / G | Justificación breve |
+|---:|---|---|
 | 1 | | |
 | 2 | | |
 | 3 | | |
@@ -69,131 +54,64 @@ Relacionar información empresarial real con las dimensiones ambiental, social y
 | 5 | | |
 | 6 | | |
 | 7 | | |
-| 8 | | |
-| 9 | | |
-| 10 | | |
 
-| ODS | Dato relacionado | Relación |
-|---|---|---|
+#### Relación razonada con dos ODS (60–90 palabras por relación)
+
+| ODS | Nº del dato | Relación razonada |
+|---|---:|---|
 | | | |
 | | | |
-| | | |
 
----
+#### Resultado comunicado frente a política declarada (60–80 palabras)
 
-## 2. Tarea B — Stakeholders, riesgos y oportunidades
+## 2. Grupos de interés y límites de la información
 
-### Objetivo
+### 2.1. Objetivo
 
-Analizar qué grupos de interés pueden verse afectados por los asuntos ASG de la empresa y qué riesgos u oportunidades aparecen.
+Relacionar asuntos ASG con personas afectadas y valorar qué información falta para tomar una decisión responsable.
 
-### Trabajo solicitado
+### 2.2. Trabajo solicitado
 
-Elegid **cuatro stakeholders** de Telefónica. Para cada uno indicad:
+1. Seleccionad **dos grupos de interés** distintos. Para cada uno, indicad qué espera de Telefónica, un dato que le interese y un riesgo u oportunidad relacionado. Escribid **40–60 palabras por grupo**.
+2. Elegid un resultado de la tabla e indicad qué necesitaríais conocer para interpretarlo mejor: método de cálculo, alcance, comparación temporal, resultado de una auditoría o contraste externo, por ejemplo. Justificad vuestra petición en **60–80 palabras**.
+3. Redactad una conclusión de **100–140 palabras**: ¿qué avances muestran los datos y qué no permiten afirmar sobre la sostenibilidad de toda la empresa? Citad al menos dos números del caso y una limitación.
 
-1. qué espera o necesita de la empresa;
-2. qué indicador de la tabla podría interesarle especialmente;
-3. un posible riesgo u oportunidad relacionado con ese asunto.
+### 2.3. Entrega
 
-Podéis utilizar trabajadores, clientes, proveedores, inversores, Administraciones públicas, comunidad local u otros grupos que podáis justificar.
+#### Análisis de dos grupos de interés (40–60 palabras por grupo)
 
-| Stakeholder | Qué espera de Telefónica | Indicador relacionado | Riesgo u oportunidad |
-|---|---|---|---|
-| | | | |
-| | | | |
+| Grupo de interés | Expectativa | Nº del dato | Riesgo u oportunidad |
+|---|---|---:|---|
 | | | | |
 | | | | |
 
-No es necesario que todos los riesgos u oportunidades sean distintos, pero deben estar razonados.
+#### Dato que necesita contexto e información adicional solicitada (60–80 palabras)
 
----
+#### Conclusión razonada (100–140 palabras)
 
-## 3. Tarea C — KPI y rendición de cuentas
+## Entregas
 
-### Objetivo
-
-Comprobar que una política de sostenibilidad necesita indicadores medibles y criterios comparables.
-
-### Trabajo solicitado
-
-Elegid **cuatro indicadores** que consideraríais especialmente útiles para evaluar la evolución de Telefónica durante los próximos cinco años.
-
-Para cada uno indicad:
-
-1. qué mide;
-2. si esperáis que aumente o disminuya;
-3. por qué ayuda a valorar la sostenibilidad de la empresa.
-
-| KPI | Qué mide | Evolución deseada | Utilidad |
-|---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-
-Telefónica indica que su información de sostenibilidad se prepara utilizando estándares europeos de reporte, entre ellos los **ESRS**.
-
-Responded además:
-
-**¿Por qué es importante que distintas empresas utilicen criterios comunes para medir y publicar sus datos de sostenibilidad?**
-
-La respuesta debe mencionar al menos una ventaja relacionada con la **comparabilidad**, la **transparencia** o la **rendición de cuentas**.
-
----
-
-## 4. Tarea D — Inversión responsable y conclusión
-
-### Contexto
-
-Imaginad que vuestro grupo dispone de **100.000 € para invertir** y está valorando comprar acciones de Telefónica. No queréis decidir únicamente por la rentabilidad económica, sino aplicar criterios de **inversión socialmente responsable (ISR)**.
-
-### Trabajo solicitado
-
-1. Elegid **cuatro cuestiones ASG** que revisaríais antes de invertir.
-2. Explicad por qué cada una podría afectar a vuestra decisión.
-3. Indicad qué información adicional pediríais antes de considerar suficiente el análisis.
-4. Redactad una conclusión final de **8 a 12 líneas** respondiendo a la pregunta:
-
-> **¿Los datos disponibles permiten afirmar que Telefónica es una empresa sostenible?**
-
-La conclusión debe:
-
-- utilizar al menos **tres datos concretos** del caso;
-- considerar más de una dimensión ASG;
-- reconocer al menos **una limitación** de la información utilizada;
-- diferenciar entre una mejora demostrada en determinados indicadores y una afirmación general sobre la sostenibilidad de toda la empresa.
-
----
-
-## Entregables
-
-Cada grupo entregará **un único documento** que contenga:
-
-- tabla de clasificación ASG;
-- relación con tres ODS;
-- análisis de cuatro stakeholders;
-- cuatro KPI seleccionados;
-- respuesta sobre comparabilidad y rendición de cuentas;
-- análisis de inversión socialmente responsable;
-- conclusión final razonada.
-
-No es necesaria una presentación oral.
+- **Documento de análisis:** clasificación de los datos, dos ODS justificados, diferencia entre resultados y políticas, análisis de dos grupos de interés, información adicional solicitada y conclusión, con las extensiones indicadas. Los títulos y las referencias no cuentan dentro de los rangos de palabras.
+- **Trazabilidad:** indicad F1 o F2, el apartado o la página del PDF y el ámbito de cada dato utilizado; distinguid España del grupo y electricidad de energía total.
 
 ## Criterios de evaluación
 
 | Criterio | Puntos | Indicadores de corrección |
 |---|---:|---|
-| Clasificación ASG y relación con ODS | 2,5 | Clasificación coherente, justificaciones correctas y relaciones con ODS razonadas. |
-| Stakeholders, riesgos y oportunidades | 2,0 | Grupos de interés pertinentes y relación clara entre intereses, datos y riesgos u oportunidades. |
-| KPI y rendición de cuentas | 2,0 | Indicadores útiles, evolución bien interpretada y comprensión de la necesidad de métricas comparables. |
-| ISR y conclusión final | 3,0 | Selección razonada de aspectos ASG, uso de evidencias, identificación de limitaciones y conclusión argumentada. |
-| Presentación y trabajo del grupo | 0,5 | Documento claro, ordenado y con los tres integrantes identificados. |
+| Clasificación ASG | 1,5 | Dimensiones coherentes y relaciones múltiples justificadas cuando proceda. |
+| Relación con dos ODS | 1,5 | Cada relación parte de un dato y explica una actuación concreta. |
+| Grupos de interés | 1,5 | Expectativas, riesgos u oportunidades vinculados a datos pertinentes. |
+| Trazabilidad y lectura crítica | 2,0 | Fuente y ámbito identificados; distingue políticas, actividades y resultados. |
+| Conclusión | 1,5 | Usa dos cifras, reconoce una limitación y evita afirmaciones absolutas. |
+| Presentación gráfica | 1,0 | Tablas legibles, títulos claros y distribución visual que permite localizar datos y fuentes sin adornos innecesarios. |
+| Redacción | 1,0 | Ideas ordenadas, lenguaje preciso, ortografía y puntuación cuidadas; respeta las extensiones solicitadas. |
 | **Total** | **10** | |
 
 ## Puntos clave de revisión
 
-- **ASG no significa únicamente medioambiente:** deben aparecer también aspectos sociales y de gobernanza.
-- **Un ODS necesita una relación concreta:** no basta con nombrarlo.
-- **Un KPI debe poder medirse:** evita expresiones vagas como «ser más ecológico».
-- **Los datos empresariales necesitan contexto:** una cifra positiva no demuestra por sí sola la sostenibilidad completa de la organización.
-- **La conclusión debe argumentarse:** no se valora responder simplemente «sí» o «no».
+- **El ámbito importa:** el dato de cobertura rural describe España, no todo el grupo.
+- **El año base importa:** la comparación de emisiones utiliza 2015 para los alcances 1 y 2, y 2016 para el alcance 3.
+- **La magnitud importa:** el 93 % se refiere a electricidad renovable en instalaciones propias, no a toda la energía.
+- **Una política no es un resultado:** «tolerancia cero» necesita datos de aplicación y seguimiento.
+- **Una cifra no cierra el juicio:** una mejora comunicada no demuestra por sí sola la sostenibilidad completa.
+- **La fuente debe quedar visible:** F1 y F2 son publicaciones empresariales y deben citarse como tales.

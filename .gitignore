@@ -6,3 +6,7 @@ Thumbs.db
 # Registros y dependencias locales accidentales
 *.log
 node_modules/
+
+# Material docente local, no publicado en GitHub Pages
+Asignaturas/
+asignaturas/

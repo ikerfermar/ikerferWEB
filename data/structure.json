@@ -7,6 +7,9 @@
         {
           "id": "instalaciones-telecomunicaciones",
           "nombre": "Instalaciones de Telecomunicaciones",
+          "imagen": "assets/img/banner-telecom.jpg",
+          "imagenAlt": "Vista panorámica de la estación de telecomunicaciones de Pleumeur-Bodou",
+          "imagenCredito": { "autor": "Kingbastard", "fuente": "https://commons.wikimedia.org/wiki/File:Panorama_CTS.jpg", "licencia": "CC BY-SA 3.0", "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0/" },
           "nivel": "Grado Medio",
           "titulacion": "Técnico en Instalaciones de Telecomunicaciones",
           "codigo": "ELE02M",
@@ -43,6 +46,10 @@
               "id": "sostenibilidad-aplicada-sistema-productivo",
               "codigo": "1708",
               "nombre": "Sostenibilidad aplicada al sistema productivo",
+              "imagen": "assets/img/banner-sostenibilidad.jpg",
+              "imagenAlt": "Panorama de una instalación de paneles solares",
+              "imagenPie": "La producción de energía renovable forma parte de la transición hacia actividades más sostenibles.",
+              "imagenCredito": { "autor": "Lauri Veerde", "fuente": "https://commons.wikimedia.org/wiki/File:Solar_park_panels.jpg", "licencia": "CC BY-SA 4.0", "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
               "descripcion": "Este módulo desarrolla conocimientos y competencias básicas sobre economía verde, sostenibilidad e impacto ambiental de la actividad. También analiza cómo la transición ecológica transforma los procesos productivos del sector y ayuda a aplicar criterios ambientales, sociales y de gobernanza en el ámbito profesional.",
               "fuenteDescripcion": "https://www.boe.es/eli/es/rd/2023/07/18/659/con",
               "fuenteResultados": "https://www.boe.es/eli/es/rd/2023/07/18/659/con",
@@ -67,6 +74,11 @@
                 "centro": "IES Giner de los Ríos",
                 "archivo": ""
               },
+              "proyecto": {
+                "id": "plan-sostenibilidad-empresa",
+                "titulo": "Proyecto: El plan de sostenibilidad de tu empresa",
+                "tipo": "proyecto"
+              },
               "unidadesTrabajo": [
                 {
                   "id": "ut-01",
@@ -82,6 +94,17 @@
                       "id": "practica-01",
                       "titulo": "Práctica 1.1 - ¿Telefónica es una empresa sostenible?",
                       "tipo": "practica"
+                    },
+                    {
+                      "id": "practica-02",
+                      "titulo": "Práctica 1.2 - Indicadores e inversión responsable en Telefónica",
+                      "tipo": "practica"
+                    },
+                    {
+                      "id": "practica-03",
+                      "titulo": "Proyecto: Empresa, ASG y grupos de interés",
+                      "tipo": "practica",
+                      "descargarWord": false
                     }
                   ]
                 }
@@ -91,6 +114,9 @@
               "id": "circuito-cerrado-television-seguridad-electronica",
               "codigo": "0364",
               "nombre": "Circuito cerrado de televisión y seguridad electrónica",
+              "imagen": "assets/img/banner-cctv-two.jpg",
+              "imagenAlt": "Dos cámaras de videovigilancia instaladas en una fachada metálica",
+              "imagenCredito": { "autor": "Fer Troulik", "fuente": "https://unsplash.com/photos/two-cameras-mounted-to-the-side-of-a-building-jJYLXHPgwWs", "licencia": "licencia Unsplash", "licenciaUrl": "https://unsplash.com/license" },
               "descripcion": "Este módulo proporciona la formación necesaria para configurar, montar y mantener instalaciones de circuito cerrado de televisión y sistemas de seguridad electrónica. Incluye sistemas de detección y alarma, control de accesos, seguimiento y presencia, así como su puesta en servicio, supervisión remota y mantenimiento con criterios de calidad y seguridad.",
               "fuenteDescripcion": "https://www.boe.es/eli/es/rd/2009/10/30/1632",
               "fuenteResultados": "https://www.boe.es/eli/es/rd/2009/10/30/1632",
@@ -139,32 +165,15 @@
                 {
                   "id": "ut-01",
                   "codigo": "UT 1",
-                  "nombre": "Fundamentos de los sistemas de CCTV",
+      "nombre": "Introducción a los sistemas de seguridad electrónica y normativa",
                   "contenidos": [
                     {
-                      "id": "tema-01",
-                      "titulo": "Fundamentos de un sistema CCTV",
-                      "tipo": "teoria"
-                    },
-                    {
-                      "id": "practica-01",
-                      "titulo": "Diseño básico de una instalación",
-                      "tipo": "practica"
-                    }
-                  ]
-                },
-                {
-                  "id": "ut-02",
-                  "codigo": "UT 2",
-                  "nombre": "Sistemas de seguridad electrónica",
-                  "contenidos": [
-                    {
-                      "id": "tema-02",
-                      "titulo": "Elementos de seguridad electrónica",
-                      "tipo": "teoria"
-                    }
-                  ]
-                }
+                      "id": "teoria-01",
+          "titulo": "Introducción a los sistemas de seguridad electrónica y normativa",
+          "tipo": "teoria"
+        }
+      ]
+    }
               ]
             }
           ]
@@ -172,6 +181,9 @@
         {
           "id": "mantenimiento-electronico",
           "nombre": "Mantenimiento Electrónico",
+          "imagen": "assets/img/banner-mantenimiento.jpg",
+          "imagenAlt": "Panorama de un taller de electrónica con mesas y equipos de trabajo",
+          "imagenCredito": { "autor": "Lauri Veerde", "fuente": "https://commons.wikimedia.org/wiki/File:Tallinna_Pol%C3%BCtehnikum_003-elektroonika-tookoda_pano.jpg", "licencia": "CC BY-SA 4.0", "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
           "nivel": "Grado Superior",
           "titulacion": "Técnico Superior en Mantenimiento Electrónico",
           "codigo": "ELE03S",

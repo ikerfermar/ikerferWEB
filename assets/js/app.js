@@ -115,7 +115,7 @@
   }
 
   function getModuleContents(modulo) {
-    return getWorkUnits(modulo).flatMap((unidad) =>
+    const workUnitContents = getWorkUnits(modulo).flatMap((unidad) =>
       (unidad.contenidos || []).map((contenido) => ({
         ...contenido,
         unidadId: unidad.id,
@@ -123,6 +123,9 @@
         unidadNombre: unidad.nombre,
       }))
     );
+    return modulo.proyecto
+      ? [{ ...modulo.proyecto, unidadCodigo: "", unidadNombre: "" }, ...workUnitContents]
+      : workUnitContents;
   }
 
   function getModuleLegislation(ciclo, modulo) {
@@ -157,6 +160,36 @@
         }
       }
     });
+    return template.innerHTML;
+  }
+
+  function resolveMarkdownImages(html, markdownUrl) {
+    const template = document.createElement("template");
+    template.innerHTML = html;
+    const documentUrl = new URL(markdownUrl, window.location.href);
+
+    template.content.querySelectorAll("img[src]").forEach((img) => {
+      const source = img.getAttribute("src");
+      if (!source || source.startsWith("#")) return;
+      try {
+        img.src = new URL(source, documentUrl).href;
+        img.loading = "lazy";
+        img.decoding = "async";
+      } catch (_) {
+        img.removeAttribute("src");
+      }
+    });
+
+    template.content.querySelectorAll("figure.study-figure > a[href]").forEach((link) => {
+      const source = link.getAttribute("href");
+      if (!source || source.startsWith("#")) return;
+      try {
+        link.href = new URL(source, documentUrl).href;
+      } catch (_) {
+        link.removeAttribute("href");
+      }
+    });
+
     return template.innerHTML;
   }
 
@@ -317,9 +350,9 @@
           modules.add(moduleKey);
           for (const unidad of getWorkUnits(modulo)) {
             units.add(`${moduleKey}/${unidad.id}`);
-            for (const contenido of unidad.contenidos || []) {
-              documents.add(`${moduleKey}/${contenido.tipo}/${contenido.id}`);
-            }
+          }
+          for (const contenido of getModuleContents(modulo)) {
+            documents.add(`${moduleKey}/${contenido.tipo}/${contenido.id}`);
           }
         }
       }
@@ -334,9 +367,10 @@
   }
 
   /* ── Card factory ─────────────────────────────────────── */
-  function createCard(href, eyebrow, title, meta) {
+  function createCard(href, eyebrow, title, meta, image = "") {
     return `
-      <a class="nav-card" href="${href}">
+      <a class="nav-card ${image ? "nav-card--image" : ""}" href="${href}">
+        ${image ? `<span class="nav-card__media"><img src="${escapeHtml(image)}" alt="" loading="lazy" decoding="async"></span>` : ""}
         <span class="nav-card__eyebrow">${eyebrow}</span>
         <h3>${title}</h3>
         <p>${meta}</p>
@@ -347,6 +381,14 @@
         </span>
       </a>
     `;
+  }
+
+  function renderPageCover(image, alt = "", caption = "", extraClass = "", credit = null) {
+    if (!image) return "";
+    return `<figure class="module-cover ${extraClass}">
+      <img src="${escapeHtml(image)}" alt="${escapeHtml(alt || "")}" decoding="async">
+      ${caption || credit ? `<figcaption>${caption ? `${escapeHtml(caption)} ` : ""}${credit ? `Fotografía: <a href="${escapeHtml(credit.fuente)}" target="_blank" rel="noopener noreferrer">${escapeHtml(credit.autor)}</a>, <a href="${escapeHtml(credit.licenciaUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(credit.licencia)}</a>.` : ""}</figcaption>` : ""}
+    </figure>`;
   }
 
   /* ── Code block enhancement ───────────────────────────── */
@@ -421,15 +463,33 @@
   }
 
   function downloadPracticeAsWord(article, title) {
-    const content = article.cloneNode(true);
-    content.querySelectorAll("a[href]").forEach((link) => link.setAttribute("href", link.href));
-    content.querySelectorAll("p").forEach((paragraph) => {
-      if (paragraph.querySelector("br")) paragraph.classList.add("line-group");
+    const content = document.createElement("div");
+    const heading = document.createElement("h1");
+    heading.textContent = title;
+    content.appendChild(heading);
+
+    article.querySelectorAll("h3").forEach((section) => {
+      if (!/^\d+\.\d+\.\s*Entrega$/i.test(section.textContent.trim())) return;
+      let element = section.nextElementSibling;
+      while (element && !/^H[23]$/.test(element.tagName)) {
+        if (element.tagName === "H4") {
+          content.appendChild(element.cloneNode(true));
+          if (element.nextElementSibling?.tagName !== "TABLE") {
+            const answer = document.createElement("table");
+            answer.className = "answer-table";
+            answer.innerHTML = "<tbody><tr><td><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></td></tr></tbody>";
+            content.appendChild(answer);
+          }
+        } else if (element.tagName === "TABLE") {
+          const table = element.cloneNode(true);
+          table.querySelectorAll("td").forEach((cell) => {
+            if (!cell.textContent.trim()) cell.innerHTML = "<p>&nbsp;</p><p>&nbsp;</p>";
+          });
+          content.appendChild(table);
+        }
+        element = element.nextElementSibling;
+      }
     });
-    content.querySelectorAll("td").forEach((cell) => {
-      if (!cell.textContent.trim()) cell.innerHTML = "<p>&nbsp;</p><p>&nbsp;</p>";
-    });
-    content.querySelectorAll("iframe").forEach((frame) => frame.remove());
 
     const wordHtml = `<!doctype html>
       <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" lang="es">
@@ -440,21 +500,12 @@
           @page { size: A4; margin: 2.2cm; }
           body { color: #111; font-family: "Latin Modern Roman", "Computer Modern Serif", Georgia, serif; font-size: 11pt; line-height: 1.45; }
           h1 { margin: 0 0 18pt; font-size: 23pt; line-height: 1.15; text-align: center; }
-          h2 { margin: 18pt 0 7pt; font-size: 16pt; }
-          h3 { margin: 14pt 0 6pt; font-size: 13pt; }
-          p { margin: 0 0 8pt; text-align: justify; text-indent: 1cm; }
-          h1 + p { text-align: center; text-indent: 0; }
-          p.line-group, blockquote p, td p { text-indent: 0; }
-          hr { margin: 16pt 0; border: 0; border-top: 1pt solid #777; }
-          blockquote { margin: 12pt 0; padding: 8pt 10pt; border-left: 2pt solid #005fbd; background: #edf4fb; }
-          ul, ol { margin: 7pt 0 10pt; }
-          li { margin-bottom: 4pt; }
+          h4 { margin: 18pt 0 7pt; font-size: 13pt; }
+          p { margin: 0 0 8pt; text-indent: 0; }
           table { width: 100%; margin: 12pt 0; border-collapse: collapse; }
           th, td { padding: 6pt; border: 1pt solid #aeb5bd; vertical-align: middle; }
           th { background: #edf1f5; font-weight: bold; text-align: left; }
-          a { color: #005fbd; }
-          pre { padding: 8pt; border: 1pt solid #b7bdc4; background: #f3f4f5; font-family: Consolas, monospace; font-size: 9pt; white-space: pre-wrap; }
-          code { font-family: Consolas, monospace; }
+          .answer-table td { height: 75pt; }
         </style>
       </head>
       <body>${content.innerHTML}</body>
@@ -477,20 +528,13 @@
     actions.setAttribute("role", "group");
     actions.setAttribute("aria-label", "Descargar práctica");
     actions.innerHTML = `
-      <button class="document-action" type="button" data-action="print">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-        </svg>
-        Imprimir / guardar en PDF
-      </button>
       <button class="document-action" type="button" data-action="word">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        Descargar Word editable
+        Descargar Word
       </button>`;
 
-    actions.querySelector('[data-action="print"]').addEventListener("click", () => window.print());
     actions.querySelector('[data-action="word"]').addEventListener("click", () => downloadPracticeAsWord(article, title));
     article.before(actions);
   }
@@ -513,7 +557,8 @@
           `#ciclo/${ciclo.id}`,
           ciclo.nivel || familia.nombre,
           ciclo.nombre,
-          cycleMeta
+          cycleMeta,
+          ciclo.imagen
         );
       }).join("");
 
@@ -547,13 +592,17 @@
               <span class="hero__stat-label">${totalUnidades === 1 ? "UT" : "UT"}</span>
             </div>
           </div>
+          <figure class="hero__media">
+            <img src="assets/img/hero-circuit-board.jpg" alt="Mano sujetando conectores y cables de un equipo electrónico durante una tarea de montaje" width="1200" height="800" decoding="async">
+            <figcaption>Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Holding_a_circuit_board_close_to_electronic_components_in_a_workshop.jpg" target="_blank" rel="noopener noreferrer">Nenad Stojković</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.</figcaption>
+          </figure>
         </section>
         ${familiesMarkup}
         <section class="search-panel" aria-labelledby="search-title">
           <div class="search-panel__heading">
             <div>
               <p class="search-panel__eyebrow">Encuentra tus apuntes</p>
-              <h2 id="search-title">Buscar en todas las unidades de trabajo</h2>
+              <h2 id="search-title">Buscar en todos los contenidos</h2>
             </div>
             <span class="search-panel__count">${totalDocumentos} documentos</span>
           </div>
@@ -598,8 +647,9 @@
             <h2 id="trayectoria-title">Experiencia docente</h2>
           </div>
           <div class="about-profile__copy">
-            <p>Llevo dos años dedicado a la docencia. Durante este tiempo he impartido clases tanto en Educación Secundaria Obligatoria como en Formación Profesional, dentro de la especialidad de Informática y especialmente en desarrollo web e inteligencia artificial.</p>
             <p>Ingeniero aeronáutico de formación, pero mis intereses abarcan la informática, la electrónica, los materiales y los procesos de fabricación, además de otros ámbitos relacionados con la ingeniería.</p>
+            <p>Llevo dos años dedicado a la docencia. Durante este tiempo he impartido clases tanto en Educación Secundaria Obligatoria como en Formación Profesional, dentro de la especialidad de Informática y especialmente en desarrollo web e inteligencia artificial.</p>
+            <p>Actualmente me encuentro impartiendo clase en el IES Giner de los Ríos en la especialidad de Equipos electrónicos.</p>
           </div>
         </section>
 
@@ -693,7 +743,8 @@
         `#ciclo/${cycleData.ciclo.id}/modulo/${modulo.id}`,
         modulo.codigo ? `Módulo ${modulo.codigo}` : "Módulo profesional",
         modulo.nombre,
-        `${unitCount} UT · ${documentCount} documentos`
+        `${unitCount} UT · ${documentCount} documentos`,
+        modulo.imagen
       );
     }).join("");
 
@@ -737,6 +788,7 @@
           <div class="content-inner">
             <p class="content-kicker">${cycle.nivel || "Formación Profesional"}</p>
             <h1>${cycle.nombre}</h1>
+            ${renderPageCover(cycle.imagen, cycle.imagenAlt, cycle.imagenPie, "cycle-cover", cycle.imagenCredito)}
             ${factsMarkup ? `<dl class="cycle-facts">${factsMarkup}</dl>` : ""}
 
             ${cycle.perfil ? `
@@ -783,13 +835,14 @@
     if (!selectedTema)
       return `<div class="error-box"><strong>Error:</strong> No se ha encontrado el contenido solicitado.</div>`;
 
+    const contentPath = markdownPath(
+      modulo._contentCycleId || ciclo.id,
+      modulo._contentModuleId || modulo.id,
+      selectedTema.tipo,
+      selectedTema.id
+    );
     const response = await fetch(
-      markdownPath(
-        modulo._contentCycleId || ciclo.id,
-        modulo._contentModuleId || modulo.id,
-        selectedTema.tipo,
-        selectedTema.id
-      ),
+      contentPath,
       {
         cache: "no-cache",
         headers: { "Accept-Charset": "utf-8" }
@@ -801,11 +854,12 @@
 
     const buffer = await response.arrayBuffer();
     const markdown = new TextDecoder("utf-8").decode(buffer);
-    return sanitizeHtml(marked.parse(markdown));
+    return resolveMarkdownImages(sanitizeHtml(marked.parse(markdown)), contentPath);
   }
 
   function renderModuleSidebar(ciclo, modulo, selectedTemaId) {
     const unidades = getWorkUnits(modulo);
+    const proyecto = modulo.proyecto;
     const selectedUnit = unidades.find((unidad) =>
       (unidad.contenidos || []).some((contenido) => contenido.id === selectedTemaId)
     );
@@ -844,8 +898,9 @@
     }).join("");
 
     return `
-      <nav id="page-navigation" class="page-sidebar ${state.sidebarOpen ? "open" : ""}" aria-label="Unidades de trabajo del módulo">
+      <nav id="page-navigation" class="page-sidebar ${state.sidebarOpen ? "open" : ""}" aria-label="Proyecto y unidades de trabajo del módulo">
         <h2><a class="sidebar-module-home" href="#ciclo/${ciclo.id}/modulo/${modulo.id}" ${selectedTemaId ? "" : 'aria-current="page"'}>${modulo.nombre}</a></h2>
+        ${proyecto ? `<a class="sidebar-project-link ${proyecto.id === selectedTemaId ? "active" : ""}" href="${topicHref(ciclo.id, modulo.id, proyecto.id)}" ${proyecto.id === selectedTemaId ? 'aria-current="page"' : ""}>${escapeHtml(proyecto.titulo)}</a>` : ""}
         ${unitsMarkup}
         ${progressText ? `<p class="sidebar-progress">${progressText}</p>` : ""}
       </nav>
@@ -878,6 +933,7 @@
       <div class="content-inner module-overview">
         <p class="content-kicker">Módulo profesional ${escapeHtml(modulo.codigo || "")}</p>
         <h1>${escapeHtml(modulo.nombre)}</h1>
+        ${renderPageCover(modulo.imagen, modulo.imagenAlt, modulo.imagenPie, "", modulo.imagenCredito)}
 
         ${modulo.descripcion ? `
           <section class="cycle-section module-description" aria-labelledby="module-description-title">
@@ -943,7 +999,7 @@
         ${renderModuleSidebar(moduleData.ciclo, moduleData.modulo, selectedTemaId)}
         <section class="page-content">
           ${selectedTema
-            ? `<article class="markdown-body"><p>Cargando contenido…</p></article>`
+            ? `<article class="markdown-body ${selectedTema.tipo === "proyecto" ? "markdown-body--project" : ""}"><p>Cargando contenido…</p></article>`
             : renderModuleOverview(moduleData)}
         </section>
       </section>
@@ -961,7 +1017,7 @@
       enhanceDocumentLayout(article);
       embedYouTubeVideos(article);
       enhanceCodeBlocks(article);
-      if (selectedTema.tipo === "practica") addPracticeActions(article, selectedTema.titulo);
+      if (selectedTema.tipo === "practica" && selectedTema.descargarWord !== false) addPracticeActions(article, selectedTema.titulo);
     } catch (error) {
       const article = appEl.querySelector(".markdown-body");
       article.innerHTML = `<div class="error-box"><strong>Error:</strong> ${error.message}</div>`;

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="title desc">
+  <title id="title">Comparación de trayectos de vídeo analógico e IP</title>
+  <desc id="desc">La cámara analógica envía vídeo por coaxial a un DVR. La cámara IP envía datos por Ethernet a un conmutador y a un NVR. En ambos casos hay que comprobar alimentación, enlace y almacenamiento.</desc>
+  <rect width="900" height="330" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#17202a">
+    <text x="40" y="40" font-size="22" font-weight="700">Dos recorridos de vídeo</text>
+    <g font-size="17" text-anchor="middle">
+      <rect x="40" y="68" width="170" height="74" rx="6" fill="#eef4fb" stroke="#395a78"/><text x="125" y="100" font-weight="700">Cámara analógica</text><text x="125" y="125">señal de vídeo</text>
+      <rect x="360" y="68" width="170" height="74" rx="6" fill="#eef4fb" stroke="#395a78"/><text x="445" y="100" font-weight="700">DVR</text><text x="445" y="125">digitaliza y graba</text>
+      <rect x="680" y="68" width="170" height="74" rx="6" fill="#f4f7f5" stroke="#4b705b"/><text x="765" y="100" font-weight="700">Almacenamiento</text><text x="765" y="125">y visualización</text>
+      <rect x="40" y="184" width="170" height="74" rx="6" fill="#eef4fb" stroke="#395a78"/><text x="125" y="216" font-weight="700">Cámara IP</text><text x="125" y="241">datos de red</text>
+      <rect x="280" y="184" width="170" height="74" rx="6" fill="#eef4fb" stroke="#395a78"/><text x="365" y="216" font-weight="700">Conmutador</text><text x="365" y="241">red y posible PoE</text>
+      <rect x="520" y="184" width="170" height="74" rx="6" fill="#eef4fb" stroke="#395a78"/><text x="605" y="216" font-weight="700">NVR</text><text x="605" y="241">recibe y graba</text>
+      <rect x="730" y="184" width="120" height="74" rx="6" fill="#f4f7f5" stroke="#4b705b"/><text x="790" y="216" font-weight="700">Archivo</text><text x="790" y="241">y monitor</text>
+    </g>
+    <g stroke="#395a78" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M210 105h149m-10-8 10 8-10 8"/><path d="M530 105h149m-10-8 10 8-10 8"/>
+      <path d="M210 221h69m-10-8 10 8-10 8"/><path d="M450 221h69m-10-8 10 8-10 8"/><path d="M690 221h39m-10-8 10 8-10 8"/>
+    </g>
+    <text x="280" y="90" font-size="15" fill="#395a78">coaxial</text>
+    <text x="225" y="204" font-size="15" fill="#395a78">Ethernet</text>
+    <text x="40" y="305" font-size="15" fill="#3f4f60">La presencia de imagen en directo no demuestra que exista grabación ni que el disco esté sano.</text>
+  </g>
+</svg>

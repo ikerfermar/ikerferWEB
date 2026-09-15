@@ -56,6 +56,10 @@ Antes de crear o modificar teoría o prácticas, lee y aplica completa la guía 
 
 El campo `titulo` de `structure.json` debe coincidir exactamente con el H1 del Markdown. El validador comprueba esta correspondencia.
 
+## Cómo añadir un proyecto transversal al módulo
+
+Un proyecto que se desarrolla a lo largo del módulo va fuera de `unidadesTrabajo`. Añade al módulo de origen un objeto `proyecto` con `id`, `titulo` y `tipo: "proyecto"`, y crea `content/[id-ciclo]/[id-modulo]/proyecto/[id].md`. El `titulo` debe coincidir exactamente con el H1. El enlace aparece debajo del nombre del módulo en el índice, antes de las UT. Si el módulo se comparte por `referencia`, el proyecto y su archivo se reutilizan en todos los ciclos; no los dupliques.
+
 ## Cómo añadir un módulo nuevo
 
 1. Añade el objeto del módulo en `structure.json` dentro del ciclo correspondiente.
@@ -64,6 +68,8 @@ El campo `titulo` de `structure.json` debe coincidir exactamente con el H1 del M
 4. Guarda las programaciones en `content/[ciclo]/[modulo]/programacion/`.
 5. Crea la carpeta `content/[ciclo]/[modulo]/teoria/` y `content/[ciclo]/[modulo]/practica/`.
 6. Añade al menos una Unidad de Trabajo siguiendo las instrucciones anteriores.
+
+Usa `imagen` para la fotografía del módulo: la misma imagen aparece en la tarjeta y en la cabecera panorámica. No añadas una `imagenCabecera` distinta. Puedes añadir `imagenAlt` y `imagenPie` si la cabecera necesita un texto alternativo o un pie informativo. El ciclo sigue la misma convención con su propio campo `imagen`. Guarda las fotografías optimizadas en `assets/img/` y declara `imagenCredito` con `autor`, `fuente`, `licencia` y `licenciaUrl`; la atribución se muestra junto a la cabecera, sin página de créditos separada.
 
 ## Cómo compartir un módulo entre varios ciclos
 

@@ -73,6 +73,35 @@ for (const family of structure.familias || []) {
         }
       }
 
+      const project = module.proyecto;
+      if (project) {
+        const identity = `${cycle.id}/${module.id}/${project.id}`;
+        if (seenIds.has(project.id)) errors.push(`ID duplicado dentro del módulo: ${identity}`);
+        if (!validId.test(project.id)) errors.push(`ID no válido: ${identity}`);
+        if (project.tipo !== "proyecto") errors.push(`Tipo no válido en ${identity}: ${project.tipo}`);
+
+        const markdownFile = path.join(
+          projectRoot,
+          "content",
+          sourceCycleId,
+          sourceModuleId,
+          "proyecto",
+          `${project.id}.md`
+        );
+        const relativeFile = path.relative(projectRoot, markdownFile);
+        if (!fs.existsSync(markdownFile)) {
+          errors.push(`Falta el archivo: ${relativeFile}`);
+        } else {
+          const markdown = fs.readFileSync(markdownFile, "utf8").trimStart();
+          const h1 = markdown.match(/^#\s+(.+)$/m)?.[1]?.trim();
+          if (!h1) errors.push(`El archivo no empieza por H1: ${relativeFile}`);
+          else if (h1 !== project.titulo) {
+            errors.push(`Título distinto del H1 en ${identity}: "${project.titulo}" ≠ "${h1}"`);
+          }
+          checkedDocuments.add(relativeFile);
+        }
+      }
+
       const programmingFile = module.programacion?.archivo;
       if (programmingFile && !fs.existsSync(path.join(projectRoot, programmingFile))) {
         errors.push(`Falta la programación: ${programmingFile}`);

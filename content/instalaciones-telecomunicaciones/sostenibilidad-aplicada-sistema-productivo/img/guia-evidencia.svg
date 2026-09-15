@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 178" role="img" aria-labelledby="title desc">
+  <title id="title">De una afirmación a una conclusión justificada</title>
+  <desc id="desc">Cinco pasos para analizar un caso real: afirmación de la empresa, dato verificable, fuente, alcance y límites del dato, y conclusión justificada.</desc>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#20262e} .step{font-size:17px;font-weight:600} .small{font-size:14px;fill:#57606a} .box{fill:#fff;stroke:#c9d1d9} .line{stroke:#0969da;stroke-width:2}</style>
+  <rect width="960" height="178" fill="#f6f8fa"/>
+  <text x="24" y="30" font-size="19" font-weight="700" fill="#20262e">Cómo analizar una afirmación de sostenibilidad</text>
+  <g transform="translate(20 55)"><rect class="box" width="168" height="99"/><text class="step" x="14" y="35">1. Afirmación</text><text class="small" x="14" y="62">¿Qué sostiene la</text><text class="small" x="14" y="81">empresa?</text></g>
+  <path class="line" d="M188 104h18m-6-6 6 6-6 6"/>
+  <g transform="translate(206 55)"><rect class="box" width="168" height="99"/><text class="step" x="14" y="35">2. Dato</text><text class="small" x="14" y="62">¿Qué cifra o hecho</text><text class="small" x="14" y="81">permite comprobarla?</text></g>
+  <path class="line" d="M374 104h18m-6-6 6 6-6 6"/>
+  <g transform="translate(392 55)"><rect class="box" width="168" height="99"/><text class="step" x="14" y="35">3. Fuente</text><text class="small" x="14" y="62">¿Dónde se publica?</text><text class="small" x="14" y="81">¿Es contrastable?</text></g>
+  <path class="line" d="M560 104h18m-6-6 6 6-6 6"/>
+  <g transform="translate(578 55)"><rect class="box" width="168" height="99"/><text class="step" x="14" y="35">4. Alcance</text><text class="small" x="14" y="62">Periodo, ámbito y</text><text class="small" x="14" y="81">límites del dato</text></g>
+  <path class="line" d="M746 104h18m-6-6 6 6-6 6"/>
+  <g transform="translate(764 55)"><rect class="box" width="176" height="99"/><text class="step" x="14" y="35">5. Conclusión</text><text class="small" x="14" y="62">¿Qué puede y qué no</text><text class="small" x="14" y="81">puede concluirse?</text></g>
+</svg>

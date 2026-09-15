@@ -16,14 +16,35 @@ Esta guía adapta a la web el estilo de los materiales LaTeX de referencia. Se a
 - Una URL de YouTube sola en su párrafo se transforma automáticamente en reproductor. No escribas un `iframe` en Markdown.
 - Termina la teoría con `## Síntesis de la unidad`: un solo párrafo que conecte las ideas principales.
 
+## Imágenes en teoría y práctica
+
+- Guarda las figuras del módulo en `content/[ciclo]/[modulo]/img/`. Desde un Markdown de `teoria/` o `practica/`, usa una ruta como `../img/asg.svg`; la web la resuelve respecto al archivo Markdown también en GitHub Pages.
+- Prioriza fotografías e infografías útiles publicadas por fuentes identificables, con permisos de uso comprobados. Crea esquemas propios solo cuando un recurso existente no permita explicar bien el concepto. Evita fotografías decorativas, iconos repetidos o imágenes que dupliquen el texto.
+- Cada imagen necesita un texto alternativo que explique su función. Si es un gráfico, indica además la unidad, el periodo, el ámbito y la fuente de los datos.
+- Incluye un pie visible cuando haya una fuente, una fecha o una interpretación que el alumnado deba recordar. Puedes utilizar `figure`, `img` y `figcaption` en el Markdown; la web conserva estas etiquetas.
+- Si la figura se ha creado para el proyecto, no añadas «esquema propio» ni «elaboración propia» al pie: describe únicamente lo que ayuda a interpretar. Conserva siempre la atribución y licencia de recursos externos.
+- No subas páginas escaneadas, imágenes de libros o fotografías ajenas sin comprobar los permisos de uso. Un enlace a la fuente original es preferible a reproducir material protegido.
+- Para fotos compartidas por portada, tarjetas y cabeceras, usa `assets/img/` y declara una única `imagen` en el ciclo o módulo. En los Markdown de sostenibilidad, la ruta relativa hasta esta carpeta es `../../../../assets/img/nombre.jpg`.
+- Declara autor, enlace al archivo original y licencia en `imagenCredito` para fotografías de ciclos y módulos. En teoría y prácticas, añade esa atribución junto a la imagen y un pie que indique qué ilustra; una fotografía ilustrativa nunca sustituye los datos y fuentes del caso.
+
+Ejemplo:
+
+```html
+<figure>
+  <img src="../img/asg.svg" alt="Tres dimensiones ASG conectadas con un mismo proceso empresarial">
+  <figcaption>Los aspectos ambientales, sociales y de gobernanza pueden coincidir en una decisión.</figcaption>
+</figure>
+```
+
 ## Cabecera de teoría
+
+La cabecera identifica el documento y el módulo sin repetir UT ni RA; esa relación se establece en el índice y en el desarrollo del contenido.
 
 ```markdown
 # Título de la unidad
 
 **Nombre del módulo**\
-Curso y ciclo formativo\
-UTXX — RAX — trimestre o «Teoría»
+Curso y ciclo formativo
 
 ---
 ```
@@ -53,12 +74,13 @@ Para destacar una conclusión o un caso, utiliza con moderación:
 
 ## Cabecera y estructura de práctica
 
+Mantén también esta cabecera breve. No añadas UT, RA ni modalidad de trabajo como una tercera línea de metadatos.
+
 ```markdown
 # Práctica X.X - Título
 
 **Nombre del módulo**\
-Curso y ciclo formativo\
-UTXX — RAX — Práctica X.X — modalidad de trabajo
+Curso y ciclo formativo
 
 ---
 
@@ -78,20 +100,20 @@ Resultado observable que debe alcanzarse.
 2. Acción concreta.
 3. Análisis o justificación.
 
-### 1.3. Evidencia
+### 1.3. Entrega
 
-Captura, tabla, fichero, cálculo, diagrama o texto que debe quedar en la entrega.
+Captura, tabla, fichero, cálculo, diagrama o texto que debe quedar en la entrega. Si se pide una justificación o una respuesta extensa, indica un rango concreto de palabras.
 
-## Entregables
+## Entregas
 
-- **Entregable 1:** contenido y formato.
-- **Entregable 2:** contenido y formato.
+- **Entrega 1:** contenido y formato.
+- **Entrega 2:** contenido y formato.
 
 ## Criterios de evaluación
 
 | Criterio | Puntos | Indicadores de corrección |
 |---|---:|---|
-| Criterio 1 | X | Evidencia observable |
+| Criterio 1 | X | Aspecto observable |
 | **Total** | **10** | |
 
 ## Puntos clave de revisión
@@ -103,7 +125,11 @@ Las prácticas deben parecer encargos profesionales. Sus preguntas deben exigir 
 
 Nombra cada práctica con el número de la UT y su posición dentro de ella: `Práctica 1.1 - Título`, `Práctica 1.2 - Título`, `Práctica 2.1 - Título`, etc.
 
-Las tablas con celdas vacías se conservan como espacios editables al descargar la práctica en Word. Diseña sus columnas pensando en la respuesta esperada y evita añadir columnas que el alumnado no necesite rellenar.
+Si una tarea forma parte de un proyecto integrador y se presenta como tal al alumnado, puede titularse `Proyecto: Título` en lugar de llevar número de práctica. Mantén idénticos el título del índice y el H1 del Markdown.
+
+Si una práctica ofrece descarga Word, pon un título `####` inmediatamente antes de cada tabla o campo de respuesta en sus secciones `### X.X. Entrega`. El Word recoge únicamente esos títulos, las tablas vacías y espacios para redactar; **no incluye** contexto, instrucciones, fuentes, imágenes ni rúbrica. Diseña las columnas pensando en la respuesta esperada y evita añadir columnas que el alumnado no necesite rellenar. Si una tarea requiere una memoria propia, prescinde de tablas para completar y marca `"descargarWord": false` en `structure.json`.
+
+Incluye en la rúbrica criterios de presentación gráfica y redacción, además de los criterios de contenido. Da rangos de palabras a cada justificación y apartado de la entrega, y aclara si referencias y títulos cuentan en el cómputo. No fijes de forma general una única sesión o tamaño de grupo en la cabecera del enunciado: cada docente puede adaptar la duración y la organización.
 
 ## Correspondencia con el diseño LaTeX
 
