@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 365" role="img" aria-labelledby="title desc">
+  <title id="title">Comparación entre detector PIR pasivo y barrera infrarroja activa</title>
+  <desc id="desc">El PIR detecta cambios de radiación procedentes de la zona observada sin emitir un haz. La barrera activa utiliza un emisor y un receptor, y reconoce la interrupción del haz entre ambos.</desc>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.head{font-size:20px;font-weight:700}.note{font-size:16px;fill:#536473}.box{fill:#f0f6fc;stroke:#b9c7d3;stroke-width:1.4}.stroke{fill:none;stroke:#17202a;stroke-width:3}.beam{fill:none;stroke:#0758a5;stroke-width:3;stroke-dasharray:8 6}.field{fill:#eaf2f9;stroke:#0758a5;stroke-width:2;stroke-dasharray:7 6}</style>
+  <rect width="1050" height="365" fill="#fff"/>
+  <text class="title" x="25" y="39">Dos principios de detección que no deben confundirse</text>
+  <rect class="box" x="24" y="66" width="488" height="248" rx="7"/><rect class="box" x="538" y="66" width="488" height="248" rx="7"/>
+  <text class="head" x="48" y="101">PIR · PASIVO</text><text class="head" x="562" y="101">BARRERA · ACTIVA</text>
+  <path class="field" d="M115 175 Q300 105 430 175 Q300 245 115 175 Z"/>
+  <rect class="stroke" x="72" y="148" width="44" height="54" rx="7"/><circle class="stroke" cx="94" cy="170" r="10"/>
+  <circle cx="300" cy="173" r="10" fill="#17202a"/><path class="stroke" d="M300 183 V221 M300 195 277 211 M300 195 322 211 M300 221 281 245 M300 221 319 245"/>
+  <text class="note" x="48" y="286">Observa variaciones de radiación de la zona.</text>
+  <rect class="stroke" x="577" y="151" width="47" height="62" rx="6"/><rect class="stroke" x="941" y="151" width="47" height="62" rx="6"/>
+  <path class="beam" d="M625 181 H779"/><path class="stroke" d="M788 151 V213" stroke="#a43a3a"/>
+  <text class="note" x="574" y="241">Emisor</text><text class="note" x="927" y="241">Receptor</text>
+  <text class="note" x="562" y="286">La interrupción del haz genera el evento.</text>
+  <text class="note" x="25" y="343">La cobertura, el ambiente y la alineación requieren comprobaciones específicas; ninguno de los dos detectores es universal.</text>
+</svg>

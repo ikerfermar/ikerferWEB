@@ -34,6 +34,8 @@ Localiza el módulo correspondiente y añade un objeto al array `unidadesTrabajo
 
 El `id` de cada UT y de cada contenido debe ser único dentro del módulo. Usa kebab-case sin espacios ni tildes.
 
+Si solo quieres mostrar una UT prevista en el índice, añade `id`, `codigo`, `nombre` y `"contenidos": []`. No declares teoría ni prácticas hasta que existan sus Markdown: así el título aparece sin generar enlaces vacíos. Los títulos de Sostenibilidad previstos proceden de `Asignaturas/SOSTENIBILIDAD/SOST_UT01.pdf` a `SOST_UT06.pdf`; esta carpeta docente permanece fuera de Git.
+
 ### 2. Crea el archivo Markdown
 
 La ruta del archivo sigue siempre este patrón:

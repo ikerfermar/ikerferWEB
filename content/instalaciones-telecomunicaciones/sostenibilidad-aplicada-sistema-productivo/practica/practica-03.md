@@ -11,6 +11,8 @@ Este trabajo inicia el proyecto **«El plan de sostenibilidad de tu empresa»**.
 
 El trabajo se divide en dos tareas. En la primera seleccionaréis la empresa y analizaréis sus asuntos ASG para formular **reglas de decisión** razonables. En la segunda elaboraréis un mapa inicial de **grupos de interés** o *stakeholders* y explicaréis cuáles merecen más atención y por qué.
 
+<figure class="study-figure"><a href="../img/mapa-grupos-interes.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el mapa de grupos de interés en una pestaña nueva"><img src="../img/mapa-grupos-interes.svg" alt="Mapa inicial de proveedores, plantilla, clientes, inversores, instituciones y comunidad local alrededor de una empresa tecnológica" loading="lazy"></a><figcaption>El mapa es un punto de partida, no una lista obligatoria. Adaptadlo a vuestra empresa y justificad a quién afectan sus decisiones. Como ejemplo real de identificación y prioridades, podéis consultar los <a href="https://www.telefonica.com/es/wp-content/uploads/sites/4/2025/06/compromiso-relacion-grupos-interes.pdf">grupos de interés publicados por Telefónica</a>. Pulsa para ampliar.</figcaption></figure>
+
 ## Fuentes y criterio de trabajo
 
 Podéis recurrir a la web de la empresa, memorias e informes, registros públicos, prensa, publicaciones en redes sociales y, cuando sea posible, conversaciones con personas del sector. Anotad quién publica cada información, su fecha y el enlace o referencia que permite localizarla. Una afirmación de la propia empresa es una fuente, pero no demuestra por sí sola que sus políticas se apliquen o produzcan el resultado anunciado.

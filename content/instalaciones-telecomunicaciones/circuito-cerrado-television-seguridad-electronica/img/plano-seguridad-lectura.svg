@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">Ejemplo de lectura de un plano de seguridad electrónica</title>
+  <desc id="desc">Planta de ejemplo con recepción, sala de equipos, almacén y pasillo. Sitúa un detector de humos, un pulsador, una central, un PIR, un contacto magnético, una cámara y un lector. La leyenda explica los identificadores, la zona vigilada y el recorrido de comunicación.</desc>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:26px;font-weight:700}.room{font-size:17px;font-weight:700;fill:#596a7b}.key{font-size:18px;font-weight:700}.note{font-size:15px;fill:#536473}.id{font-size:15px;font-weight:700}.wall{fill:none;stroke:#17202a;stroke-width:9;stroke-linecap:square}.thin{fill:none;stroke:#17202a;stroke-width:2}.door{fill:none;stroke:#8497a9;stroke-width:2}.tag{fill:#fff;stroke:#0758a5;stroke-width:2}.red{fill:none;stroke:#a43a3a;stroke-width:2}.blue{fill:none;stroke:#0758a5;stroke-width:2;stroke-dasharray:8 6}
+  </style>
+  <rect width="1200" height="690" fill="#fff"/>
+  <text x="28" y="42" class="title">Leer un plano: ubicación, identificador y función</text>
+  <text x="28" y="68" class="note">Planta de ejemplo, no proyecto ejecutivo. La leyenda permite reconocer cada elemento sin adivinar sus siglas.</text>
+  <g transform="translate(38 110)">
+    <path class="wall" d="M0 0 H738 V490 H0 Z M310 0 V185 M310 245 V490 M0 245 H160 M220 245 H738 M500 245 V490"/>
+    <path class="door" d="M310 185 A60 60 0 0 1 370 245 M160 245 A60 60 0 0 0 220 305 M500 245 A60 60 0 0 1 560 305"/>
+    <path class="thin" d="M95 -4 V5 M115 -4 V5 M435 -4 V5 M455 -4 V5 M738 98 H748 M738 118 H748"/>
+    <text class="room" x="55" y="40">RECEPCIÓN</text><text class="room" x="365" y="40">SALA DE EQUIPOS</text><text class="room" x="55" y="340">PASILLO Y ACCESO</text><text class="room" x="565" y="285">ALMACÉN</text>
+    <path class="red" stroke-dasharray="5 5" d="M60 125 Q170 55 275 125 M58 125 Q170 235 275 125"/>
+    <path class="red" d="M270 76 210 45 210 107 Z"/>
+    <path class="blue" d="M301 76 H608 V115"/>
+    <rect class="tag" x="252" y="58" width="49" height="36" rx="3"/><text class="id" x="261" y="82">C1</text>
+    <rect class="tag" x="54" y="105" width="61" height="36" rx="3"/><text class="id" x="62" y="129">PIR1</text>
+    <rect class="tag" x="135" y="56" width="55" height="36" rx="3"/><text class="id" x="143" y="80">DH1</text>
+    <rect class="tag" x="46" y="210" width="56" height="36" rx="3"/><text class="id" x="54" y="234">PM1</text>
+    <rect class="tag" x="420" y="86" width="50" height="36" rx="3"/><text class="id" x="428" y="110">CI1</text>
+    <rect class="tag" x="605" y="99" width="54" height="36" rx="3"/><text class="id" x="613" y="123">G1</text>
+    <rect class="tag" x="184" y="259" width="57" height="36" rx="3"/><text class="id" x="192" y="283">CM1</text>
+    <rect class="tag" x="530" y="286" width="48" height="36" rx="3"/><text class="id" x="538" y="310">L1</text>
+    <text class="note" x="22" y="474">Entrada</text><path class="thin" d="M34 453 V408 M34 408 26 419 M34 408 42 419"/>
+  </g>
+  <path class="thin" d="M815 102 V610" stroke="#b8c4d1"/>
+  <text class="key" x="842" y="135">LEYENDA DEL PLANO</text>
+  <text class="note" x="842" y="170">DH1  Detector de humos</text>
+  <text class="note" x="842" y="204">PM1  Pulsador manual de incendios</text>
+  <text class="note" x="842" y="238">CI1  Central de incendios</text>
+  <text class="note" x="842" y="272">PIR1 Detector infrarrojo pasivo</text>
+  <text class="note" x="842" y="306">CM1  Contacto magnético de puerta</text>
+  <text class="note" x="842" y="340">C1     Cámara de recepción</text>
+  <text class="note" x="842" y="374">G1     Grabador de vídeo</text>
+  <text class="note" x="842" y="408">L1      Lector de acceso</text>
+  <path class="red" d="M843 452 H895"/><text class="note" x="910" y="457">Campo ilustrativo de cámara</text>
+  <path class="red" stroke-dasharray="5 5" d="M843 486 H895"/><text class="note" x="910" y="491">Cobertura ilustrativa del PIR</text>
+  <path class="blue" d="M843 520 H895"/><text class="note" x="910" y="525">Recorrido de comunicación</text>
+  <text class="note" x="842" y="570">La línea no define aún cable, red o protocolo.</text>
+  <text class="note" x="28" y="654">Antes del montaje se verifican escala, cotas, altura, cobertura, alimentación, conexión, accesibilidad y privacidad.</text>
+</svg>

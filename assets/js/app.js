@@ -589,7 +589,7 @@
             </div>
             <div class="hero__stat">
               <span class="hero__stat-num">${totalUnidades}</span>
-              <span class="hero__stat-label">${totalUnidades === 1 ? "UT" : "UT"}</span>
+              <span class="hero__stat-label">UT</span>
             </div>
           </div>
           <figure class="hero__media">

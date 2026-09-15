@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 340" role="img" aria-labelledby="title desc">
+  <title id="title">Diferencia entre grabar vídeo y señalar automáticamente un evento</title>
+  <desc id="desc">Un sistema CCTV registra la escena. La analítica de vídeo puede marcar un cruce de línea o la presencia de un objeto según una regla. La alerta necesita comprobación y no supone identificación personal.</desc>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:24px;font-weight:700}.head{font-size:19px;font-weight:700}.note{font-size:16px;fill:#526374}.frame{fill:#f0f6fc;stroke:#b9c7d3;stroke-width:1.4}.floor{fill:none;stroke:#74889a;stroke-width:2}.person{fill:none;stroke:#17202a;stroke-width:4;stroke-linecap:round}.rule{fill:none;stroke:#a43a3a;stroke-width:3;stroke-dasharray:7 6}.mark{fill:none;stroke:#a43a3a;stroke-width:2.5}</style>
+  <rect width="1050" height="340" fill="#fff"/><text class="title" x="25" y="40">De la imagen a una alerta: una regla, no una certeza</text>
+  <text class="head" x="41" y="85">CÁMARA Y GRABACIÓN</text><text class="head" x="562" y="85">ANALÍTICA DE VÍDEO</text>
+  <rect class="frame" x="34" y="102" width="470" height="175" rx="5"/><rect class="frame" x="546" y="102" width="470" height="175" rx="5"/>
+  <path class="floor" d="M48 244 H490 M560 244 H1002"/>
+  <circle class="person" cx="261" cy="153" r="12"/><path class="person" d="M261 165 V207 M261 182 239 203 M261 182 281 203 M261 207 244 235 M261 207 278 235"/>
+  <circle class="person" cx="773" cy="153" r="12"/><path class="person" d="M773 165 V207 M773 182 751 203 M773 182 793 203 M773 207 756 235 M773 207 790 235"/>
+  <path class="rule" d="M684 116 V244"/><path class="mark" d="M631 206 H735 M724 197 735 206 724 215"/><rect class="mark" x="742" y="124" width="61" height="113" rx="4"/>
+  <text class="note" x="45" y="305">Se puede revisar la escena grabada.</text><text class="note" x="559" y="305">El sistema propone: «cruce de línea».</text>
+  <text class="note" x="25" y="330">Verificad la alerta, el campo observado y la privacidad; este ejemplo no identifica a la persona.</text>
+</svg>

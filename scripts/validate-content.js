@@ -34,11 +34,19 @@ for (const family of structure.familias || []) {
       }
 
       const seenIds = new Set();
+      const seenUnitIds = new Set();
       for (const unit of module.unidadesTrabajo || []) {
         const unitIdentity = `${cycle.id}/${module.id}/${unit.id}`;
         if (!validId.test(unit.id)) errors.push(`ID de UT no válido: ${unitIdentity}`);
+        if (seenUnitIds.has(unit.id)) errors.push(`ID de UT duplicado: ${unitIdentity}`);
+        seenUnitIds.add(unit.id);
+        if (!unit.nombre?.trim()) errors.push(`UT sin nombre: ${unitIdentity}`);
+        if (!Array.isArray(unit.contenidos)) {
+          errors.push(`La UT debe declarar contenidos como array, aunque esté vacía: ${unitIdentity}`);
+          continue;
+        }
 
-        for (const content of unit.contenidos || []) {
+        for (const content of unit.contenidos) {
           const identity = `${cycle.id}/${module.id}/${content.id}`;
           if (seenIds.has(content.id)) errors.push(`ID duplicado dentro del módulo: ${identity}`);
           seenIds.add(content.id);

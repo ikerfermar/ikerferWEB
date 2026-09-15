@@ -11,7 +11,7 @@ Web estática de una sola página para organizar apuntes de Formación Profesion
 - Enlaces directos a cada contenido mediante rutas hash compartibles.
 - Renderizado Markdown seguro en cliente con una versión fijada de `marked.js`.
 - Tema claro y oscuro con diseño adaptable a móvil.
-- Prácticas imprimibles en PDF y descargables como documentos Word editables.
+- Descarga Word editable en las prácticas que tienen campos para rellenar; las memorias propias no generan Word.
 - Compatible con GitHub Pages usando rutas relativas.
 - Módulos compartidos entre ciclos sin duplicar datos ni documentos.
 - Validación de IDs, rutas, referencias y correspondencia entre el índice y los H1.
@@ -26,6 +26,8 @@ Web estática de una sola página para organizar apuntes de Formación Profesion
 - `docs/guia-contenidos.md`
 - `scripts/validate-content.js`
 - `AGENTS.md`
+
+Las UT previstas pueden aparecer en el índice con `"contenidos": []`. No abren un documento hasta que se publique su teoría o práctica. `Asignaturas/` conserva los PDF docentes locales y `tmp/` las imágenes de lectura de PDF; ninguna de las dos carpetas se despliega en GitHub Pages.
 
 ## Ejecutar en local
 

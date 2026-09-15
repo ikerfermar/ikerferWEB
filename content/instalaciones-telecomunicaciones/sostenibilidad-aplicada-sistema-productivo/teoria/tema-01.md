@@ -88,6 +88,8 @@ La Agenda 2030 reúne sus prioridades en cinco dimensiones, conocidas como las *
 
 En una empresa de telecomunicaciones, **personas** puede significar empleos seguros y servicios accesibles; **planeta**, menor consumo energético y gestión responsable de residuos; **prosperidad**, infraestructuras útiles y actividad económica viable; **paz**, decisiones íntegras y respeto de derechos; y **alianzas**, colaboración con administraciones, proveedores y comunidades locales. Las dimensiones se refuerzan entre sí. Un despliegue rural que mejora el acceso digital deja de ser una buena solución si ignora los derechos de sus trabajadores o deteriora un entorno natural.
 
+El [vídeo de Naciones Unidas sobre las cinco P](https://unsdg.un.org/es/latest/videos/5ps-sdgs-people-planet-prosperity-peace-and-partnership) ofrece otra representación de estas dimensiones. Úsalo para comprobar cómo se relacionan entre sí, no para asignar cada ODS a una sola categoría.
+
 <figure class="content-photo"><img src="../img/energia-renovable.jpg" alt="Paneles fotovoltaicos junto a un aerogenerador en una instalación de investigación energética" loading="lazy"><figcaption>La transición energética puede reducir emisiones, pero también requiere infraestructuras, materiales y decisiones sobre su ubicación. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:CdTe_PV_array_at_the_National_Wind_Technology_Center_(NWTC).jpg">Dennis Schroeder / Departamento de Energía de EE. UU., dominio público</a>.</figcaption></figure>
 
 > **Comprueba que lo has entendido**
@@ -261,6 +263,8 @@ Un indicador aislado puede resultar engañoso. Reducir el consumo total de elect
 ### 4.1. De un objetivo a un KPI comprobable
 
 Una **métrica** es un dato que se mide; un **KPI** es una métrica elegida para evaluar un objetivo prioritario. «Consumir menos energía» es una intención. «Reducir el consumo eléctrico de la red por terabyte de datos transmitidos entre 2026 y 2028» ya permite definir un indicador, un periodo y una comparación. Antes de calcularlo hay que decidir qué instalaciones entran en el dato, de dónde proceden los registros y si se utilizará energía medida o estimada.
+
+<figure class="study-figure"><a href="../img/lectura-indicador-energia.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el ejemplo de lectura de un indicador energético en una pestaña nueva"><img src="../img/lectura-indicador-energia.svg" alt="Ejemplo hipotético: consumo de 1.000 a 900 MWh y tráfico de uno a dos millones de TB; intensidad de 1 a 0,45 kWh por TB si el perímetro es comparable" loading="lazy"></a><figcaption>Los datos son hipotéticos. La intensidad por servicio añade información que no ofrece el consumo absoluto; aun así, hay que confirmar que ambos periodos incluyen el mismo perímetro. Pulsa para ampliar.</figcaption></figure>
 
 Un KPI útil debe incluir **nombre, unidad, periodo, perímetro, método, valor inicial, meta y fuente**. La meta no debe elegirse después de ver el resultado. Cuando cambia el perímetro —por ejemplo, al incorporar otra empresa o ampliar la red— hay que explicarlo para que la evolución no parezca mejor o peor de lo que es.
 

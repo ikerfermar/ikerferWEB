@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa inicial de grupos de interés de una empresa tecnológica</title>
+  <desc id="desc">La empresa se relaciona con proveedores y sus trabajadores, plantilla propia, clientes, inversores, instituciones públicas y comunidades locales. Las relaciones atraviesan toda la cadena de valor, no solo el centro de trabajo.</desc>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:25px;font-weight:700}.label{font-size:18px;font-weight:700}.sub{font-size:15px;fill:#506173}.hub{fill:#eef5fc;stroke:#0758a5;stroke-width:2}.box{fill:#fff;stroke:#b9c7d3;stroke-width:1.5}.line{fill:none;stroke:#0758a5;stroke-width:2.3;marker-start:url(#arrow);marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10 Z" fill="#0758a5"/></marker></defs>
+  <rect width="1120" height="560" fill="#fff"/>
+  <text class="title" x="26" y="40">¿A quién afecta la actividad de una empresa?</text>
+  <text class="sub" x="26" y="67">Mapa de partida: cada grupo puede influir en la empresa y recibir impactos de sus decisiones.</text>
+  <path class="line" d="M274 200 H418"/><path class="line" d="M702 200 H846"/>
+  <path class="line" d="M556 149 V125"/><path class="line" d="M556 251 V320"/>
+  <path class="line" d="M410 242 283 359"/><path class="line" d="M702 242 835 359"/>
+  <rect class="hub" x="418" y="149" width="284" height="102" rx="8"/>
+  <text class="label" x="463" y="189">EMPRESA ELEGIDA</text><text class="sub" x="443" y="219">Actividad, tamaño y decisiones ASG</text>
+  <rect class="box" x="26" y="146" width="248" height="105" rx="7"/><text class="label" x="49" y="183">PROVEEDORES</text><text class="sub" x="49" y="210">Equipos, energía, materiales</text><text class="sub" x="49" y="232">y trabajadores de su cadena</text>
+  <rect class="box" x="846" y="146" width="248" height="105" rx="7"/><text class="label" x="869" y="183">CLIENTES</text><text class="sub" x="869" y="210">Servicio, accesibilidad,</text><text class="sub" x="869" y="232">privacidad y reparación</text>
+  <rect class="box" x="418" y="78" width="284" height="47" rx="7"/><text class="label" x="481" y="108">PLANTILLA</text>
+  <rect class="box" x="418" y="320" width="284" height="77" rx="7"/><text class="label" x="473" y="351">INVERSORES</text><text class="sub" x="443" y="377">Riesgos, resultados y transparencia</text>
+  <rect class="box" x="26" y="359" width="280" height="86" rx="7"/><text class="label" x="49" y="391">COMUNIDAD LOCAL</text><text class="sub" x="49" y="418">Empleo, residuos e infraestructuras</text>
+  <rect class="box" x="814" y="359" width="280" height="86" rx="7"/><text class="label" x="837" y="391">INSTITUCIONES</text><text class="sub" x="837" y="418">Normas, permisos y supervisión</text>
+  <text class="sub" x="26" y="496">Preguntas para el equipo: ¿quién puede verse afectado, qué espera y qué información falta para justificarlo?</text>
+  <text class="sub" x="26" y="521">Añadid o retirad grupos según la actividad real; no todos tienen la misma relevancia en todas las empresas.</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 465" role="img" aria-labelledby="title desc">
+  <title id="title">Interpretación de un indicador energético con datos y alcance</title>
+  <desc id="desc">Ejemplo hipotético con electricidad anual de 1000 a 900 megavatios hora y tráfico de 1 a 2 millones de terabytes. La intensidad pasa de 1 a 0,45 kilovatios hora por terabyte, siempre que el perímetro sea comparable.</desc>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:25px;font-weight:700}.head{font-size:18px;font-weight:700}.val{font-size:20px;font-weight:700;fill:#0758a5}.note{font-size:15px;fill:#536473}.rule{stroke:#b9c7d3;stroke-width:1.5}.box{fill:#f0f6fc;stroke:#b9c7d3;stroke-width:1.3}
+  </style>
+  <rect width="1050" height="465" fill="#fff"/>
+  <text class="title" x="27" y="40">Un dato cambia de sentido cuando cambia el servicio</text>
+  <text class="note" x="27" y="66">Ejemplo didáctico hipotético; comparar solo MWh oculta la intensidad energética.</text>
+  <rect class="box" x="23" y="92" width="1004" height="235" rx="7"/>
+  <text class="head" x="49" y="126">MÉTRICA</text><text class="head" x="421" y="126">PERIODO INICIAL</text><text class="head" x="739" y="126">PERIODO FINAL</text>
+  <path class="rule" d="M49 145 H997 M49 207 H997 M49 269 H997"/>
+  <text class="head" x="49" y="183">Electricidad de la red</text><text class="val" x="421" y="183">1.000 MWh</text><text class="val" x="739" y="183">900 MWh</text>
+  <text class="head" x="49" y="245">Tráfico cursado</text><text class="val" x="421" y="245">1 millón de TB</text><text class="val" x="739" y="245">2 millones de TB</text>
+  <text class="head" x="49" y="307">Intensidad energética</text><text class="val" x="421" y="307">1 kWh/TB</text><text class="val" x="739" y="307">0,45 kWh/TB</text>
+  <text class="note" x="27" y="359">Cálculo: 1.000 MWh = 1.000.000 kWh; 900 MWh = 900.000 kWh. Se divide cada consumo por el tráfico de su periodo.</text>
+  <text class="note" x="27" y="389">Conclusión condicionada: la intensidad mejora si se midieron los mismos equipos, límites y tipos de tráfico.</text>
+  <text class="note" x="27" y="419">Antes de afirmar eficiencia, comprobamos método, fuente de registros y posibles cambios en el perímetro de la red.</text>
+</svg>

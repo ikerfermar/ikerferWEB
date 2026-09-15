@@ -107,6 +107,36 @@
                       "descargarWord": false
                     }
                   ]
+                },
+                {
+                  "id": "ut-02",
+                  "codigo": "UT 2",
+                  "nombre": "Retos ambientales y sociales",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-03",
+                  "codigo": "UT 3",
+                  "nombre": "Los ODS en el desempeño profesional y personal",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-04",
+                  "codigo": "UT 4",
+                  "nombre": "Economía verde y circular",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-05",
+                  "codigo": "UT 5",
+                  "nombre": "Actividades sostenibles y medioambiente",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-06",
+                  "codigo": "UT 6",
+                  "nombre": "El plan de sostenibilidad",
+                  "contenidos": []
                 }
               ]
             },
@@ -165,15 +195,69 @@
                 {
                   "id": "ut-01",
                   "codigo": "UT 1",
-      "nombre": "Introducción a los sistemas de seguridad electrónica y normativa",
+                  "nombre": "Introducción a los sistemas de seguridad. Normativa",
                   "contenidos": [
                     {
                       "id": "teoria-01",
-          "titulo": "Introducción a los sistemas de seguridad electrónica y normativa",
-          "tipo": "teoria"
-        }
-      ]
-    }
+                      "titulo": "Introducción a los sistemas de seguridad electrónica y normativa",
+                      "tipo": "teoria"
+                    },
+                    {
+                      "id": "practica-01",
+                      "titulo": "Práctica 1.1 - Reconocimiento de los sistemas de seguridad del taller",
+                      "tipo": "practica",
+                      "descargarWord": false
+                    }
+                  ]
+                },
+                {
+                  "id": "ut-02",
+                  "codigo": "UT 2",
+                  "nombre": "Instalaciones de alarma contra incendios: equipos y elementos",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-03",
+                  "codigo": "UT 3",
+                  "nombre": "Montaje y configuración de instalaciones de protección contra incendios",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-04",
+                  "codigo": "UT 4",
+                  "nombre": "Sistemas de seguridad anti-intrusión: equipos y elementos",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-05",
+                  "codigo": "UT 5",
+                  "nombre": "Montaje de instalaciones de seguridad anti-intrusión",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-06",
+                  "codigo": "UT 6",
+                  "nombre": "Instalaciones de CCTV: equipos y elementos",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-07",
+                  "codigo": "UT 7",
+                  "nombre": "Montaje de instalaciones de CCTV",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-08",
+                  "codigo": "UT 8",
+                  "nombre": "Sistemas de control de accesos: equipos y elementos",
+                  "contenidos": []
+                },
+                {
+                  "id": "ut-09",
+                  "codigo": "UT 9",
+                  "nombre": "Montaje de instalaciones de control de accesos",
+                  "contenidos": []
+                }
               ]
             }
           ]
