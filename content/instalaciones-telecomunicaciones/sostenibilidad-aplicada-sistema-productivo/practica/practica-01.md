@@ -27,7 +27,7 @@ Consultad la [ficha ESG 2025 de Telefónica, publicada el 15 de junio de 2026](h
 | 6 | Se realizaron **17.219 auditorías a proveedores**. | Grupo; [F2, Información sobre gobernanza, «Auditorías a proveedores clave», p. 11 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-gobernanza-informe-consolidado-telefonica.pdf#page=11). | Actividad comunicada; incluye auditorías documentales e *in situ* y no expresa su resultado. |
 | 7 | La compañía declara **tolerancia cero frente a la corrupción**. | Política del grupo; [F2, Información sobre gobernanza, «Conducta empresarial», p. 2 del PDF](https://www.telefonica.com/es/wp-content/uploads/sites/4/2026/03/informacion-gobernanza-informe-consolidado-telefonica.pdf#page=2). | Compromiso declarado, no indicador de resultado. |
 
-La tabla combina ámbitos distintos. El 95 % de cobertura rural corresponde a España; no debe compararse como si describiera todos los países del grupo. El 93 % se refiere a electricidad en instalaciones propias, no a toda la energía que consume la actividad. La reducción del 49 % tampoco parte de un único año base para los tres alcances, y el informe señala cambios en el perímetro del grupo que pueden afectar a las comparaciones temporales de emisiones. Asimismo, una auditoría realizada no prueba por sí sola que un proveedor cumpla los requisitos. Registrad estas diferencias en vuestro análisis.
+La tabla combina ámbitos distintos. El 95 % de cobertura rural corresponde a España; no debe compararse como si describiera todos los países del grupo. El 93 % se refiere a electricidad en instalaciones propias, no a toda la energía que consume la actividad, ya que existe gasto extra, por ejemplo en transporte. La reducción del 49 % tampoco parte de un único año base para los tres alcances, sino de dos, y el informe señala cambios en el perímetro del grupo que pueden afectar a las comparaciones temporales de emisiones. Asimismo, una auditoría realizada no indica por sí sola cuál fue el resultado; habría que conocer sus conclusiones, su alcance y los incumplimientos detectados. Registrad estas diferencias en vuestro análisis.
 
 ## 1. Clasificación ASG y ODS
 
@@ -38,7 +38,7 @@ Identificar qué dimensión o dimensiones ASG representa cada asunto y justifica
 ### 1.2. Trabajo solicitado
 
 1. Clasificad los siete elementos de la tabla como A, S o G. Podéis asignar más de una dimensión cuando lo justifiquéis. Redactad **20–35 palabras de justificación por dato**.
-2. Indicad cuáles son resultados comunicados y cuál es una política declarada. Explicad en **60–80 palabras** por qué no deben tratarse del mismo modo.
+2. Indicad cuáles son resultados comunicados y cuál es una política o compromiso declarado (Ver columna naturaleza). Explicad en **60–80 palabras** qué es cada una y por qué no deben tratarse del mismo modo.
 3. Elegid **dos ODS** de la [lista oficial de Naciones Unidas](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/). Relacionad cada uno con un dato concreto y una posible actuación de la empresa; no basta con nombrar el objetivo. Escribid **60–90 palabras por relación**.
 
 ### 1.3. Entrega
@@ -93,6 +93,8 @@ Relacionar asuntos ASG con personas afectadas y valorar qué información falta 
 
 - **Documento de análisis:** clasificación de los datos, dos ODS justificados, diferencia entre resultados y políticas, análisis de dos grupos de interés, información adicional solicitada y conclusión, con las extensiones indicadas. Los títulos y las referencias no cuentan dentro de los rangos de palabras.
 - **Trazabilidad:** indicad F1 o F2, el apartado o la página del PDF y el ámbito de cada dato utilizado; distinguid España del grupo y electricidad de energía total.
+
+La extensión total del texto evaluable será de **560 a 845 palabras**. Las tablas, los títulos y las referencias no cuentan dentro de ese intervalo.
 
 ## Criterios de evaluación
 

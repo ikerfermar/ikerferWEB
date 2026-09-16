@@ -1,7 +1,7 @@
 # Introducción a los sistemas de seguridad electrónica y normativa
 
 **Circuito cerrado de televisión y seguridad electrónica**  
-2.º CFGM Instalaciones de Telecomunicaciones
+2.º curso del Ciclo Formativo de Grado Medio (CFGM) de Instalaciones de Telecomunicaciones
 
 ---
 
@@ -17,7 +17,75 @@ La **captación** transforma una condición física en información: una cámara
 >
 > Un contacto de puerta cambia de estado al abrirse, pero el cable que lo une a la central está cortado. Si la línea está supervisada, la central mostrará una avería o un sabotaje aunque nadie abra la puerta. Si no vigila la integridad de la línea, el fallo puede pasar inadvertido. La diferencia no está en el contacto, sino en el diseño del circuito y en la programación de la central.
 
-## 1. Clasificación de los sistemas de seguridad electrónica
+## 1. Cadenas funcionales de los principales sistemas
+
+Una **cadena funcional** representa el recorrido de la información desde que se capta un fenómeno hasta que el sistema genera una respuesta. Su forma general es **captación o detección → transmisión → control o procesamiento → aviso, actuación o registro**. No debe confundirse con el recorrido de la corriente: la señal y la energía pueden circular por conductores distintos o compartir el mismo medio, como sucede con Ethernet y la alimentación a través de Ethernet (PoE, *Power over Ethernet*).
+
+La **alimentación** es un bloque transversal. Suministra energía a cámaras, detectores, centrales, grabadores, equipos de red y actuadores; cuando la continuidad del servicio resulta necesaria, incorpora una fuente secundaria o una batería. Un diagrama funcional ayuda a reconocer relaciones entre equipos, pero no sustituye un esquema de conexión, las instrucciones del fabricante ni los cálculos del proyecto.
+
+> **Idea clave**
+>
+> La cadena funcional explica cómo se obtiene información, cómo llega a la unidad que decide y qué respuesta produce. La alimentación permite que esas funciones se mantengan, pero no constituye el último paso de la cadena.
+
+### 1.1. Detección de incendios convencional
+
+En un sistema convencional, los detectores automáticos y los pulsadores modifican el estado eléctrico de una **zona supervisada**. La central interpreta ese cambio, identifica la zona afectada y gobierna las salidas previstas, como los avisadores acústicos. La **resistencia de fin de línea (EOL, *End Of Line*)** permite supervisar el circuito según el diseño del fabricante. Por tanto, el detector no alimenta ni activa directamente la sirena: ambos se relacionan a través de la central.
+
+<figure class="study-figure"><a href="../img/cadena-incendios-convencional.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el diagrama funcional de detección de incendios convencional en una pestaña nueva"><img src="../img/cadena-incendios-convencional.webp" alt="Diagrama de una central de incendios con dos zonas, detectores de humo y temperatura, pulsadores, resistencias de fin de línea y avisador acústico" loading="lazy"></a><figcaption>Cadena funcional: detector o pulsador → zona supervisada → central → avisador. La resistencia EOL permite supervisar el estado de la línea; no es un dispositivo de detección. Es un esquema simplificado y no sirve como instrucción de conexionado. Fuente: <a href="https://wiringall.com/fire-alarm-system-wiring-diagram.html">WiringAll, «Fire Alarm System Wiring Diagram»</a>. Pulsa para ampliar.</figcaption></figure>
+
+Esta resistencia permite que la central diferencie determinados estados de la zona, como reposo, alarma o fallo. En el dibujo aparece situada al final de cada circuito para que también pueda detectarse una interrupción anterior. La alimentación de red y la batería de la central sostienen la función, pero quedan fuera de la secuencia detector → decisión → aviso.
+
+### 1.2. Intrusión
+
+Un sistema de intrusión combina entradas diferentes —contactos magnéticos, detectores infrarrojos pasivos (PIR, *Passive Infrared*), barreras o pulsadores— con una central que procesa sus estados. La comunicación puede ser cableada, por bus o inalámbrica. Cuando la programación reconoce una condición de alarma, la respuesta puede ser local, mediante sirena o señal luminosa, y remota, mediante una comunicación hacia una central receptora u otra persona autorizada.
+
+<figure class="study-figure"><a href="../img/cadena-intrusion.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el diagrama funcional de un sistema de intrusión en una pestaña nueva"><img src="../img/cadena-intrusion.webp" alt="Diagrama de intrusión con detectores cableados e inalámbricos, pulsador de pánico, contacto magnético y barrera conectados a una central con avisos locales y transmisión remota" loading="lazy"></a><figcaption>Cadena funcional: detector o pulsador → enlace cableado o radio → central de intrusión → aviso local y transmisión remota. El esquema muestra la red telefónica pública conmutada (PSTN, <em>Public Switched Telephone Network</em>), una tecnología histórica; en instalaciones actuales son habituales el protocolo de Internet (IP, <em>Internet Protocol</em>) y las redes móviles. Los detectores de humo o temperatura dibujados no convierten esta central en un sistema reglamentario de detección de incendios. Fuente: <a href="https://arindamcctvaccesscontrol.blogspot.com/2016/11/british-and-european-intruder-alarm.html">Arindam, «Intruder Alarm Overview»</a>. Pulsa para ampliar.</figcaption></figure>
+
+La cadena no termina necesariamente en una sirena. Una salida local puede advertir en el edificio, mientras una ruta de comunicación transmite el evento para su verificación. Debe distinguirse también el **sensor** que origina la información del **actuador** que produce el aviso: aunque ambos estén conectados a la misma central, cumplen funciones opuestas.
+
+### 1.3. Circuito cerrado de televisión (CCTV) sobre coaxial
+
+En CCTV sobre coaxial, la cámara genera la señal de vídeo y la conduce hasta un **grabador digital de vídeo (DVR, *Digital Video Recorder*)**. El grabador recibe los canales, los procesa, los almacena y entrega imagen al monitor. Su interfaz de red permite consultar el sistema desde equipos autorizados, pero esa conexión exterior no sustituye el enlace de vídeo existente entre cada cámara y el DVR.
+
+<figure class="study-figure"><a href="../img/cadena-cctv-coaxial.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el diagrama funcional de CCTV sobre coaxial en una pestaña nueva"><img src="../img/cadena-cctv-coaxial.webp" alt="Diagrama de cuatro cámaras conectadas a entradas de vídeo de un DVR Turbo HD con monitor, audio, router y acceso remoto" loading="lazy"></a><figcaption>Cadena funcional: cámara → enlace de vídeo sobre coaxial → DVR → almacenamiento y visualización; el router añade acceso remoto. El equipo Turbo HD (<em>High Definition</em>, alta definición) representa vídeo de alta definición sobre coaxial, no el sistema analógico PAL (<em>Phase Alternating Line</em>) clásico. Fuente: <a href="https://www.rfwireless-world.com/terminology/analog-cctv-vs-ip-cctv">RF Wireless World, «Analog CCTV vs IP CCTV»</a>. Pulsa para ampliar.</figcaption></figure>
+
+El dibujo reúne funciones principales y auxiliares. Las cámaras, el medio de transmisión y el DVR forman la cadena de vídeo; el monitor y el ratón permiten operar; el router proporciona comunicación con la red; el micrófono y el altavoz añaden audio cuando el sistema y su uso lo permiten. Identificar esas funciones evita interpretar todos los cables como si transportasen la misma señal.
+
+### 1.4. CCTV IP
+
+Una **cámara IP** es un dispositivo de red: capta la escena, codifica el vídeo y genera datos que circulan por Ethernet. Si la cámara y el conmutador admiten **PoE**, el mismo cable transporta comunicación y alimentación, aunque ambas funciones siguen siendo conceptualmente distintas. El **grabador de vídeo en red (NVR, *Network Video Recorder*)** recibe los flujos de vídeo a través de la red, los registra y facilita su consulta.
+
+<figure class="study-figure"><a href="../img/cadena-cctv-ip.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el diagrama funcional de CCTV IP con PoE en una pestaña nueva"><img src="../img/cadena-cctv-ip.webp" alt="Diagrama de cámaras IP de tipo domo y bullet conectadas por Ethernet a un conmutador PoE, un NVR, un monitor y un router" loading="lazy"></a><figcaption>Cadena funcional: cámara IP → Ethernet y PoE → conmutador → NVR → almacenamiento y visualización; el router comunica la red con otros equipos autorizados. El esquema muestra relaciones funcionales, no todos los requisitos de configuración o ciberseguridad. Fuente: <a href="https://dk.delgatdataentry.com/">Delgat Data Entry</a>. Pulsa para ampliar.</figcaption></figure>
+
+En esta arquitectura, el conmutador transporta los datos entre cámaras, grabador y otros equipos de la red. El router solo es necesario cuando se requiere comunicación entre redes o acceso exterior; no debe suponerse que toda cámara tenga que quedar expuesta a Internet. La dirección IP, los permisos, la segmentación y las actualizaciones forman parte del funcionamiento seguro del sistema.
+
+### 1.5. Control de accesos
+
+La cadena básica de una puerta es **credencial → lector → controlador → elemento de cierre y registro**. El lector obtiene un identificador de una tarjeta, huella o código y lo transmite al controlador. El controlador aplica las reglas de autorización; si permite el paso, gobierna la cerradura y registra el resultado junto con la puerta, la identidad y la hora cuando esa información forma parte del sistema.
+
+<figure class="study-figure"><a href="../img/cadena-control-accesos.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el diagrama funcional de control de accesos en una pestaña nueva"><img src="../img/cadena-control-accesos.webp" alt="Diagrama de tres puertas con lectores, controladores, cerraduras, pulsador de salida, interfaz serie RS-485, comunicación TCP, conmutador y ordenador de gestión" loading="lazy"></a><figcaption>Para leer el conjunto, seguid primero una sola puerta: credencial → lector → controlador → cerradura; después incorporad el registro y la gestión centralizada. La interfaz serie RS-485 permite comunicar equipos mediante un bus. El protocolo de control de transmisión (TCP, <em>Transmission Control Protocol</em>) aparece como abreviatura gráfica de comunicación de red y no identifica por sí solo un tipo de cable. Fuente: <a href="https://andy811geglibguide.z21.web.core.windows.net/access-control-system-block-diagram.html">Andy811 Geglib Guide, «Access Control System Block Diagram»</a>. Pulsa para ampliar.</figcaption></figure>
+
+El pulsador de salida, el contacto de puerta y el cierrapuertas completan la operación física. El contacto confirma si la hoja está abierta o cerrada; por ello una orden de apertura registrada no demuestra que la puerta se haya movido. La comunicación RS-485 o de red permite integrar varias puertas y un ordenador de gestión, pero la decisión puede residir en el controlador local según la arquitectura.
+
+### 1.6. Comparación de las cadenas
+
+| Sistema | Captación o detección | Transmisión | Control o procesamiento | Respuesta o registro |
+|---|---|---|---|---|
+| Incendios | Detector de humo o temperatura y pulsador. | Zona o bus. | Central de incendios. | Avisadores, señalización y maniobras previstas. |
+| Intrusión | PIR, contacto magnético, barrera o pulsador. | Cable, bus o radio. | Central de intrusión. | Sirena, comunicación y registro. |
+| CCTV sobre coaxial | Cámara. | Coaxial u otro medio compatible. | DVR. | Grabación, monitor y acceso remoto. |
+| CCTV IP | Cámara IP. | Ethernet e IP. | NVR o software de gestión. | Grabación, monitor y acceso remoto. |
+| Control de accesos | Lector de tarjeta, huella o número de identificación personal (PIN, *Personal Identification Number*). | Interfaz de lector, RS-485 o red, según el equipo. | Controlador. | Cerradura, estado de puerta y registro. |
+
+La tabla permite reconocer una función aunque cambie el equipo. Una cámara IP integra captación y codificación; un conmutador transmite datos y puede suministrar PoE; un NVR procesa y registra. En todos los sistemas se comprueba además la alimentación: puede proceder de una fuente de 12 V o 24 V, de una central, de PoE o de equipos independientes, con respaldo cuando lo exijan el diseño y la normativa.
+
+> **Comprueba lo aprendido — CCTV coaxial e IP**
+>
+> - **Situación:** una instalación utiliza cámaras con conector de bayoneta Neill-Concelman (BNC) y DVR; otra emplea cámaras IP, conmutador PoE y NVR.
+> - **Tarea:** dibuja las dos cadenas funcionales desde la cámara hasta la visualización y señala qué cambia en captación, transmisión, alimentación y grabación.
+> - **Resultado:** dos esquemas y tres diferencias explicadas con una frase cada una.
+
+## 2. Clasificación de los sistemas de seguridad electrónica
 
 La clasificación más útil atiende a la finalidad. En un mismo edificio pueden coexistir detección de incendios, intrusión, videovigilancia y control de accesos; compartir canalizaciones o una interfaz de gestión no convierte sus requisitos en equivalentes. Cada subsistema identifica fenómenos distintos y obedece a reglas técnicas y legales propias.
 
@@ -31,27 +99,27 @@ La clasificación más útil atiende a la finalidad. En un mismo edificio pueden
 
 La tabla no permite intercambiar componentes. Un detector de humo, una cámara y un sensor PIR pueden parecer pequeños dispositivos de techo o pared, pero realizan funciones diferentes. Incluso dentro de una misma familia hay que comprobar la compatibilidad con la central, la alimentación y las condiciones de montaje.
 
-### 1.1. Detección y alarma de incendios
+### 2.1. Detección y alarma de incendios
 
 La detección de incendios busca reconocer lo antes posible fenómenos asociados al fuego y avisar a las personas o a otros sistemas. Puede combinar detectores automáticos, pulsadores manuales, una central de control, dispositivos acústicos y ópticos, alimentación principal y batería. La central también debe indicar estados de fallo, como pérdida de comunicación o alimentación defectuosa.
 
-<figure class="content-photo"><img src="../img/detector-humos.jpg" alt="Detector automático de humos fijado en el techo, con su carcasa y base de montaje visibles" loading="lazy"><figcaption>Este detector es una entrada automática; su ubicación y tecnología se identifican en el plano y en la ficha del fabricante. La fotografía no acredita que esté conectado a una central. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Smoke_detector_on_the_stretch_ceiling_(02).jpg">Georg Pik, CC0 1.0</a>.</figcaption></figure>
+<figure class="content-photo"><img src="../img/detector-humos.jpg" alt="Detector automático de humos fijado en el techo, con su carcasa y base de montaje visibles" loading="lazy"><figcaption>Este detector es una entrada automática; su ubicación y tecnología se identifican en el plano y en la ficha del fabricante. La fotografía no acredita que esté conectado a una central. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Smoke_detector_on_the_stretch_ceiling_(02).jpg">Georg Pik, Creative Commons Zero 1.0 (CC0 1.0)</a>.</figcaption></figure>
 
 **Detectar** no es **extinguir**. El detector o pulsador informa; un sistema de extinción intenta controlar el fuego mediante otro equipamiento. Algunas instalaciones coordinan maniobras sobre puertas, ventilación u otros equipos, pero estas deben estar previstas en el diseño. No todo aviso implica automáticamente cortar la electricidad o activar una extinción. Para comprobar las obligaciones de instalación y mantenimiento se consulta el [Reglamento de instalaciones de protección contra incendios (RIPCI)](https://www.boe.es/buscar/act.php?id=BOE-A-2017-6606), no las reglas de una alarma de intrusión.
 
-### 1.2. Detección de gases
+### 2.2. Detección de gases
 
 Un detector de gases mide una magnitud del ambiente y la compara con los umbrales establecidos para un riesgo concreto. Puede advertir de una sustancia inflamable o tóxica, de una fuga vinculada a un proceso o de una atmósfera con falta de oxígeno. La **ubicación** resulta decisiva: la densidad del gas, la ventilación, la geometría del recinto y las fuentes probables de fuga determinan dónde conviene medir. Montar todos los detectores a la misma altura por costumbre puede dejar sin vigilancia la zona donde se acumula el gas.
 
 La señal debe llegar a una unidad capaz de advertir a las personas y, cuando esté previsto, activar ventilación o interrumpir un suministro. Esta respuesta necesita coordinación con el proyecto. Un detector que mide una concentración no convierte por sí solo un recinto en seguro ni sustituye el mantenimiento de la instalación que puede originar la fuga.
 
-### 1.3. Intrusión, robo y atraco
+### 2.3. Intrusión, robo y atraco
 
 Un sistema de **intrusión** intenta reconocer un acceso no autorizado antes o durante su entrada en la zona protegida. Se estudian los recorridos probables, los cerramientos y los puntos vulnerables; después se combinan detectores adecuados. Un contacto magnético vigila la apertura de una puerta o ventana, un detector PIR observa cambios de radiación infrarroja compatibles con movimiento y una barrera activa reconoce la interrupción de un haz. La protección depende tanto de su colocación como de la reacción ante averías o sabotajes.
 
 El aviso de **robo o atraco** responde a una situación diferente: puede comenzar por la activación voluntaria de un dispositivo de aviso cuando una persona está amenazada. Por eso no se trata la señal de atraco como si fuese un detector de movimiento. La forma de verificación y comunicación a una central receptora está regulada en el ámbito de la seguridad privada.
 
-<figure class="study-figure"><img src="../img/contacto-magnetico.jpg" alt="Contacto magnético inalámbrico instalado en el marco de una puerta, junto a la parte móvil" loading="lazy" style="width:auto;max-height:420px;object-fit:contain"><figcaption>El contacto y el imán deben corresponder con el mismo acceso y quedar alineados cuando la puerta cierra. La fotografía muestra el montaje, no permite comprobar por sí sola la supervisión de la zona. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Installing_a_Magnetic_Door_Contact.JPG">Ndamack, CC BY-SA 3.0</a>.</figcaption></figure>
+<figure class="study-figure"><img src="../img/contacto-magnetico.jpg" alt="Contacto magnético inalámbrico instalado en el marco de una puerta, junto a la parte móvil" loading="lazy" style="width:auto;max-height:420px;object-fit:contain"><figcaption>El contacto y el imán deben corresponder con el mismo acceso y quedar alineados cuando la puerta cierra. La fotografía muestra el montaje, no permite comprobar por sí sola la supervisión de la zona. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Installing_a_Magnetic_Door_Contact.JPG">Ndamack, Creative Commons Atribución-CompartirIgual 3.0 (CC BY-SA 3.0)</a>.</figcaption></figure>
 
 <figure class="content-photo"><img src="../img/detector-pir.jpg" alt="Detector PIR desmontado, con lente de Fresnel en el frontal y circuito electrónico detrás" loading="lazy"><figcaption>La lente segmenta el campo observado por el sensor. Un PIR es pasivo: detecta cambios de radiación infrarroja, no emite un haz de vigilancia. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:PIR_Motion_Detector.jpg">oomlout, CC BY-SA 2.0</a>.</figcaption></figure>
 
@@ -61,7 +129,7 @@ El aviso de **robo o atraco** responde a una situación diferente: puede comenza
 >
 > Un PIR orientado hacia una ventana soleada puede responder a variaciones del entorno que no corresponden a una intrusión. Cambiar la sensibilidad sin revisar la ubicación quizá reduzca los avisos, pero también puede crear una zona sin detección. Primero se analiza la causa, la cobertura y el ambiente; después se decide si hay que reubicar, cambiar o ajustar el detector.
 
-### 1.4. Circuito cerrado de televisión
+### 2.4. Circuito cerrado de televisión
 
 Un **circuito cerrado de televisión (CCTV)** capta imágenes destinadas a un grupo limitado de usuarios autorizados. La instalación puede permitir observación en directo, grabación, consulta posterior o verificación de alarmas. Sus bloques básicos son cámara y óptica, transmisión, alimentación, grabador o servidor, almacenamiento e interfaz de visualización. Ver imagen en un monitor no demuestra que el disco esté grabando ni que conserve los archivos.
 
@@ -79,17 +147,23 @@ https://www.youtube.com/watch?v=u3BXi_ro_rE
 
 La imagen de una persona identificada o identificable es un dato personal. Una cámara técnicamente viable puede no ser admisible en el lugar o con el encuadre elegido. Antes de fijar su posición se analiza la finalidad, la zona realmente necesaria, quién accederá a las imágenes y cómo se informará a las personas. Estos límites se desarrollan en el apartado de protección de datos.
 
-### 1.5. Accesos, presencia y seguimiento
+### 2.5. Accesos, presencia y seguimiento
 
 El **control de accesos** decide si se autoriza el paso por una puerta o a una zona. Combina habitualmente lector, credencial, controladora, elemento de cierre y contacto que informa del estado de la puerta. La autorización no equivale al movimiento físico: la orden de apertura puede haberse emitido y la puerta seguir cerrada por una avería. Por ello se interpretan conjuntamente los eventos de control y las señales de estado.
 
-El **control de presencia** registra entradas, salidas o permanencia según una finalidad concreta. El seguimiento de objetos o vehículos puede utilizar RFID, redes móviles o posicionamiento. Aunque todos identifican o registran eventos, no comparten automáticamente legitimación, equipamiento ni plazos de conservación de datos.
+El **control de presencia** registra entradas, salidas o permanencia según una finalidad concreta. El seguimiento de objetos o vehículos puede utilizar identificación por radiofrecuencia (RFID, *Radio Frequency Identification*), redes móviles o posicionamiento. Aunque todos identifican o registran eventos, no comparten automáticamente legitimación, equipamiento ni plazos de conservación de datos.
 
-## 2. Elementos que constituyen una instalación
+> **Comprueba lo aprendido — sistema y función de cada equipo**
+>
+> - **Elementos:** detector de humo · PIR · cámara · lector · central de incendios · central de intrusión · DVR · NVR · sirena · cerradura eléctrica.
+> - **Tarea:** asigna cada elemento a incendios, intrusión, CCTV o control de accesos y clasifícalo como detector o captador, unidad de control, grabador, interfaz o actuador.
+> - **Resultado:** una tabla de diez filas; si un equipo realiza más de una función, indica cuál es la principal y cuál es la adicional.
+
+## 3. Elementos que constituyen una instalación
 
 Un esquema profesional relaciona cada **bloque funcional** con un elemento real. Debe incluir una leyenda, identificadores de equipos y conexiones para seguir el recorrido de la señal y de la energía. Un símbolo aislado no basta: una «C» puede representar una cámara o una central según el plano. La leyenda y las conexiones eliminan esa ambigüedad.
 
-La lámina siguiente reúne **dieciocho elementos frecuentes**. Sus formas para CCTV, intrusión y accesos son una convención didáctica: no existe una abreviatura válida para todos los proyectos. Para incendios, la [guía técnica sobre detección y alarma, apartado 15](https://www.diba.cat/documents/467843/96195101/P1E07011GuiaDeteccion_automatica_incendios_Asepeyo.pdf/fea05314-5cd8-4f9d-89c3-09c64f1eeb18) permite contrastar símbolos de plano; utilizadla como referencia gráfica, no como legislación vigente. El [material docente de configuración de CCTSE, apartado 3.2](https://sarreplec.caib.es/pluginfile.php/13809/mod_folder/content/0/IT_CCTSE02_2020_VI.pdf?forcedownload=1) explica por qué la simbología debe acompañarse de convenciones de representación.
+La lámina siguiente reúne **dieciocho elementos frecuentes**. Sus formas para CCTV, intrusión y accesos son una convención didáctica: no existe una abreviatura válida para todos los proyectos. Para incendios, la [guía técnica sobre detección y alarma, apartado 15](https://www.diba.cat/documents/467843/96195101/P1E07011GuiaDeteccion_automatica_incendios_Asepeyo.pdf/fea05314-5cd8-4f9d-89c3-09c64f1eeb18) permite contrastar símbolos de plano; utilizadla como referencia gráfica, no como legislación vigente. El [material docente del módulo Circuito cerrado de televisión y seguridad electrónica (CCTSE), apartado 3.2](https://sarreplec.caib.es/pluginfile.php/13809/mod_folder/content/0/IT_CCTSE02_2020_VI.pdf?forcedownload=1) explica por qué la simbología debe acompañarse de convenciones de representación.
 
 <figure class="study-figure"><a href="../img/leyenda-sistemas-seguridad.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar la leyenda de sistemas de seguridad en una pestaña nueva"><img src="../img/leyenda-sistemas-seguridad.svg" alt="Leyenda ilustrativa de dieciocho elementos habituales: seis de incendio, seis de intrusión y seis de CCTV o accesos, cada uno con su función" loading="lazy"></a><figcaption>Reconoced primero la función y después la abreviatura. En una instalación concreta prevalecen la leyenda del plano, la norma aplicable y la ficha del equipo. Pulsa para ampliar.</figcaption></figure>
 
@@ -101,7 +175,17 @@ Al añadir elementos de seguridad, cada marca necesita **ubicación, código y s
 
 <figure class="study-figure"><a href="../img/plano-seguridad-lectura.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el ejemplo de plano de seguridad en una pestaña nueva"><img src="../img/plano-seguridad-lectura.svg" alt="Plano de ejemplo con ocho elementos identificados, leyenda, cobertura ilustrativa de cámara y PIR, y enlace de cámara a grabador" loading="lazy"></a><figcaption>Leed el plano en este orden: planta y accesos, marca de cada equipo, leyenda, cobertura y conexión. No se trata de un proyecto ejecutivo ni de una propuesta de ubicación normativa. Pulsa para ampliar.</figcaption></figure>
 
-### 2.1. Unidad de control y alimentación
+El plano siguiente permite pasar del símbolo aislado al documento técnico. Localizad primero la leyenda y, después, seguid sobre la planta sus cuatro capas de información: los símbolos de cámara, los arcos rojos de cobertura, los recorridos de cable en azul y el grabador digital. La forma gráfica de una cámara puede variar respecto a la leyenda didáctica anterior; por eso el significado debe comprobarse siempre en la leyenda del propio plano.
+
+<figure class="study-figure"><a href="../img/plano-cctv-real-con-simbologia.jpg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el plano real de CCTV con simbología, cobertura y cableado en una pestaña nueva"><img src="../img/plano-cctv-real-con-simbologia.jpg" alt="Plano técnico de CCTV de una planta baja con símbolos de cámara, arcos rojos de cobertura, recorridos azules de cable, grabador y leyenda" loading="lazy"></a><figcaption>Plano real de una instalación de CCTV. Comprobad si cada cámara cubre el acceso o espacio previsto y seguid su recorrido hasta el grabador antes de interpretar la instalación. Las convenciones gráficas del documento sirven como ejemplo de lectura y no sustituyen la documentación ni la normativa aplicables al proyecto. Fuente: <a href="https://kiesarquitecturainterior.weebly.com/cctv.html">Estefanía King Baca, «Instalaciones de CCTV»</a>. Pulsa para ampliar.</figcaption></figure>
+
+> **Comprueba lo aprendido — lectura de un plano**
+>
+> - **Situación:** utiliza el plano real de CCTV anterior y comienza por su leyenda.
+> - **Tarea:** localiza un símbolo de cámara, su campo de cobertura, el recorrido del cable y el equipo de grabación; sigue después una conexión completa sobre la planta.
+> - **Resultado:** una captura anotada o una lista numerada con cinco indicaciones. No deduzcas del plano datos que no figuren en él.
+
+### 3.1. Unidad de control y alimentación
 
 La **central de control** recibe señales, las interpreta y gobierna salidas. Comprende electrónica de proceso, memoria de programación, entradas, salidas, interfaz de usuario y fuente de alimentación. En grandes instalaciones puede comunicarse con otros equipos o con software de supervisión, pero sigue siendo necesario identificar qué dispositivo toma cada decisión. En CCTV la gestión puede residir en un DVR, un NVR o un servidor de vídeo; no se llama «central de alarmas» a cualquiera de ellos.
 
@@ -111,7 +195,7 @@ Una central diferencia reposo, alarma, avería y sabotaje. La programación defi
 
 La **alimentación principal** suministra la energía ordinaria. La **alimentación de respaldo**, si el sistema la requiere, mantiene los bloques esenciales durante una interrupción. Una batería instalada no garantiza autonomía: se comprueban su estado, capacidad, cargador, consumo y periodicidad de pruebas. Una caída de tensión en un tendido largo también puede impedir el funcionamiento aunque la fuente entregue la tensión nominal. El cálculo y la ficha técnica prevalecen sobre una regla universal de «12 V para todo».
 
-### 2.2. Detectores, pulsadores y zonas
+### 3.2. Detectores, pulsadores y zonas
 
 Los **detectores** convierten una magnitud física o un cambio de estado en una señal interpretable. Pueden observar humo, temperatura, movimiento, apertura o rotura; cada principio exige una ubicación adecuada. Un **pulsador manual** permite que una persona genere deliberadamente un aviso. Ambos son entradas, pero su significado operativo difiere: una activación manual no se explica por los mismos factores que una respuesta automática al ambiente.
 
@@ -119,13 +203,13 @@ Los **detectores** convierten una magnitud física o un cambio de estado en una 
 
 Una **zona** agrupa señales que la central interpreta de forma conjunta o identificable. Esta división ayuda a localizar el evento y organizar la respuesta. Un sistema de incendios puede emplear lazos y direccionamiento según su tecnología; uno de intrusión puede supervisar un circuito mediante resistencia de fin de línea para distinguir reposo, alarma, corte y cortocircuito. La **resistencia de fin de línea** permite vigilar la integridad de un circuito compatible y bien configurado; no «mejora» por sí sola el detector.
 
-### 2.3. Actuadores, avisos e interfaces
+### 3.3. Actuadores, avisos e interfaces
 
 Los **actuadores** realizan una acción física, como gobernar un relé, una cerradura o una maniobra prevista en el proyecto. Los dispositivos de **señalización** comunican una condición mediante sonido, luz o pantalla. Una sirena de intrusión, una alarma de incendio y una baliza de estado pueden compartir principios electrónicos, pero sus funciones y requisitos de ubicación no son iguales.
 
 Los teclados, lectores, paneles repetidores y aplicaciones de operación son **interfaces**. Permiten autorizar, consultar, programar o reconocer estados; no sustituyen ni la central ni el sensor. La documentación debe indicar quién puede operar cada función y qué ocurre si la interfaz queda fuera de servicio.
 
-### 2.4. Central receptora de alarmas
+### 3.4. Central receptora de alarmas
 
 La **Central Receptora de Alarmas (CRA)** presta un servicio remoto de recepción, verificación y gestión de señales procedentes de instalaciones conectadas. No debe confundirse con la central situada en el edificio: una gestiona procedimientos y avisos a distancia; la otra detecta y gobierna elementos locales. Una señal transmitida no se comunica automáticamente a las Fuerzas y Cuerpos de Seguridad. La [Orden INT/316/2011](https://www.boe.es/buscar/act.php?id=BOE-A-2011-3170) establece métodos y condiciones de verificación cuando corresponde.
 
@@ -139,11 +223,17 @@ Este vídeo introductorio de SATEL muestra la relación entre detectores, centra
 
 https://www.youtube.com/watch?v=nnBIPDiyRfM
 
-## 3. Medios de comunicación entre componentes
+> **Comprueba lo aprendido — estados locales y comunicación con la CRA**
+>
+> - **Casos:** PIR activado · corte de una zona · batería baja · apertura de la tapa de la central · pérdida de la conexión IP con la CRA.
+> - **Tarea:** clasifica cada caso como alarma, avería, sabotaje o fallo de comunicación y representa en un esquema la central local, la sirena, la ruta exterior y la CRA.
+> - **Resultado:** una tabla de cinco filas y dos frases que expliquen qué seguiría funcionando si la alarma local se activa, pero la CRA no recibe la señal.
+
+## 4. Medios de comunicación entre componentes
 
 El medio de transmisión transporta señales o datos entre equipos. Elegirlo exige considerar distancia, volumen de información, interferencias, canalización disponible, supervisión del enlace, mantenimiento y coste. «Cableado» no significa infalible y «inalámbrico» no significa que nunca se necesite cable: la alimentación y la comunicación exterior pueden seguir teniendo conexiones físicas.
 
-### 3.1. Cable, coaxial, par trenzado y fibra
+### 4.1. Cable, coaxial, par trenzado y fibra
 
 Los **conductores multipolares** se emplean para zonas, alimentación, buses o contactos auxiliares. Su continuidad puede vigilarse con circuitos adecuados, pero un tendido mal identificado o próximo a interferencias complica el mantenimiento. Hay que respetar la sección, longitud y condiciones establecidas por fabricante y normativa aplicable.
 
@@ -151,13 +241,53 @@ El **coaxial** fue habitual para vídeo analógico y sigue presente en instalaci
 
 <figure class="content-photo"><img src="../img/cables-ethernet-coaxial.jpg" alt="Dos cables de conexión empaquetados, uno con conectores de red y otro de tipo coaxial" loading="lazy"><figcaption>El marcaje y la inspección de ambos extremos son más fiables que el color de la cubierta. La foto permite comparar medios físicos, no deducir protocolo o calidad de señal. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Ethernet_Cat5E_RJ45_cable_%26_coaxial_cable.jpg">Kent Madsen, CC BY-SA 2.0</a>.</figcaption></figure>
 
-### 3.2. Enlaces inalámbricos
+### 4.2. Cables, conectores e interfaces habituales
+
+El **cable** es el medio físico, el **conector** termina ese medio y la **interfaz** define características eléctricas, ópticas o lógicas de la comunicación. No son términos equivalentes. Un BNC no indica por sí solo qué formato de vídeo circula por el coaxial; un conector 8P8C no demuestra que exista enlace Ethernet; y RS-485 puede terminar en una borna, un conector modular o una conexión propia del fabricante.
+
+En seguridad electrónica se repiten unas familias concretas. Las demás pueden aparecer en equipos antiguos, ordenadores de gestión o aplicaciones especiales, pero no deben memorizarse todas con la misma prioridad.
+
+| Uso profesional | Cable o medio habitual | Terminación frecuente | Qué debe comprobarse |
+|---|---|---|---|
+| Vídeo sobre coaxial | Coaxial de 75 Ω adecuado al formato y a la distancia. | BNC. | Impedancia, calidad de terminación, pérdidas y compatibilidad del DVR y la cámara. |
+| CCTV IP y equipos de red | Par trenzado de categoría adecuada. | Conector modular de ocho posiciones y ocho contactos (8P8C), denominado habitualmente RJ45 (*Registered Jack 45*). | Categoría, esquema de terminación, longitud, enlace y presupuesto PoE. |
+| Zonas, relés, alimentación y buses | Conductores multipolares o pares trenzados según el sistema. | Bornes de tornillo o resorte y conectores del fabricante. | Sección, polaridad, tensión, corriente, supervisión, apantallamiento y comportamiento frente al fuego. |
+| Alimentación de equipos | Red de 230 V o baja tensión procedente de una fuente, según el equipo. | Conectores C13/C14 de la Comisión Electrotécnica Internacional (IEC, *International Electrotechnical Commission*), conector cilíndrico de corriente continua o bornes. | Tensión, tipo de corriente, polaridad, potencia, protección y competencia para intervenir. |
+| Enlaces de larga distancia o entre edificios | Fibra monomodo o multimodo según el diseño. | Conectores Lucent (LC, *Lucent Connector*) o de abonado (SC, *Subscriber Connector*), normalmente mediante módulos enchufables de pequeño formato (SFP, *Small Form-factor Pluggable*) o convertidores. | Tipo de fibra, longitud de onda, presupuesto óptico, limpieza y compatibilidad de transceptores. |
+| Monitor local de DVR o NVR | Cable de vídeo digital; en equipos antiguos puede existir vídeo analógico. | Interfaz multimedia de alta definición (HDMI, *High-Definition Multimedia Interface*); la matriz gráfica de vídeo (VGA, *Video Graphics Array*) permanece en instalaciones existentes. | Resolución, distancia, entrada del monitor y salida configurada. |
+| Operación y extracción local | Cable o memoria del bus serie universal (USB, *Universal Serial Bus*). | USB-A, USB-B, micro-USB o USB-C según el equipo. | Función admitida, versión, formato del soporte y procedimiento seguro de exportación. |
+
+El **BNC** emplea un cierre de bayoneta y es la terminación más reconocible del CCTV sobre coaxial. Se instala sobre un coaxial de 75 Ω y debe mantener continuidad de pantalla y conductor central sin cortocircuitos. El conector **F**, también coaxial pero roscado, es común en televisión y radiofrecuencia; no se intercambia con BNC ni se elige para una entrada de cámara solo porque ambos utilicen coaxial. Una instalación puede reunir cable de vídeo y alimentación en una misma cubierta, pero siguen siendo circuitos distintos salvo soluciones específicas de alimentación por coaxial.
+
+En redes IP se utiliza un conector modular **8P8C**, llamado de forma habitual «RJ45» en catálogos y obra. Sus ocho contactos corresponden a cuatro pares trenzados y deben terminarse manteniendo el trenzado y un mismo esquema en todo el enlace. La categoría impresa en el cable no garantiza por sí sola las prestaciones: también influyen conectores, paneles, latiguillos, longitud y ejecución. En Ethernet sobre cobre se toma como referencia un canal de hasta 100 m, pero el límite aplicable se confirma con la tecnología, el proyecto y los equipos utilizados.
+
+Los **bornes** son especialmente frecuentes en centrales, fuentes, detectores, módulos y cerraduras. Pueden transportar alimentación, entradas de zona, contactos de relé, buses o comunicaciones como RS-485. Que dos equipos tengan dos bornes no los hace compatibles: antes de conectarlos se comparan tensión, polaridad, corriente, tipo de entrada o salida y protocolo. Un contacto libre de potencial no proporciona necesariamente tensión, y una entrada de alarma no debe emplearse como salida de alimentación.
+
+Los grabadores, conmutadores y monitores pueden recibir red mediante conectores de la familia **IEC 60320**, mientras cámaras, pequeños equipos de red y periféricos utilizan con frecuencia fuentes externas con conector cilíndrico de corriente continua o bornes. El diámetro de un conector cilíndrico y la polaridad no son universales: que una clavija encaje no garantiza que la tensión, la corriente o el polo central sean correctos. La conexión a 230 V pertenece además a un circuito con requisitos y riesgos distintos de una salida de 12 V o 24 V.
+
+La **fibra óptica** aparece cuando la distancia, el ancho de banda, el aislamiento galvánico o las interferencias justifican su uso. Los conectores LC y SC son habituales, pero además deben coincidir el tipo de fibra, la longitud de onda y los transceptores. La fibra transporta información, no alimentación; una cámara situada al otro extremo sigue necesitando una fuente local o una solución adicional. La limpieza de las terminaciones y el radio de curvatura condicionan el enlace aunque el conector parezca correctamente insertado.
+
+<figure class="study-figure"><a href="../img/tabla-conectores-historicos.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar la lámina de familias de conectores en una pestaña nueva"><img src="../img/tabla-conectores-historicos.webp" alt="Lámina en blanco y negro con conectores D-sub, Centronics, USB, modulares, de almacenamiento, DIN, de fibra, coaxiales, bornes y alimentación" loading="lazy"></a><figcaption>La lámina ayuda a reconocer familias y muestra BNC, F, SC, conectores modulares y bornes. También incluye la interfaz para sistemas informáticos pequeños (SCSI, <em>Small Computer System Interface</em>) y conectores normalizados históricamente por el Instituto Alemán de Normalización (DIN, <em>Deutsches Institut für Normung</em>), entre otras interfaces antiguas que no son prioritarias en una instalación actual de seguridad. La identificación visual se confirma siempre con el marcaje y la documentación. Fuente facilitada: <a href="https://uk.pinterest.com/pin/508625351640634793/">publicación en Pinterest; autor original no indicado</a>. Pulsa para ampliar.</figcaption></figure>
+
+<figure class="study-figure"><a href="../img/tabla-conectores-puertos.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar la tabla fotográfica de conectores y puertos en una pestaña nueva"><img src="../img/tabla-conectores-puertos.webp" alt="Tabla fotográfica de conectores USB, almacenamiento, red, audio, vídeo y alimentación con sus nombres" loading="lazy"></a><figcaption>Para este módulo interesan especialmente Ethernet 8P8C, USB, HDMI, VGA, conectores coaxiales y alimentación IEC. La interfaz serie de conexión de tecnología avanzada (SATA, <em>Serial Advanced Technology Attachment</em>) y otras interfaces internas pueden aparecer dentro de un grabador, pero no son el cableado de campo de una cámara. Imagen: <a href="https://www.prrcomputers.com/blog/ultimate-connectors-chart/">PRR Computers, «Ultimate Chart of Computer Connectors and Ports»</a>, CC BY-SA 4.0. Pulsa para ampliar.</figcaption></figure>
+
+> **Ejemplo razonado — el conector encaja, pero la función no coincide**
+>
+> Un DVR dispone de un puerto 8P8C para conectarse a la red. Una cámara coaxial termina en BNC y no puede conectarse directamente a ese puerto mediante un simple cambio de forma: su señal y su arquitectura son diferentes. Del mismo modo, la salida HDMI del DVR sirve para un monitor y no para recibir vídeo de una cámara. Antes de usar un adaptador hay que identificar qué señal entrega cada equipo y qué conversión sería necesaria.
+
+> **Comprueba lo aprendido — medio, conector o interfaz**
+>
+> - **Elementos:** coaxial · BNC · par trenzado · 8P8C/RJ45 · HDMI · VGA · USB · bornera · fibra · LC · RS-485 · PoE.
+> - **Tarea:** clasifica cada elemento como medio, conector, interfaz o tecnología. Cuando una denominación no pertenezca a una sola columna, explica en una frase qué describe realmente.
+> - **Resultado:** una tabla compacta que distinga la forma física de la señal, el protocolo o la alimentación que puede transportar.
+
+### 4.3. Enlaces inalámbricos
 
 Un enlace **inalámbrico** evita parte de la canalización y facilita ampliaciones, pero depende de propagación radio, alimentación y compatibilidad. Muros, metal, interferencias y cambios en el entorno modifican la cobertura. La batería requiere supervisión y sustitución planificada. La señal se comprueba en la ubicación final y se ensaya el estado que indica la central si se pierde un dispositivo.
 
 La radio está sujeta a condiciones de espectro y compatibilidad electromagnética. La frecuencia y el equipo se verifican en la ficha del producto y en el marco vigente. La protección frente a sabotajes requiere saber qué ocurre si se interfiere el canal o se abre el equipo.
 
-### 3.3. Red IP, PoE y continuidad
+### 4.4. Red IP, PoE y continuidad
 
 Una cámara o controladora **IP** necesita una dirección y una red configuradas. El vídeo sale de la cámara como datos, atraviesa conmutadores y llega al grabador o servidor. La red puede fallar aunque la cámara tenga alimentación; también puede ocurrir lo contrario si un conmutador PoE deja de suministrarla. **Power over Ethernet (PoE)** une datos y energía en un cable compatible, pero el presupuesto de potencia del conmutador ha de alcanzar para los dispositivos conectados.
 
@@ -171,7 +301,7 @@ El conmutador, el panel de conexiones y el grabador no son el mismo elemento. El
 >
 > Se ve la cámara IP en pantalla, pero el disco del NVR está averiado. Captación y enlace funcionan; falla el registro. Comprobar solo que aparece imagen en directo daría un resultado incorrecto. La puesta en servicio y el mantenimiento deben probar también una grabación y su recuperación.
 
-### 3.4. Comunicación hacia el exterior
+### 4.5. Comunicación hacia el exterior
 
 Hay que distinguir **el enlace interno**, por el que una señal llega del detector a la central, de **la ruta exterior**, por la que la central transmite un aviso a un destinatario autorizado. La central puede seguir detectando y activando una sirena local aunque no consiga comunicar con una CRA. También puede llegar una señal exterior mientras un detector concreto ha dejado de responder. Las pruebas de ambos recorridos son independientes.
 
@@ -190,7 +320,7 @@ El medio de comunicación se escoge también por **cómo informa de su propia p�
 >
 > Durante una prueba se abre una puerta protegida. La central registra la zona y suena la sirena, pero la CRA no recibe aviso. La detección local ha funcionado; el diagnóstico se dirige a la ruta exterior y al registro de comunicaciones. Si se corta la conexión IP y el equipo dispone de enlace móvil de respaldo, se comprueba que el aviso llegue por esa segunda ruta y que el cambio quede registrado. Repetir solo la apertura de la puerta no verifica estas funciones.
 
-## 4. Detección de intrusión y niveles de seguridad
+## 5. Detección de intrusión y niveles de seguridad
 
 Una instalación de intrusión intenta detectar accesos no autorizados y comunicar un aviso verificable. La protección no depende de un único detector: intervienen la delimitación de las zonas, la central, la alimentación de respaldo, la transmisión y la respuesta prevista. La posición de un sensor debe derivarse del recorrido probable de entrada y de las condiciones del lugar; colocar muchos detectores sin estudiar el entorno no garantiza una detección mejor.
 
@@ -205,7 +335,13 @@ En España, los **grados de seguridad** de los sistemas de alarma de intrusión 
 
 La tabla resume el concepto de riesgo, pero **no sustituye las obligaciones legales ni la ficha de cada componente**. Un detector con unas prestaciones determinadas no convierte por sí solo toda la instalación en un sistema de ese grado. También cuentan central, comunicación, protección frente a manipulación, supervisión, instalación y mantenimiento. Antes de especificar equipos se identifica la actividad, el nivel exigible y las condiciones ambientales del emplazamiento.
 
-### 4.1. Zonas, sabotaje y falsas alarmas
+> **Comprueba lo aprendido — grados de seguridad**
+>
+> - **Situaciones:** intento oportunista sin conocimientos · intruso con conocimientos y herramientas corrientes · ataque planificado con medios especializados · amenaza organizada con recursos elevados.
+> - **Tarea:** relaciona cada descripción con los grados 1, 2, 3 o 4 y justifica cada relación con una frase.
+> - **Resultado:** una tabla de cuatro filas. Se trata de reconocer el nivel general de amenaza, no de asignar por vuestra cuenta el grado exigible a un establecimiento real.
+
+### 5.1. Zonas, sabotaje y falsas alarmas
 
 Una **zona** agrupa una parte del edificio o un conjunto de dispositivos para poder localizar el origen de una señal. «Alarma» informa de una detección; «avería» indica que algo impide funcionar correctamente; «sabotaje» informa, por ejemplo, de la apertura o manipulación de un equipo protegido. Deben poder distinguirse, porque la respuesta no es la misma.
 
@@ -215,7 +351,7 @@ Una **falsa alarma** es una señal de alarma sin la intrusión que se pretendía
 >
 > Una zona se dispara siempre al abrir el portón de carga, incluso cuando el sistema está armado y no entra nadie. El registro apunta al mismo detector. Antes de cambiar la central, se revisan el ángulo del sensor, el movimiento de la puerta, posibles corrientes y el cableado. Una prueba controlada permite separar una detección real de un defecto de montaje o ajuste.
 
-## 5. De la planificación al funcionamiento verificable
+## 6. De la planificación al funcionamiento verificable
 
 El montaje comienza con una necesidad concreta: qué se desea detectar, registrar o comunicar y en qué condiciones debe funcionar. El **replanteo** contrasta el plano con el edificio real. Permite comprobar accesos, alturas, canalizaciones, alimentación, cobertura, iluminación, puntos de red y espacios para mantenimiento. Si una cámara prevista queda a contraluz o un detector apunta a una fuente de calor, se corrige su posición antes de tender cable.
 
@@ -225,7 +361,7 @@ El emplazamiento de los equipos debe dejar accesibles sus puntos de prueba y sus
 
 <figure class="content-photo"><img src="../img/rack-cctv.jpg" alt="Armario cerrado de una instalación CCTV, con equipos, cableado y canalización visibles" loading="lazy"><figcaption>En un armario se debe poder identificar cada conexión, acceder a los equipos y comprobar su alimentación sin desordenar el cableado. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:CCTV_Installation.jpg">Support gigates, CC BY 4.0</a>.</figcaption></figure>
 
-### 5.1. Documentación antes y después del montaje
+### 6.1. Documentación antes y después del montaje
 
 La documentación inicial define **qué se va a instalar y por qué**. Según el tipo y alcance de la instalación puede consistir en una memoria técnica o requerir un proyecto con mayor desarrollo. Una memoria identifica el riesgo o la finalidad, las zonas, los equipos elegidos, la alimentación, las rutas de comunicación y los criterios de funcionamiento. Los planos sitúan dispositivos y canalizaciones; los esquemas muestran el conexionado y el recorrido de señales; las especificaciones, mediciones y presupuesto permiten comprobar compatibilidad y alcance económico. No se exige el mismo expediente para una pequeña instalación privada que para un sistema de protección contra incendios sometido a obligaciones específicas.
 
@@ -235,7 +371,7 @@ Un **plano de ubicación** responde a «¿dónde está el detector?»; un **esqu
 >
 > El proyecto situaba un detector junto a la puerta principal. En el replanteo se trasladó a otra pared para evitar una corriente de aire, pero nadie actualizó el plano. Meses después una avería aparece como «zona 2» y la persona que revisa el sistema inspecciona el lugar equivocado. El cambio físico era razonable; el fallo fue no dejar constancia del nuevo emplazamiento y del identificador de la zona.
 
-### 5.2. Puesta en servicio
+### 6.2. Puesta en servicio
 
 La **puesta en servicio** comprueba la instalación completa, no solo que los aparatos encienden. Se ensayan las zonas de alarma, la indicación de avería y sabotaje, los avisos de la central, las comunicaciones y la autonomía prevista. En CCTV se verifica el campo de visión, la imagen de día y de noche cuando procede, la fecha y hora, el registro, la recuperación de grabaciones y los permisos de acceso. Una prueba debe dejar constancia de resultado, fecha y condiciones; un fallo se corrige y se vuelve a ensayar.
 
@@ -254,7 +390,7 @@ La documentación final recoge ubicación y referencia de los equipos, esquema r
 
 El **manual de uso** explica a la persona responsable los estados del sistema, las acciones permitidas, el procedimiento ante un aviso y a quién comunicar una avería. El **registro de pruebas y mantenimiento** documenta qué se revisó, con qué resultado y qué quedó pendiente. Cuando correspondan certificados, declaraciones, registros o trámites administrativos, se incorporan los exigidos para esa instalación concreta. Una factura o garantía comercial no sustituye por sí sola la documentación técnica ni una comprobación reglamentaria.
 
-### 5.3. Mantenimiento y diagnóstico
+### 6.3. Mantenimiento y diagnóstico
 
 El **mantenimiento preventivo** revisa de forma planificada componentes que pueden degradarse: alimentación de respaldo, fijaciones, limpieza, conectores, eventos, calidad de imagen, capacidad de almacenamiento y comunicación. El **correctivo** restablece un equipo tras una avería. Las comprobaciones y sustituciones se ajustan a manuales y, en instalaciones reguladas, a las obligaciones aplicables; no existe una periodicidad universal válida para cualquier sistema.
 
@@ -281,15 +417,22 @@ Un **multímetro** mide tensión, resistencia o continuidad según su configurac
 >
 > Tras un corte eléctrico, una central sigue encendida pero ya no envía avisos. La batería ha mantenido la central; puede haber fallado el equipo o el enlace de comunicaciones. En otro edificio, la central está apagada y tampoco hay avisos: la comprobación comienza por la alimentación y su respaldo. El mismo resultado visible para el usuario no implica la misma causa.
 
-## 6. Normativa vigente y protección de los datos
+> **Comprueba lo aprendido — diagnóstico por bloques**
+>
+> - **Caso A:** cuatro cámaras conectadas al mismo conmutador dejan de verse al mismo tiempo.
+> - **Caso B:** una cámara se ve en directo, pero no aparece ninguna grabación al buscar el evento.
+> - **Tarea:** ordena las comprobaciones de alimentación, captación, transmisión, red, grabación y visualización sin sustituir equipos al azar.
+> - **Resultado:** un recorrido de diagnóstico para cada caso y una frase que justifique el primer bloque comprobado.
+
+## 7. Normativa vigente y protección de los datos
 
 Una **ley o reglamento** establece obligaciones jurídicas; una **norma técnica** describe requisitos y métodos de ensayo; un **manual de fabricante** concreta la instalación y el uso de un producto. Se complementan, pero no tienen la misma función. La exigencia aplicable depende del tipo de sistema, de la actividad, del emplazamiento y de la fecha de la instalación. Por eso una referencia normativa de un libro o catálogo antiguo debe contrastarse con su texto vigente.
 
 En intrusión conectada con el ámbito de seguridad privada son referencias principales la [Ley 5/2014, de Seguridad Privada](https://www.boe.es/buscar/act.php?id=BOE-A-2014-3649) y la [Orden INT/316/2011](https://www.boe.es/buscar/act.php?id=BOE-A-2011-3170). En detección y alarma de incendios se aplica, cuando corresponde, el [Reglamento de instalaciones de protección contra incendios, aprobado por el Real Decreto 513/2017](https://www.boe.es/buscar/act.php?id=BOE-A-2017-6606), junto con las normas técnicas a las que remite. No se debe utilizar para una instalación nueva el antiguo reglamento de 1993 como si siguiera siendo el marco general vigente.
 
-### 6.1. Videovigilancia responsable
+### 7.1. Videovigilancia responsable
 
-Una cámara no solo capta una escena: puede tratar **datos personales** si las imágenes permiten identificar a alguien. Antes de instalarla se define finalidad, responsable, zonas necesarias, acceso a grabaciones y plazo de conservación. El encuadre debe limitarse a lo imprescindible y evitar captar espacios ajenos; la vía pública solo se graba en los supuestos permitidos. Se informa de la existencia de videovigilancia mediante el distintivo correspondiente y se protege el acceso a las imágenes. La [guía de videovigilancia de la AEPD](https://www.aepd.es/areas-de-actuacion/videovigilancia) desarrolla estos criterios y las excepciones.
+Una cámara no solo capta una escena: puede tratar **datos personales** si las imágenes permiten identificar a alguien. Antes de instalarla se define finalidad, responsable, zonas necesarias, acceso a grabaciones y plazo de conservación. El encuadre debe limitarse a lo imprescindible y evitar captar espacios ajenos; la vía pública solo se graba en los supuestos permitidos. Se informa de la existencia de videovigilancia mediante el distintivo correspondiente y se protege el acceso a las imágenes. La [guía de videovigilancia de la Agencia Española de Protección de Datos (AEPD)](https://www.aepd.es/areas-de-actuacion/videovigilancia) desarrolla estos criterios y las excepciones.
 
 En una red IP, además, se cambian credenciales por defecto, se asignan permisos según funciones, se actualizan equipos cuando procede y se evita exponer cámaras directamente a Internet. Una instalación puede producir buena imagen y, sin embargo, ser deficiente si cualquiera puede consultar las grabaciones. La prueba de funcionamiento incluye privacidad y seguridad de acceso, no solo calidad de vídeo.
 
@@ -297,13 +440,13 @@ En una red IP, además, se cambian credenciales por defecto, se asignan permisos
 >
 > Si la finalidad es proteger el acceso, se ajusta la cámara para registrar la puerta y la zona necesaria, no toda la calle ni el interior de viviendas próximas. Se comprueba quién puede ver las imágenes, dónde se guardan y cuándo se eliminan. Una mejora técnica de resolución no autoriza a ampliar la captación sin motivo.
 
-## 7. Seguridad laboral e impacto ambiental del montaje
+## 8. Seguridad laboral e impacto ambiental del montaje
 
 La prevención comienza por reconocer la tarea y sus peligros antes de trabajar. El riesgo eléctrico aparece al intervenir en alimentación, cuadros o equipos averiados; el de caída, al montar cámaras o detectores en altura; el mecánico, al taladrar, cortar o manejar herramientas; y el de exposición ambiental, al desechar baterías y equipos. Las medidas se eligen para cada situación y se priorizan las que eliminan o reducen el riesgo en origen sobre la mera confianza en un equipo de protección individual.
 
 Una evaluación aplicada no se limita a escribir «riesgo de caída» en una ficha. Primero describe la operación —por ejemplo, fijar una cámara en una fachada— y las condiciones reales: altura, suelo, tránsito de personas, alimentación disponible y herramientas. Después identifica qué puede fallar y quién podría resultar afectado. Por último, establece medidas verificables: cambiar el emplazamiento si es posible, elegir un acceso adecuado, aislar y comprobar la alimentación, delimitar la zona inferior y coordinar la intervención. Si cambian las condiciones, se revisa la evaluación antes de continuar.
 
-El [Real Decreto 614/2001](https://www.boe.es/eli/es/rd/2001/06/08/614) establece disposiciones mínimas frente al riesgo eléctrico. Antes de intervenir se identifica el circuito, se asegura la desconexión y se verifica la ausencia de tensión con instrumentos y procedimientos adecuados. El [vídeo del INSST sobre las cinco reglas de oro](https://www.insst.es/documentacion/material-divulgativo-y-audiovisual/videos/riesgo-electrico-cinco-reglas-de-oro-ano-2019) explica por qué desconectar un interruptor, por sí solo, no basta para declarar segura una instalación.
+El [Real Decreto 614/2001](https://www.boe.es/eli/es/rd/2001/06/08/614) establece disposiciones mínimas frente al riesgo eléctrico. Antes de intervenir se identifica el circuito, se asegura la desconexión y se verifica la ausencia de tensión con instrumentos y procedimientos adecuados. El [vídeo del Instituto Nacional de Seguridad y Salud en el Trabajo (INSST) sobre las cinco reglas de oro](https://www.insst.es/documentacion/material-divulgativo-y-audiovisual/videos/riesgo-electrico-cinco-reglas-de-oro-ano-2019) explica por qué desconectar un interruptor, por sí solo, no basta para declarar segura una instalación.
 
 Conviene distinguir el circuito de **230 V** que alimenta una fuente del circuito secundario de menor tensión que llega a un detector o a una cámara. Las precauciones no son idénticas, pero «baja tensión» no significa ausencia de peligro: una batería puede producir corrientes de cortocircuito elevadas y un cable dañado puede afectar a otros equipos. La intervención sobre partes alimentadas y las mediciones que la requieran corresponden a personal capacitado, con procedimiento e instrumentos apropiados. La [documentación del INSST sobre riesgo eléctrico](https://www.insst.es/materias/riesgos/seguridad-en-el-trabajo/riesgo-electrico) permite ampliar estos criterios.
 
@@ -321,9 +464,25 @@ El taladrado y el tendido de cable también requieren un replanteo preventivo. A
 >
 > Una cámara debe cubrir un acceso desde una fachada alta y su fuente se encuentra en un cuadro interior. Cambiar la posición puede permitir un montaje desde un lugar accesible sin perder cobertura. Si no es posible, se selecciona el medio de acceso según la evaluación, se delimita el paso inferior y se programa la intervención eléctrica con personal competente. No basta con escoger una plataforma: también hay que comprobar dónde se apoya, cómo se tiende el cable y cómo se probará la cámara sin exponer a otras personas.
 
+> **Comprueba lo aprendido — antes de instalar una cámara**
+>
+> - **Situación:** una cámara debe colocarse en altura para vigilar una entrada, pero el encuadre previsto capta también parte de la calle y una ventana de la vivienda vecina.
+> - **Tarea:** identifica dos riesgos del montaje y un problema de protección de datos; propone para cada uno una medida concreta que pueda comprobarse antes de poner el sistema en servicio.
+> - **Resultado:** cuatro viñetas: dos sobre prevención, una sobre el encuadre y una sobre acceso, conservación o información de las imágenes.
+
 Los equipos retirados no se abandonan ni se mezclan indiscriminadamente con residuos ordinarios. El [Real Decreto 110/2015 sobre residuos de aparatos eléctricos y electrónicos](https://www.boe.es/buscar/act.php?id=BOE-A-2015-1762) regula su gestión; las baterías requieren también el cauce de recogida que corresponda. Antes de entregar un grabador o soporte de almacenamiento para tratamiento se protege la información que pudiera contener. Reutilizar un equipo funcional, cuando resulta seguro y compatible, puede evitar residuos, pero no justifica conservar aparatos inseguros u obsoletos en una instalación crítica.
 
 <figure class="content-photo"><img src="../../../../assets/img/electronic-waste.jpg" alt="Acumulación de aparatos electrónicos desechados" loading="lazy"><figcaption>El final de vida de cámaras, centrales, grabadores y fuentes de alimentación también forma parte de la instalación. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Basura_electr%C3%B3nica.jpg">Dolapeart, CC BY-SA 4.0</a>.</figcaption></figure>
+
+## Conceptos que debes reconocer al terminar la unidad
+
+> **Debes poder explicar sin consultar los apuntes:**
+>
+> **Sistemas:** incendios · gases · intrusión · CCTV · control de accesos.<br>
+> **Equipos y funciones:** detector · central · zona · actuador · CRA · DVR · NVR.<br>
+> **Transmisión y conexiones:** cableado · enlace inalámbrico · PoE · BNC · 8P8C/RJ45 · HDMI · VGA · USB · bornera · coaxial · par trenzado · fibra.<br>
+> **Funcionamiento y seguridad:** cadena funcional · EOL · sabotaje · falsa alarma · grado de seguridad · puesta en servicio · mantenimiento preventivo.<br>
+> **Criterio profesional:** consulta de normativa y manuales · riesgos básicos de montaje · protección de datos en videovigilancia.
 
 ## Síntesis de la unidad
 

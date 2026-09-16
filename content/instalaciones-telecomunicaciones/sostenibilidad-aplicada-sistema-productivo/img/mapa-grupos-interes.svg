@@ -2,14 +2,14 @@
   <title id="title">Mapa inicial de grupos de interés de una empresa tecnológica</title>
   <desc id="desc">La empresa se relaciona con proveedores y sus trabajadores, plantilla propia, clientes, inversores, instituciones públicas y comunidades locales. Las relaciones atraviesan toda la cadena de valor, no solo el centro de trabajo.</desc>
   <style>
-    text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:25px;font-weight:700}.label{font-size:18px;font-weight:700}.sub{font-size:15px;fill:#506173}.hub{fill:#eef5fc;stroke:#0758a5;stroke-width:2}.box{fill:#fff;stroke:#b9c7d3;stroke-width:1.5}.line{fill:none;stroke:#0758a5;stroke-width:2.3;marker-start:url(#arrow);marker-end:url(#arrow)}
+    text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}.title{font-size:25px;font-weight:700}.label{font-size:18px;font-weight:700}.sub{font-size:15px;fill:#506173}.hub{fill:#eef5fc;stroke:#0758a5;stroke-width:2}.box{fill:#fff;stroke:#b9c7d3;stroke-width:1.5}.line{fill:none;stroke:#0758a5;stroke-width:2.3;marker-start:url(#arrow);marker-end:url(#arrow)}.line-short{fill:none;stroke:#0758a5;stroke-width:2.3;marker-end:url(#arrow)}
   </style>
   <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10 Z" fill="#0758a5"/></marker></defs>
   <rect width="1120" height="560" fill="#fff"/>
   <text class="title" x="26" y="40">¿A quién afecta la actividad de una empresa?</text>
   <text class="sub" x="26" y="67">Mapa de partida: cada grupo puede influir en la empresa y recibir impactos de sus decisiones.</text>
   <path class="line" d="M274 200 H418"/><path class="line" d="M702 200 H846"/>
-  <path class="line" d="M556 149 V125"/><path class="line" d="M556 251 V320"/>
+  <path class="line-short" d="M556 149 V125"/><path class="line" d="M556 251 V320"/>
   <path class="line" d="M410 242 283 359"/><path class="line" d="M702 242 835 359"/>
   <rect class="hub" x="418" y="149" width="284" height="102" rx="8"/>
   <text class="label" x="463" y="189">EMPRESA ELEGIDA</text><text class="sub" x="443" y="219">Actividad, tamaño y decisiones ASG</text>

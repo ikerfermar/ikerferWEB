@@ -205,8 +205,7 @@
                     {
                       "id": "practica-01",
                       "titulo": "Práctica 1.1 - Reconocimiento de los sistemas de seguridad del taller",
-                      "tipo": "practica",
-                      "descargarWord": false
+                      "tipo": "practica"
                     }
                   ]
                 },

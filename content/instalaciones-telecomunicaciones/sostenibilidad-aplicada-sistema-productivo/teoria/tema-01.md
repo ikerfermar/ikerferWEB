@@ -7,8 +7,6 @@
 
 La sostenibilidad empresarial no consiste únicamente en reducir emisiones o reciclar residuos. Una organización sostenible debe analizar cómo afecta su actividad al medioambiente, a las personas y a la forma en que se gobierna, y debe ser capaz de medir esos efectos para tomar decisiones y rendir cuentas.
 
-Esta UT desarrolla el **RA1 y sus seis criterios de evaluación** del [currículo básico oficial del módulo 1708, anexo VIII del Real Decreto 659/2023](https://www.boe.es/eli/es/rd/2023/07/18/659/con).
-
 ## 1. Sostenibilidad y desarrollo sostenible
 
 Una actividad es **sostenible** cuando puede mantenerse en el tiempo sin trasladar costes ambientales, sociales o económicos inasumibles a otras personas, territorios o generaciones. El concepto de **desarrollo sostenible** añade una idea fundamental: satisfacer las necesidades actuales sin comprometer la capacidad de las generaciones futuras para satisfacer las suyas.
@@ -35,7 +33,7 @@ Estos marcos no sustituyen a la legislación, pero ayudan a definir qué asuntos
 
 Conviene distinguir tres niveles que a menudo aparecen mezclados. Una **agenda internacional**, como la Agenda 2030, propone objetivos compartidos; un **tratado**, como el Acuerdo de París, compromete a los Estados que son parte; y una **ley o reglamento** concreta obligaciones aplicables en un territorio y a determinadas organizaciones. Adherirse voluntariamente al Pacto Mundial tampoco equivale a cumplir toda la normativa ambiental, laboral y mercantil.
 
-El [Marco de Cooperación de Naciones Unidas para el Desarrollo Sostenible](https://unsdg.un.org/2030-agenda/cooperation-framework) sirve para planificar, ejecutar y evaluar la colaboración de la ONU con cada país en relación con los ODS. Es una herramienta de cooperación institucional, no una norma de obligado cumplimiento para una pequeña empresa española.
+El [Marco de Cooperación de Naciones Unidas para el Desarrollo Sostenible](https://unsdg.un.org/2030-agenda/cooperation-framework) sirve para planificar, ejecutar y evaluar la colaboración de la Organización de las Naciones Unidas (ONU) con cada país en relación con los ODS. Es una herramienta de cooperación institucional, no una norma de obligado cumplimiento para una pequeña empresa española.
 
 En España, el marco de energía y clima se desarrolla, entre otros instrumentos, mediante la [Ley 7/2021 de cambio climático y transición energética](https://www.boe.es/eli/es/l/2021/05/20/7/con) y el [Plan Nacional Integrado de Energía y Clima 2023–2030](https://www.miteco.gob.es/es/energia/estrategia-normativa/pniec-23-30.html). Este último es una herramienta de planificación nacional, no una lista de obligaciones idénticas para todas las empresas. Antes de decidir qué exigencias afectan a una organización hay que examinar su actividad, tamaño, ubicación y normativa específica.
 
@@ -84,13 +82,13 @@ Una actuación empresarial puede ayudar a un objetivo y perjudicar a otro. Por e
 
 ### 1.3. Las cinco dimensiones de la Agenda
 
-La Agenda 2030 reúne sus prioridades en cinco dimensiones, conocidas como las **5P** por sus nombres en inglés: **personas, planeta, prosperidad, paz y alianzas**. Estas dimensiones aparecen en el [preámbulo oficial de la Agenda 2030](https://sdgs.un.org/2030agenda); no sustituyen a los 17 objetivos ni asignan un ODS exclusivamente a una dimensión.
+La Agenda 2030 reúne sus prioridades en cinco dimensiones, conocidas como las **5P** por las iniciales de sus nombres en inglés: *people* (personas), *planet* (planeta), *prosperity* (prosperidad), *peace* (paz) y *partnership* (alianzas). Estas dimensiones aparecen en el [preámbulo oficial de la Agenda 2030](https://sdgs.un.org/2030agenda); no sustituyen a los 17 objetivos ni asignan un ODS exclusivamente a una dimensión.
 
 En una empresa de telecomunicaciones, **personas** puede significar empleos seguros y servicios accesibles; **planeta**, menor consumo energético y gestión responsable de residuos; **prosperidad**, infraestructuras útiles y actividad económica viable; **paz**, decisiones íntegras y respeto de derechos; y **alianzas**, colaboración con administraciones, proveedores y comunidades locales. Las dimensiones se refuerzan entre sí. Un despliegue rural que mejora el acceso digital deja de ser una buena solución si ignora los derechos de sus trabajadores o deteriora un entorno natural.
 
 El [vídeo de Naciones Unidas sobre las cinco P](https://unsdg.un.org/es/latest/videos/5ps-sdgs-people-planet-prosperity-peace-and-partnership) ofrece otra representación de estas dimensiones. Úsalo para comprobar cómo se relacionan entre sí, no para asignar cada ODS a una sola categoría.
 
-<figure class="content-photo"><img src="../img/energia-renovable.jpg" alt="Paneles fotovoltaicos junto a un aerogenerador en una instalación de investigación energética" loading="lazy"><figcaption>La transición energética puede reducir emisiones, pero también requiere infraestructuras, materiales y decisiones sobre su ubicación. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:CdTe_PV_array_at_the_National_Wind_Technology_Center_(NWTC).jpg">Dennis Schroeder / Departamento de Energía de EE. UU., dominio público</a>.</figcaption></figure>
+<figure class="content-photo"><img src="../img/energia-renovable.jpg" alt="Paneles fotovoltaicos junto a un aerogenerador en una instalación de investigación energética" loading="lazy"><figcaption>La transición energética puede reducir emisiones, pero también requiere infraestructuras, materiales y decisiones sobre su ubicación. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:CdTe_PV_array_at_the_National_Wind_Technology_Center_(NWTC).jpg">Dennis Schroeder / Departamento de Energía de Estados Unidos, dominio público</a>.</figcaption></figure>
 
 > **Comprueba que lo has entendido**
 >
@@ -98,7 +96,7 @@ El [vídeo de Naciones Unidas sobre las cinco P](https://unsdg.un.org/es/latest/
 
 ### Vídeo — Agenda 2030 y Objetivos de Desarrollo Sostenible
 
-**Los Objetivos de Desarrollo Sostenible: qué son y cómo alcanzarlos — UNESCO en español**
+**Los Objetivos de Desarrollo Sostenible: qué son y cómo alcanzarlos — Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)**
 
 https://www.youtube.com/watch?v=MCKH5xk8X-g
 
@@ -112,7 +110,7 @@ https://www.youtube.com/watch?v=MCKH5xk8X-g
 
 ## 2. Aspectos ambientales, sociales y de gobernanza
 
-Los criterios **ASG** permiten analizar la sostenibilidad empresarial desde tres dimensiones. En inglés se utiliza la sigla **ESG** (*Environmental, Social and Governance*).
+Los criterios **ambientales, sociales y de gobernanza (ASG)** permiten analizar la sostenibilidad empresarial desde tres dimensiones. En inglés se utiliza la sigla **ESG** (*Environmental, Social and Governance*; ambiental, social y gobernanza).
 
 | Dimensión | Qué analiza | Ejemplos |
 |---|---|---|
@@ -128,7 +126,7 @@ La dimensión **social** incluye condiciones laborales, prevención de riesgos, 
 
 La **gobernanza** pregunta quién toma las decisiones, quién supervisa su cumplimiento y cómo se detectan y corrigen las malas prácticas. Son ejemplos un código ético, controles anticorrupción, una política de compras, canales para comunicar incidencias y criterios transparentes para informar de resultados. La [explicación de los diez principios del Pacto Mundial de la ONU](https://unglobalcompact.org/what-is-gc/mission/principles) muestra por qué una buena práctica en una dimensión no neutraliza un daño grave en otra.
 
-<figure class="content-photo"><img src="../../../../assets/img/electronic-waste.jpg" alt="Equipos informáticos y componentes electrónicos desechados" loading="lazy"><figcaption>Los residuos electrónicos ilustran un impacto ambiental que debe analizarse junto con las decisiones de compra, reparación y gestión de proveedores. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Basura_electrónica.jpg">Dolapeart, CC BY-SA 4.0</a>.</figcaption></figure>
+<figure class="content-photo"><img src="../../../../assets/img/electronic-waste.jpg" alt="Equipos informáticos y componentes electrónicos desechados" loading="lazy"><figcaption>Los residuos electrónicos ilustran un impacto ambiental que debe analizarse junto con las decisiones de compra, reparación y gestión de proveedores. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Basura_electrónica.jpg">Dolapeart, Creative Commons Atribución-CompartirIgual 4.0 (CC BY-SA 4.0)</a>.</figcaption></figure>
 
 ### 2.1. Riesgos y oportunidades ASG
 
@@ -157,7 +155,7 @@ Al comunicar estas decisiones hay que evitar el **lavado verde**: afirmar que to
 
 ### Vídeo — Criterios ESG / ASG
 
-**¿Qué son los criterios ESG y por qué son importantes? — Fundación Microfinanzas BBVA**
+**¿Qué son los criterios ESG y por qué son importantes? — Fundación Microfinanzas Banco Bilbao Vizcaya Argentaria (BBVA)**
 
 https://www.youtube.com/watch?v=ssY-e8qaAR4
 
@@ -223,7 +221,7 @@ La **doble materialidad** observa el asunto desde dos perspectivas. La *material
 
 Por ejemplo, una brecha de datos puede perjudicar la privacidad de los clientes y, al mismo tiempo, generar costes, sanciones y pérdida de confianza para la empresa. Para valorar su importancia habría que conocer a quién afectó, la gravedad del daño, los controles existentes y las posibles consecuencias para la organización; no bastaría con contar incidentes.
 
-Esta forma de analizar los asuntos se recoge en los [estándares europeos de información sobre sostenibilidad (ESRS)](https://finance.ec.europa.eu/financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en). No equivale a afirmar que todas las empresas están obligadas a publicar el mismo informe.
+Esta forma de analizar los asuntos se recoge en los [estándares europeos de información sobre sostenibilidad (ESRS, *European Sustainability Reporting Standards*)](https://finance.ec.europa.eu/financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en). No equivale a afirmar que todas las empresas están obligadas a publicar el mismo informe.
 
 ### Vídeo — Stakeholders o grupos de interés
 
@@ -241,7 +239,7 @@ https://www.youtube.com/watch?v=DkJGc1rFvDY
 
 ## 4. Medición de la sostenibilidad
 
-Una política de sostenibilidad solo puede evaluarse si existen datos que permitan comprobar su evolución. Para ello se utilizan **indicadores** y **KPI** (*Key Performance Indicators* o indicadores clave de desempeño).
+Una política de sostenibilidad solo puede evaluarse si existen datos que permitan comprobar su evolución. Para ello se utilizan **indicadores** e **indicadores clave de desempeño (KPI, *Key Performance Indicators*)**.
 
 Un KPI debe relacionarse con un objetivo concreto y permitir comparar la situación en distintos momentos.
 
@@ -264,7 +262,7 @@ Un indicador aislado puede resultar engañoso. Reducir el consumo total de elect
 
 Una **métrica** es un dato que se mide; un **KPI** es una métrica elegida para evaluar un objetivo prioritario. «Consumir menos energía» es una intención. «Reducir el consumo eléctrico de la red por terabyte de datos transmitidos entre 2026 y 2028» ya permite definir un indicador, un periodo y una comparación. Antes de calcularlo hay que decidir qué instalaciones entran en el dato, de dónde proceden los registros y si se utilizará energía medida o estimada.
 
-<figure class="study-figure"><a href="../img/lectura-indicador-energia.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el ejemplo de lectura de un indicador energético en una pestaña nueva"><img src="../img/lectura-indicador-energia.svg" alt="Ejemplo hipotético: consumo de 1.000 a 900 MWh y tráfico de uno a dos millones de TB; intensidad de 1 a 0,45 kWh por TB si el perímetro es comparable" loading="lazy"></a><figcaption>Los datos son hipotéticos. La intensidad por servicio añade información que no ofrece el consumo absoluto; aun así, hay que confirmar que ambos periodos incluyen el mismo perímetro. Pulsa para ampliar.</figcaption></figure>
+<figure class="study-figure"><a href="../img/lectura-indicador-energia.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar el ejemplo de lectura de un indicador energético en una pestaña nueva"><img src="../img/lectura-indicador-energia.svg" alt="Ejemplo hipotético: consumo de 1.000 a 900 megavatios hora y tráfico de uno a dos millones de terabytes; intensidad de 1 a 0,45 kilovatios hora por terabyte si el perímetro es comparable" loading="lazy"></a><figcaption>Los datos son hipotéticos: el consumo pasa de 1.000 a 900 megavatios hora (MWh), el tráfico de uno a dos millones de terabytes (TB) y la intensidad de 1 a 0,45 kilovatios hora por terabyte (kWh/TB). La intensidad por servicio añade información que no ofrece el consumo absoluto; aun así, hay que confirmar que ambos periodos incluyen el mismo perímetro. Pulsa para ampliar.</figcaption></figure>
 
 Un KPI útil debe incluir **nombre, unidad, periodo, perímetro, método, valor inicial, meta y fuente**. La meta no debe elegirse después de ver el resultado. Cuando cambia el perímetro —por ejemplo, al incorporar otra empresa o ampliar la red— hay que explicarlo para que la evolución no parezca mejor o peor de lo que es.
 
@@ -277,7 +275,7 @@ Un KPI útil debe incluir **nombre, unidad, periodo, perímetro, método, valor 
 
 Los ejemplos del libro —**huella de carbono, consumo energético, distancias de transporte, residuos e impacto social**— son buenas familias de medidas, pero no existe un conjunto de cinco indicadores universalmente «más eficaz». La elección depende de los impactos materiales de cada empresa. Si una empresa apenas transporta mercancías pero consume mucha electricidad, medir kilómetros recorridos puede resultar menos útil que medir energía por servicio prestado.
 
-La **huella de carbono** requiere un método de cálculo, no solo una cifra final. El [GHG Protocol](https://ghgprotocol.org/corporate-standard?page=1) diferencia emisiones directas de fuentes propias o controladas (**alcance 1**), emisiones indirectas de energía adquirida (**alcance 2**) y otras emisiones de la cadena de valor (**alcance 3**). Una empresa de telecomunicaciones que anuncia menos emisiones en sus oficinas no ha demostrado necesariamente que también disminuyan las de fabricación de equipos, proveedores y uso de sus servicios. Debe indicar qué alcances incluye y cómo ha obtenido los datos.
+La **huella de carbono** requiere un método de cálculo, no solo una cifra final. El [Protocolo de Gases de Efecto Invernadero (GHG Protocol, *Greenhouse Gas Protocol*)](https://ghgprotocol.org/corporate-standard?page=1) diferencia emisiones directas de fuentes propias o controladas (**alcance 1**), emisiones indirectas de energía adquirida (**alcance 2**) y otras emisiones de la cadena de valor (**alcance 3**). Una empresa de telecomunicaciones que anuncia menos emisiones en sus oficinas no ha demostrado necesariamente que también disminuyan las de fabricación de equipos, proveedores y uso de sus servicios. Debe indicar qué alcances incluye y cómo ha obtenido los datos.
 
 Los indicadores **sociales** deben relacionarse con derechos y experiencias reales: accidentes, formación, igualdad, accesibilidad, satisfacción y condiciones en la cadena de suministro. Los de **gobernanza** pueden medir formación anticorrupción, incidencias investigadas, plazos de respuesta o proveedores con controles completados. Una cifra de «cero incidencias» no prueba automáticamente que no exista ningún problema: también puede señalar que el sistema de detección es insuficiente.
 
@@ -292,7 +290,7 @@ Los indicadores **sociales** deben relacionarse con derechos y experiencias real
 
 La **rendición de cuentas** implica que una organización debe explicar qué objetivos se ha fijado, qué resultados ha obtenido y con qué criterios los ha medido.
 
-Para que la información sea comparable existen marcos y estándares de reporte. Entre los más utilizados se encuentran los estándares **GRI** (*Global Reporting Initiative*) y, en la Unión Europea, los **ESRS** (*European Sustainability Reporting Standards*), vinculados a la normativa europea de información sobre sostenibilidad.
+Para que la información sea comparable existen marcos y estándares de reporte. Entre los más utilizados se encuentran los estándares de la **Iniciativa Global de Reporte (GRI, *Global Reporting Initiative*)** y, en la Unión Europea (UE), los **ESRS**, vinculados a la normativa europea de información sobre sostenibilidad.
 
 La utilidad de un estándar común es sencilla: si cada empresa define de forma distinta conceptos como emisiones, residuos, igualdad o riesgos, comparar resultados entre organizaciones resulta difícil y puede favorecer comunicaciones poco transparentes.
 
@@ -324,7 +322,7 @@ Las calificaciones o los índices no convierten automáticamente una empresa en 
 
 La ISR puede aplicarse de varias formas: **excluir** determinadas actividades por criterios definidos, **integrar** factores ASG en el análisis junto a rentabilidad y riesgo, **seleccionar** empresas con mejor comportamiento relativo o invertir con un **objetivo ambiental o social específico**. También existen bonos verdes o sociales destinados a financiar ciertos proyectos. Ninguna estrategia elimina los riesgos financieros habituales ni permite prescindir de la documentación del producto.
 
-No debe confundirse un **fondo que incorpora criterios ASG** con un **fondo solidario** que entrega parte de sus comisiones a una entidad benéfica. Pueden coincidir, pero describen mecanismos distintos. La [infografía de finanzas sostenibles de la CNMV](https://www.cnmv.es/DocPortal/Publicaciones/Infografias/Infografia_Finanzas_sostenibles.pdf) compara fondos con criterios ASG, fondos solidarios y bonos verdes o sociales, y recuerda que hay que leer la información del producto y comprobar que se ajusta al perfil del inversor.
+No debe confundirse un **fondo que incorpora criterios ASG** con un **fondo solidario** que entrega parte de sus comisiones a una entidad benéfica. Pueden coincidir, pero describen mecanismos distintos. La [infografía de finanzas sostenibles de la Comisión Nacional del Mercado de Valores (CNMV)](https://www.cnmv.es/DocPortal/Publicaciones/Infografias/Infografia_Finanzas_sostenibles.pdf) compara fondos con criterios ASG, fondos solidarios y bonos verdes o sociales, y recuerda que hay que leer la información del producto y comprobar que se ajusta al perfil del inversor.
 
 Para analizar una afirmación de ISR, pregunta **qué se financia**, **qué criterios de selección se aplican**, **quién verifica la información** y **qué riesgos permanecen**. Una empresa puede emitir un bono para instalar equipos más eficientes y seguir teniendo problemas laborales o de privacidad. Del mismo modo, obtener una buena calificación ASG de una agencia no equivale a que todos sus impactos sean positivos.
 
@@ -350,7 +348,7 @@ Caracterizar la sostenibilidad del sector exige analizar estos aspectos de forma
 
 <figure class="content-photo"><img src="../../../../assets/img/yellow-cables.jpg" alt="Cableado amarillo conectado a un panel de red" loading="lazy"><figcaption>El despliegue de redes implica materiales, consumo energético, mantenimiento y decisiones sobre su vida útil. Fotografía: <a href="https://commons.wikimedia.org/wiki/File:Yellow_Network_Cables_Patchpanel_rear.jpg">Matthäus Wander, CC BY 4.0</a>.</figcaption></figure>
 
-Para conocer otros casos empresariales del entorno, la [Fundación Empresa Familiar de Castilla y León](https://fundacionefcl.org/) presenta una Guía de Sostenibilidad para FP con vídeos, retos y ejemplos de empresas de la comunidad. Como apoyo abierto para profundizar en teoría y actividades por familias profesionales, el [CENEAM reúne una guía didáctica del módulo](https://www.miteco.gob.es/es/ceneam/recursos/materiales/gia-didactica-sostenibilidad-fp.html). Estos recursos amplían el caso de la unidad; no sustituyen la lectura crítica de las fuentes originales de cada empresa.
+Para conocer otros casos empresariales del entorno, la [Fundación Empresa Familiar de Castilla y León](https://fundacionefcl.org/) presenta una Guía de Sostenibilidad para Formación Profesional (FP) con vídeos, retos y ejemplos de empresas de la comunidad. Como apoyo abierto para profundizar en teoría y actividades por familias profesionales, el [Centro Nacional de Educación Ambiental (CENEAM) reúne una guía didáctica del módulo](https://www.miteco.gob.es/es/ceneam/recursos/materiales/gia-didactica-sostenibilidad-fp.html). Estos recursos amplían el caso de la unidad; no sustituyen la lectura crítica de las fuentes originales de cada empresa.
 
 Para ampliar con otros materiales docentes, [Educación en Sostenibilidad ofrece un tema introductorio del módulo y actividades sobre ODS, ASG, grupos de interés, doble materialidad, indicadores e inversión responsable](https://educacionensostenibilidad.com/sostenibilidad-aplicada-al-sistema-productivo/).
 

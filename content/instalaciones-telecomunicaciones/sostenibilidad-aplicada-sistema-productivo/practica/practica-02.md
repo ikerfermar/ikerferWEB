@@ -9,7 +9,7 @@
 
 <figure class="content-photo"><img src="../../../../assets/img/electric-meter.jpg" alt="Contador eléctrico digital instalado en un cuadro de medición" loading="lazy"><figcaption>Un contador permite registrar consumo, pero para valorar una mejora hay que comparar periodos, actividad y alcance de los datos. Fotografía ilustrativa: <a href="https://commons.wikimedia.org/wiki/File:Smart_Electrical_Meter.jpg">Aliva Sahoo, CC BY-SA 4.0</a>.</figcaption></figure>
 
-Continuáis el análisis de la Práctica 1.1 como si prepararais una nota breve para un equipo que estudia inversiones responsables. No vais a elaborar aún un plan de sostenibilidad empresarial: ese trabajo corresponde a una unidad posterior vinculada al RA6. Aquí debéis escoger métricas comparables, explicar para qué sirven los estándares de reporte y señalar qué información faltaría antes de tomar una decisión.
+Continuáis el análisis de la Práctica 1.1 como si prepararais una nota breve para un equipo que estudia inversiones responsables. No vais a elaborar aquí el plan de sostenibilidad de vuestra empresa. Esta práctica se centra en interpretar indicadores, estándares de reporte e inversión responsable. El proyecto transversal se desarrolla por separado y se completará progresivamente durante las distintas unidades hasta llegar al plan final.
 
 <figure class="study-figure"><a href="../img/guia-evidencia.svg" target="_blank" rel="noopener noreferrer" aria-label="Ampliar la guía de análisis en una pestaña nueva"><img src="../img/guia-evidencia.svg" alt="Proceso de cinco pasos: afirmación, dato, fuente, alcance y conclusión" loading="lazy"></a><figcaption>En esta segunda práctica, prestad especial atención al alcance del dato y a las reservas que deben acompañar la conclusión. Pulsa para ampliar.</figcaption></figure>
 
@@ -59,7 +59,7 @@ Relacionar los riesgos ASG con una decisión de inversión sin presentar un juic
 Imaginad que analizáis, a modo de ejercicio, una posible inversión en Telefónica. No debéis recomendar la compra de acciones ni calcular su rentabilidad financiera.
 
 1. Seleccionad **dos asuntos ASG** que podrían influir en la decisión de un inversor y justificad su relevancia con datos del caso. Redactad **70–100 palabras por asunto**. En uno de ellos, explicad brevemente las dos caras de la doble materialidad: cómo puede afectar la actividad de la empresa a personas o al medioambiente y cómo puede afectar ese asunto a la propia empresa. Si una cara no se puede valorar con estos datos, indicadlo.
-2. Indicad qué información adicional solicitaríais para cada asunto y dónde intentaríais contrastarla.
+2. Indicad en la misma tabla qué información adicional solicitaríais para cada asunto y dónde intentaríais contrastarla; no requiere un texto separado ni modifica el rango de 70–100 palabras por asunto.
 3. Explicad en **80–110 palabras** qué pueden aportar analistas, inversores, agencias de calificación e índices de sostenibilidad, y cuál es el límite de confiar únicamente en una calificación.
 4. Cerrad la nota con una decisión provisional: **seguir investigando** o **descartar el caso por falta de información suficiente**. Justificadla en **90–120 palabras** sin afirmar que la empresa es completamente sostenible o insostenible.
 
@@ -80,6 +80,8 @@ Imaginad que analizáis, a modo de ejercicio, una posible inversión en Telefón
 
 - **Documento de análisis:** tabla de tres métricas, respuesta sobre anticorrupción y estándares, análisis de dos asuntos ASG y decisión provisional argumentada, con las extensiones indicadas. Los títulos y las referencias no cuentan dentro de los rangos de palabras.
 - **Referencias:** señalad F1 o F2 y el apartado o la página del PDF para cada dato del caso; anotad cualquier fuente adicional utilizada para contrastarlo.
+
+La extensión total del texto evaluable será de **565 a 790 palabras**. Las tablas, los títulos y las referencias no cuentan dentro de ese intervalo.
 
 ## Criterios de evaluación
 

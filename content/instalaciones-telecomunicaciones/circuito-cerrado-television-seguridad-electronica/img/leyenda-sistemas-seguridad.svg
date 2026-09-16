@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1228 900" role="img" aria-labelledby="title desc">
   <title id="title">Leyenda didáctica de elementos frecuentes en instalaciones de seguridad</title>
   <desc id="desc">Dieciocho elementos agrupados en incendios, intrusión y videovigilancia o accesos, con representación esquemática, abreviatura y nombre. La leyenda de cada proyecto determina el significado de sus símbolos.</desc>
   <style>
     text{font-family:Arial,Helvetica,sans-serif;fill:#17202a} .head{font-size:28px;font-weight:700} .group{font-size:18px;font-weight:700;fill:#0758a5} .name{font-size:17px;font-weight:600} .code{font-size:14px;fill:#526273} .small{font-size:14px;fill:#526273} .box{fill:#fff;stroke:#b8c4d1;stroke-width:1.5} .symbol{fill:none;stroke:#17202a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round} .dot{fill:#17202a}
   </style>
-  <rect width="1200" height="900" fill="#fff"/>
+  <rect width="1228" height="900" fill="#fff"/>
   <text x="28" y="42" class="head">Elementos frecuentes en un plano de seguridad</text>
   <text x="28" y="68" class="small">Símbolos de ejemplo; identificadores, tecnología y significado se confirman siempre en la leyenda del proyecto.</text>
   <text x="28" y="109" class="group">DETECCIÓN Y ALARMA DE INCENDIOS</text>
@@ -50,22 +50,22 @@
   </g>
 
   <g transform="translate(826 125)">
-    <rect class="box" width="346" height="112" rx="5"/><path class="symbol" d="M19 42 H59 V65 H19 Z M59 47 78 38 V68 L59 59 Z"/><text class="name" x="91" y="52">Cámara CCTV</text><text class="code" x="91" y="76">C · captación de vídeo</text>
+    <rect class="box" width="374" height="112" rx="5"/><path class="symbol" d="M19 42 H59 V65 H19 Z M59 47 78 38 V68 L59 59 Z"/><text class="name" x="91" y="52">Cámara CCTV</text><text class="code" x="91" y="76">C · captación de vídeo</text>
   </g>
   <g transform="translate(826 243)">
-    <rect class="box" width="346" height="112" rx="5"/><rect class="symbol" x="18" y="34" width="59" height="40"/><circle class="symbol" cx="48" cy="54" r="10"/><text class="name" x="91" y="52">Grabador DVR / NVR</text><text class="code" x="91" y="76">G · registro y consulta</text>
+    <rect class="box" width="374" height="112" rx="5"/><rect class="symbol" x="18" y="34" width="59" height="40"/><circle class="symbol" cx="48" cy="54" r="10"/><text class="name" x="91" y="52">Grabador DVR / NVR</text><text class="code" x="91" y="76">G · registro y consulta</text>
   </g>
   <g transform="translate(826 361)">
-    <rect class="box" width="346" height="112" rx="5"/><rect class="symbol" x="17" y="37" width="61" height="35"/><path class="symbol" d="M29 43 V56 M41 43 V56 M53 43 V56 M65 43 V56"/><text class="name" x="91" y="52">Conmutador PoE</text><text class="code" x="91" y="76">SW · red y alimentación</text>
+    <rect class="box" width="374" height="112" rx="5"/><rect class="symbol" x="17" y="37" width="61" height="35"/><path class="symbol" d="M29 43 V56 M41 43 V56 M53 43 V56 M65 43 V56"/><text class="name" x="91" y="52">Conmutador PoE</text><text class="code" x="91" y="76">SW · red y alimentación</text>
   </g>
   <g transform="translate(826 479)">
-    <rect class="box" width="346" height="112" rx="5"/><rect class="symbol" x="23" y="26" width="48" height="56"/><path class="symbol" d="M31 48 Q47 33 63 48 M36 56 Q47 46 58 56"/><text class="name" x="91" y="52">Lector de acceso</text><text class="code" x="91" y="76">L · presenta credencial</text>
+    <rect class="box" width="374" height="112" rx="5"/><rect class="symbol" x="23" y="26" width="48" height="56"/><path class="symbol" d="M31 48 Q47 33 63 48 M36 56 Q47 46 58 56"/><text class="name" x="91" y="52">Lector de acceso</text><text class="code" x="91" y="76">L · presenta credencial</text>
   </g>
   <g transform="translate(826 597)">
-    <rect class="box" width="346" height="112" rx="5"/><path class="symbol" d="M22 30 H61 V79 H22 Z M61 43 H76 V67 H61"/><circle class="dot" cx="52" cy="55" r="3"/><text class="name" x="91" y="52">Cierre eléctrico</text><text class="code" x="91" y="76">CE · libera o retiene puerta</text>
+    <rect class="box" width="374" height="112" rx="5"/><path class="symbol" d="M22 30 H61 V79 H22 Z M61 43 H76 V67 H61"/><circle class="dot" cx="52" cy="55" r="3"/><text class="name" x="91" y="52">Cierre eléctrico</text><text class="code" x="91" y="76">CE · libera o retiene puerta</text>
   </g>
   <g transform="translate(826 715)">
-    <rect class="box" width="346" height="112" rx="5"/><rect class="symbol" x="18" y="34" width="18" height="39"/><rect class="symbol" x="52" y="34" width="18" height="39"/><text class="name" x="91" y="52">Contacto de puerta</text><text class="code" x="91" y="76">CP · confirma estado del acceso</text>
+    <rect class="box" width="374" height="112" rx="5"/><rect class="symbol" x="18" y="34" width="18" height="39"/><rect class="symbol" x="52" y="34" width="18" height="39"/><text class="name" x="91" y="52">Contacto de puerta</text><text class="code" x="91" y="76">CP · confirma estado del acceso</text>
   </g>
   <text x="28" y="869" class="small">No es un plano de proyecto ni una certificación de conformidad. Los símbolos de incendios se contrastan con la norma aplicable.</text>
 </svg>

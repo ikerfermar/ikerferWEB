@@ -8,6 +8,7 @@ Esta guía adapta a la web el estilo de los materiales LaTeX de referencia. Se a
 - Entra directamente en la materia. Evita introducciones genéricas, frases motivacionales, emojis y recursos infantiles.
 - Explica principalmente mediante prosa. Reserva las listas para fases, requisitos, clasificaciones o comparaciones.
 - Destaca en **negrita** la primera aparición de un término técnico y usa *cursiva* para extranjerismos cuando resulte natural.
+- Desarrolla toda sigla o acrónimo en su primera aparición siguiendo el orden «nombre completo (sigla)»; si procede de otro idioma, añade también la forma original en *cursiva*. Aplica la regla igualmente en tablas, pies de figura, vídeos y bloques de repaso.
 - Relaciona los conceptos con situaciones profesionales, decisiones, métricas, costes, riesgos, mantenimiento, normativa o impacto.
 - Evita afirmaciones absolutas: indica límites y condiciones cuando el resultado dependa del contexto.
 - Utiliza párrafos relativamente breves y una jerarquía estable: `#` para el título, `##` para bloques principales, `###` para secciones y `####` solo si es imprescindible.
