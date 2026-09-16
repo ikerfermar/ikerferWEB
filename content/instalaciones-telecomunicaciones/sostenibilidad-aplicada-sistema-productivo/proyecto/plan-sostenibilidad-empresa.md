@@ -1,7 +1,7 @@
 # Proyecto: El plan de sostenibilidad de tu empresa
 
 **Sostenibilidad aplicada al sistema productivo**\
-Proyecto transversal — Grado Medio y Grado Superior
+2.º de Formación Profesional — Grado Medio y Grado Superior
 
 ---
 
