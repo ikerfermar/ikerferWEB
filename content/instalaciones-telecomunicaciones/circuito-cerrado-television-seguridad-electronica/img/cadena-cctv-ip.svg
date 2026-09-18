@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">Cadena funcional de CCTV IP con PoE</title>
+  <desc id="desc">Las cámaras IP se conectan por Ethernet a un conmutador PoE. Los datos llegan al NVR, que almacena y entrega vídeo al monitor. Un router puede comunicar la instalación con otras redes autorizadas.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#0969da"/></marker></defs>
+  <rect width="1200" height="540" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#1f2328">
+    <text x="60" y="54" font-size="28" font-weight="700">CCTV IP con alimentación PoE</text>
+    <text x="60" y="84" font-size="17" fill="#57606a">Los datos y la energía pueden compartir el cable, pero cumplen funciones distintas.</text>
+    <g text-anchor="middle">
+      <rect x="60" y="145" width="220" height="160" rx="12" fill="#f6f8fa" stroke="#57606a" stroke-width="2"/>
+      <path d="M105 205l35-25h67l28 25-28 25h-67z" fill="none" stroke="#57606a" stroke-width="4"/><circle cx="174" cy="205" r="20" fill="none" stroke="#57606a" stroke-width="4"/><circle cx="174" cy="205" r="7" fill="#57606a"/>
+      <text x="170" y="270" font-size="20" font-weight="700">Cámaras IP</text>
+      <text x="170" y="294" font-size="16" fill="#57606a">captan y codifican</text>
+
+      <rect x="360" y="145" width="220" height="160" rx="12" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/>
+      <rect x="405" y="180" width="130" height="50" rx="5" fill="none" stroke="#0969da" stroke-width="4"/>
+      <g fill="#0969da"><rect x="420" y="196" width="16" height="14"/><rect x="443" y="196" width="16" height="14"/><rect x="466" y="196" width="16" height="14"/><rect x="489" y="196" width="16" height="14"/><rect x="512" y="196" width="16" height="14"/></g>
+      <text x="470" y="270" font-size="20" font-weight="700">Conmutador PoE</text>
+      <text x="470" y="294" font-size="16" fill="#57606a">transporta datos y energía</text>
+
+      <rect x="660" y="145" width="220" height="160" rx="12" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/>
+      <rect x="705" y="180" width="130" height="50" rx="5" fill="none" stroke="#0969da" stroke-width="4"/><circle cx="808" cy="205" r="8" fill="#1a7f37"/><path d="M720 215h60" stroke="#0969da" stroke-width="4"/>
+      <text x="770" y="270" font-size="20" font-weight="700">NVR</text>
+      <text x="770" y="294" font-size="16" fill="#57606a">recibe, registra y consulta</text>
+
+      <rect x="960" y="145" width="180" height="160" rx="12" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+      <rect x="1000" y="175" width="100" height="62" rx="4" fill="none" stroke="#1a7f37" stroke-width="4"/><path d="M1050 237v18M1018 255h64" stroke="#1a7f37" stroke-width="4"/>
+      <text x="1050" y="285" font-size="20" font-weight="700">Monitor</text>
+    </g>
+    <g stroke="#0969da" stroke-width="4" fill="none" marker-end="url(#a)"><path d="M280 225h70"/><path d="M580 225h70"/><path d="M880 225h70"/></g>
+    <text x="315" y="205" text-anchor="middle" font-size="15" fill="#0969da">Ethernet</text>
+    <text x="315" y="250" text-anchor="middle" font-size="15" fill="#bf8700">PoE</text>
+    <rect x="330" y="390" width="280" height="100" rx="12" fill="#fff8c5" stroke="#bf8700" stroke-width="2"/>
+    <text x="470" y="424" text-anchor="middle" font-size="19" font-weight="700">Presupuesto PoE</text>
+    <text x="470" y="450" text-anchor="middle" font-size="15" fill="#57606a"><tspan x="470">potencia disponible por puerto</tspan><tspan x="470" dy="21">y para el conjunto</tspan></text>
+    <path d="M470 390v-75" stroke="#bf8700" stroke-width="3" stroke-dasharray="8 7"/>
+    <rect x="630" y="390" width="280" height="100" rx="12" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="770" y="424" text-anchor="middle" font-size="19" font-weight="700">Router o cortafuegos</text>
+    <text x="770" y="450" text-anchor="middle" font-size="15" fill="#57606a"><tspan x="770">solo cuando se comunican</tspan><tspan x="770" dy="21">redes distintas</tspan></text>
+    <path d="M770 390v-75" stroke="#8c959f" stroke-width="3" stroke-dasharray="8 7"/>
+    <text x="60" y="515" font-size="16" fill="#57606a">La conexión física no garantiza vídeo: deben ser correctas la alimentación, la red, la configuración y los permisos.</text>
+  </g>
+</svg>

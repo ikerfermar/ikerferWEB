@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Relación entre fenómenos del incendio y familias de detectores</title>
+  <desc id="desc">Un incendio puede producir partículas, aumento de temperatura y radiación de llama. Cada fenómeno se relaciona con detectores de humo, térmicos o de llama; los multisensor combinan varias señales.</desc>
+  <rect width="1200" height="620" fill="#f6f8fa"/>
+  <style>
+    .title{font:700 28px Arial,sans-serif;fill:#1f2328}.head{font:700 22px Arial,sans-serif;fill:#1f2328}.text{font:17px Arial,sans-serif;fill:#4b5563}.card{fill:#fff;stroke:#8c959f;stroke-width:2}.smoke{fill:#ddf4ff;stroke:#0969da;stroke-width:3}.heat{fill:#fff8c5;stroke:#9a6700;stroke-width:3}.flame{fill:#ffebe9;stroke:#cf222e;stroke-width:3}.multi{fill:#dafbe1;stroke:#1a7f37;stroke-width:3}.arrow{stroke:#57606a;stroke-width:4;fill:none;marker-end:url(#m)}
+  </style>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6z" fill="#57606a"/></marker></defs>
+  <text class="title" x="55" y="58">Elegir el detector exige identificar el fenómeno y el entorno</text>
+  <rect class="card" x="55" y="105" width="245" height="165" rx="12"/><text class="head" x="92" y="145">Incendio incipiente</text><text class="text" x="85" y="185">Partículas y aerosoles</text><text class="text" x="96" y="215">antes de la llama</text>
+  <path class="arrow" d="M300 188H410"/>
+  <rect class="smoke" x="430" y="115" width="280" height="145" rx="70"/><text class="head" x="492" y="170">Detección de humo</text><text class="text" x="481" y="205">puntual, lineal o aspiración</text>
+
+  <rect class="card" x="55" y="315" width="245" height="165" rx="12"/><text class="head" x="91" y="355">Evolución térmica</text><text class="text" x="92" y="395">Temperatura máxima</text><text class="text" x="82" y="425">o aumento rápido</text>
+  <path class="arrow" d="M300 398H410"/>
+  <rect class="heat" x="430" y="325" width="280" height="145" rx="70"/><text class="head" x="490" y="380">Detección térmica</text><text class="text" x="466" y="415">fija, termovelocimétrica</text>
+
+  <rect class="card" x="830" y="105" width="315" height="165" rx="12"/><text class="head" x="920" y="145">Llama visible</text><text class="text" x="875" y="185">Radiación ultravioleta,</text><text class="text" x="888" y="215">infrarroja o ambas</text>
+  <rect class="flame" x="770" y="325" width="330" height="145" rx="70"/><text class="head" x="848" y="380">Detector de llama</text><text class="text" x="830" y="415">campo de visión y combustible</text>
+  <path class="arrow" d="M990 270V315"/>
+
+  <rect class="multi" x="350" y="520" width="500" height="70" rx="12"/><text class="head" x="455" y="563">Multisensor: combina varias señales</text>
+  <path class="arrow" d="M650 260C750 335 750 455 700 520"/><path class="arrow" d="M570 470V505"/><path class="arrow" d="M935 470Q880 535 860 550"/>
+</svg>

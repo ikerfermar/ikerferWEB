@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">Cadena funcional de detección de incendios convencional</title>
+  <desc id="desc">Un detector o pulsador se conecta a una zona supervisada con resistencia de fin de línea. La central interpreta el estado y activa los avisadores. La alimentación de red y la batería respaldan la central.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#0969da"/></marker>
+  </defs>
+  <rect width="1200" height="540" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" fill="#1f2328">
+    <text x="60" y="54" font-size="28" font-weight="700">Detección de incendios convencional</text>
+    <text x="60" y="84" font-size="17" fill="#57606a">La información recorre la zona; la central decide y gobierna la respuesta.</text>
+    <g text-anchor="middle">
+      <rect x="60" y="145" width="220" height="145" rx="12" fill="#fff1f0" stroke="#cf222e" stroke-width="2"/>
+      <circle cx="125" cy="195" r="27" fill="none" stroke="#cf222e" stroke-width="5"/><circle cx="125" cy="195" r="8" fill="#cf222e"/>
+      <rect x="190" y="168" width="45" height="55" rx="4" fill="none" stroke="#cf222e" stroke-width="4"/><circle cx="212" cy="195" r="8" fill="#cf222e"/>
+      <text x="170" y="252" font-size="20" font-weight="700">Detector o pulsador</text>
+      <text x="170" y="277" font-size="16" fill="#57606a">entrada automática o manual</text>
+
+      <rect x="360" y="145" width="220" height="145" rx="12" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/>
+      <path d="M405 198h118" stroke="#0969da" stroke-width="4"/><path d="M523 176v44" stroke="#0969da" stroke-width="4"/>
+      <path d="M532 176l12 10-24 20 24 20-12 10" fill="none" stroke="#bf8700" stroke-width="4"/>
+      <text x="470" y="252" font-size="20" font-weight="700">Zona supervisada</text>
+      <text x="470" y="277" font-size="16" fill="#57606a">resistencia EOL al final</text>
+
+      <rect x="660" y="145" width="220" height="145" rx="12" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/>
+      <rect x="727" y="168" width="86" height="62" rx="5" fill="none" stroke="#0969da" stroke-width="4"/><circle cx="749" cy="249" r="7" fill="#1a7f37"/><circle cx="770" cy="249" r="7" fill="#bf8700"/><circle cx="791" cy="249" r="7" fill="#cf222e"/>
+      <text x="770" y="277" font-size="20" font-weight="700">Central</text>
+
+      <rect x="960" y="145" width="180" height="145" rx="12" fill="#fff8c5" stroke="#bf8700" stroke-width="2"/>
+      <path d="M1017 172v54h30l25 18v-90l-25 18z" fill="none" stroke="#bf8700" stroke-width="5"/><path d="M1083 177q25 23 0 46M1095 164q40 36 0 72" fill="none" stroke="#bf8700" stroke-width="4"/>
+      <text x="1050" y="277" font-size="20" font-weight="700">Avisadores</text>
+    </g>
+    <g stroke="#0969da" stroke-width="4" fill="none" marker-end="url(#arrow)"><path d="M280 217h70"/><path d="M580 217h70"/><path d="M880 217h70"/></g>
+    <rect x="360" y="360" width="520" height="100" rx="12" fill="#f6f8fa" stroke="#8c959f" stroke-width="2"/>
+    <text x="620" y="397" text-anchor="middle" font-size="19" font-weight="700">Alimentación y continuidad de servicio</text>
+    <text x="620" y="430" text-anchor="middle" font-size="17" fill="#57606a">red eléctrica + fuente de alimentación + batería de respaldo</text>
+    <path d="M620 360v-60" stroke="#8c959f" stroke-width="3" stroke-dasharray="8 7"/>
+    <text x="60" y="510" font-size="16" fill="#57606a">EOL: resistencia de fin de línea. El esquema representa funciones, no instrucciones de conexionado.</text>
+  </g>
+</svg>
